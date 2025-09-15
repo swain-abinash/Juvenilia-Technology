@@ -11,6 +11,8 @@ export const serviceItems = [
   { key: 'service-1', label: 'Service 1', href: '/services#service-1' },
   { key: 'service-2', label: 'Service 2', href: '/services#service-2' },
   { key: 'service-3', label: 'Service 3', href: '/services#service-3' },
+  { key: 'service-4', label: 'Service 4', href: '/services#service-4' },
+
 ] as const
 
 
