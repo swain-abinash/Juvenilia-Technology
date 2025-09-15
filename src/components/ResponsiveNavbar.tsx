@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { IoIosClose } from "react-icons/io";
 import { RiArrowDownSLine } from "react-icons/ri";
@@ -184,10 +185,16 @@ const ResponsiveNavbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 backdrop-blur-md">
-          <nav className="lg:hidden bg-white text-[#000000] text-[16px] font-normal p-4 absolute top-0 right-0 w-3/4 h-full transform transition-transform duration-300 ease-in-out translate-x-0">
+      {/* Mobile Menu - Portal ensures overlay sits above all content even when scrolled */}
+      {isOpen && createPortal(
+        <div className="fixed inset-0 z-[1100]">
+          {/* Overlay */}
+          <div
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm opacity-100 transition-opacity duration-300"
+            onClick={() => setIsOpen(false)}
+          />
+          {/* Drawer */}
+          <nav className="lg:hidden bg-white/80 backdrop-blur-md text-[#000000] text-[16px] font-normal p-4 absolute top-0 right-0 w-3/4 h-full transform transition-transform duration-300 ease-in-out translate-x-0 shadow-xl">
             <div className="flex justify-between mx-5">
               <img
                 src={Jtlogo}
@@ -277,8 +284,7 @@ const ResponsiveNavbar = () => {
               </div>
             </div>
           </nav>
-        </div>
-      )}
+        </div>, document.body)}
     </header>
   );
 };
