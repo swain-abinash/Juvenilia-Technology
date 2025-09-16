@@ -4,7 +4,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { IoIosClose } from "react-icons/io";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { HiMenuAlt3 } from "react-icons/hi";
-import Jtlogo from "../assets/Jtlogo.jpeg";
+import logo from "../assets/logo.png";
 
 
 const ResponsiveNavbar = () => {
@@ -89,7 +89,7 @@ const ResponsiveNavbar = () => {
         <div className="flex justify-center items-center gap-24 relative">
           <div className="flex items-center space-x-2">
             <img
-              src={Jtlogo}
+              src={logo}
               alt="Matrix AI"
               className="lg:w-[110px] lg:h-[54px] w-[80px] h-[45px] cursor-pointer"
               onClick={handleHomePageClick}
@@ -197,7 +197,7 @@ const ResponsiveNavbar = () => {
           <nav className="lg:hidden bg-white/80 backdrop-blur-md text-[#000000] text-[16px] font-normal p-4 absolute top-0 right-0 w-3/4 h-full transform transition-transform duration-300 ease-in-out translate-x-0 shadow-xl">
             <div className="flex justify-between mx-5">
               <img
-                src={Jtlogo}
+                src={logo}
                 alt="Matrix AI"
                 className="lg:w-[110px] lg:h-[54px] w-[80px] h-[45px] cursor-pointer"
                 onClick={() => navigate("/")}
