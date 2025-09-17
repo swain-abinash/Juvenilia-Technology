@@ -1,4 +1,4 @@
-import { productsContent } from '../../mock/pages'
+import { productsContent } from '../../mock/pages';
 
 export default function Products() {
   return (

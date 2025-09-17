@@ -1,4 +1,4 @@
-import { careerContent } from '../../mock/pages'
+import { careerContent } from '../../mock/pages';
 
 export default function Career() {
   return (

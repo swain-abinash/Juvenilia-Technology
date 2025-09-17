@@ -1,4 +1,4 @@
-import { servicesContent } from '../../mock/pages'
+import { servicesContent } from  '../../mock/pages';
 
 export default function Services() {
   return (

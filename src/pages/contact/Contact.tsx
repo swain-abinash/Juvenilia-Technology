@@ -1,4 +1,4 @@
-import { contactContent } from '../../mock/pages'
+import { contactContent } from  '../../mock/pages';
 
 export default function Contact() {
   return (
