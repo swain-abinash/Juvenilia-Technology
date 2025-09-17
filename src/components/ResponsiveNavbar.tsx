@@ -4,7 +4,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { IoIosClose } from "react-icons/io";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { HiMenuAlt3 } from "react-icons/hi";
-import Jtlogo from "../assets/Jtlogo.jpeg";
+import logo from "../assets/logo.png";
 
 
 const ResponsiveNavbar = () => {
@@ -19,31 +19,22 @@ const ResponsiveNavbar = () => {
   const [isFixed, setIsFixed] = useState(false);
 
   const listitem = [
+      { link: "/home", text: "Home", dropdown: [] },
+    { link: "/about", text: "About", dropdown: [] },
+      { link: "/services", text: "Services", dropdown: [] },
+    { link: "/case-study", text: "Case Study", dropdown: [] },
+    { link: "/pricing", text: "Pricing", dropdown: [] },
+
     {
       link: "",
-      text: "Industries",
+      text: "MOU",
       dropdown: [
-        { link: "/industries/e-commerce", text: "E-Commerce", desc: "Track orders, after sale service, claim warranty, return and exchange" },
-        { link: "/industries/hospitality", text: "Hospitality", desc: "Seamless hotel booking, dining, event reservations, and customer support" },
-        { link: "/industries/travel-tourism", text: "Travel & Tourism", desc: "Itinerary planning, travel booking, hotel booking, activity booking, travel guidance" },
-        { link: "/industries/fitness-wellness", text: "Fitness & Wellness", desc: "Schedule fitness/training classes, booking spa, suggest diet plans" },
-        { link: "/industries/healthcare", text: "Healthcare", desc: "Book appointments, book lab tests" },
-        { link: "/industries/education", text: "Education", desc: "Enroll for courses, fee payment assistance" },
-        { link: "/industries/banking-finance", text: "Banking & Finance", desc: "Loan & Credit card application, investment portfolio" },
-        { link: "/industries/real-estate", text: "Real Estate", desc: "Property search, schedule visits, loan eligibility check" },
-        { link: "/industries/logistics", text: "Logistics", desc: "Shipment tracking, booking courier pickup" },
-        { link: "/industries/automotive", text: "Automotive", desc: "Schedule vehicle service, test drive booking" },
-        { link: "/industries/legal-services", text: "Legal Services", desc: "Booking consultations, legal document help" },
-        { link: "/industries/hr-recruitment", text: "HR & Recruitment", desc: "Apply for job, policies, onboarding assistance" },
-        { link: "/industries/insurance", text: "Insurance", desc: "Policy recommendations, claim insurance" },
-        { link: "/industries/entertainment", text: "Entertainment", desc: "Booking tickets, explore options" },
-        { link: "/industries/ngos-charities", text: "NGOs & Charities", desc: "Donate, volunteer signup" },
-        { link: "/industries/event-management", text: "Event Management", desc: "Booking" },
+        { link: "/mou/college_student", text: "College Student", desc: "One for College for students" },
+        { link: "/mou/employment", text: "Employement", desc: "Another as Companies for employment" },
+       
       ],
     },
-    { link: "/pricing", text: "Pricing", dropdown: [] },
-    { link: "/case-study", text: "Case Study", dropdown: [] },
-    { link: "/blogs", text: "Blogs", dropdown: [] },
+    { link: "/contactus", text: "Contact Us", dropdown: [] },
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -84,14 +75,14 @@ const ResponsiveNavbar = () => {
           : "bg-gradient-to-r from-orange-50 to-white"
       } sticky top-0 z-50`}
     >
-      <div className="max-w-[1600px] xl:mx-auto flex justify-between items-center py-5 md:px-20 lg:px-12 px-8 md:mx-10">
+      <div className="max-w-[1600px] xl:mx-auto flex justify-between items-center py-3 md:px-20 lg:px-12 px-8 md:mx-10">
         {/* Logo */}
         <div className="flex justify-center items-center gap-24 relative">
           <div className="flex items-center space-x-2">
             <img
-              src={Jtlogo}
+              src={logo}
               alt="Matrix AI"
-              className="lg:w-[110px] lg:h-[54px] w-[80px] h-[45px] cursor-pointer"
+              className="lg:w-[70px] lg:h-[54px] w-[60px] h-[45px] cursor-pointer"
               onClick={handleHomePageClick}
             />
           </div>
@@ -139,7 +130,7 @@ const ResponsiveNavbar = () => {
                   </Link>
                 )}
                 {hoveredItem === item.text && item.dropdown.length > 0 && (
-                  <div className="absolute left-0 mt-0 rounded-md bg-white shadow-lg text-left space-y-2 z-50 w-[90vw] md:w-[75vw] lg:w-[90vw] grid grid-cols-4 gap-1 p-5 pb-8">
+                  <div className="absolute  mt-0 rounded-md bg-white shadow-lg text-left space-y-2 z-50 w-[10vw] md:w-[15vw] lg:w-[20vw] grid grid-cols-1 gap-1 p-5 pb-8">
                     {item.dropdown.map((dropdownItem, dropdownIndex) => (
                       <Link
                         key={dropdownIndex}
@@ -170,7 +161,7 @@ const ResponsiveNavbar = () => {
         {/* Desktop CTA */}
         <div className="hidden lg:flex space-x-4 text-center rounded-lg hover:bg-orange-100 transition">
           <a
-            href="https://app.lopaa.io/signup"
+            href=""
             target="_blank"
             rel="noreferrer"
             className="px-6 py-3 text-white text-center bg-orange-600 hover:bg-orange-700 rounded-lg transition font-semibold"
@@ -197,9 +188,9 @@ const ResponsiveNavbar = () => {
           <nav className="lg:hidden bg-white/80 backdrop-blur-md text-[#000000] text-[16px] font-normal p-4 absolute top-0 right-0 w-3/4 h-full transform transition-transform duration-300 ease-in-out translate-x-0 shadow-xl">
             <div className="flex justify-between mx-5">
               <img
-                src={Jtlogo}
+                src={logo}
                 alt="Matrix AI"
-                className="lg:w-[110px] lg:h-[54px] w-[80px] h-[45px] cursor-pointer"
+                className="lg:w-[70px] lg:h-[54px] w-[60px] h-[45px] cursor-pointer"
                 onClick={() => navigate("/")}
               />
               <button onClick={() => setIsOpen(false)} className="text-4xl">
