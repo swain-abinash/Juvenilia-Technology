@@ -5,40 +5,47 @@ export const footerData = {
       'Auctor blandit dolorem primis eius odit soluta molestie? Malesuada elementum aut doloremque labo.',
     socials: [
       { key: 'facebook', label: 'Facebook', href: 'https://facebook.com' },
-      { key: 'twitter', label: 'Twitter', href: 'https://twitter.com' },
       { key: 'instagram', label: 'Instagram', href: 'https://instagram.com' },
-      { key: 'youtube', label: 'YouTube', href: 'https://youtube.com' },
+      { key: 'linkedin', label: 'LinkedIn', href: 'https://youtube.com' },
+      { key: 'twitter', label: 'Twitter', href: 'https://twitter.com' },
     ],
+    logo:"../assets/logo.png"
   },
   columns: [
     {
-      title: 'Useful Links',
+      title: 'Short Links',
       links: [
-        { label: 'About us', href: '/about' },
-        { label: 'Careers', href: '/career' },
-        { label: 'News & Articles', href: '/blogs' },
-        { label: 'Legal Notice', href: '/legal' },
+        { label: 'Products', href: '/products' },
+        { label: 'MOU', href: '/mou' },
+        { label: 'Blog', href: '/blogs' },
+        { label: 'News & Articles', href: '/news' },
       ],
     },
     {
       title: 'Support',
       links: [
         { label: 'Help Center', href: '/help' },
-        { label: 'Contact Us', href: '/contact' },
-        { label: 'FAQ', href: '/faq' },
-        { label: 'Parent Community', href: '/community' },
+        { label: 'Privacy Policy', href: '/privacypolicy' },
+        { label: 'Helps', href: '/help' },
+        { label: 'FAQS', href: '/faq' },
+        { label: 'Contact', href: '/contact' },
       ],
     },
-    {
-      title: 'Contact Information',
-      contacts: [
-        { type: 'address', value: '3557 Derek Drive, Orlando, Florida' },
-        { type: 'phone', value: '+1(456)657-887' },
-        { type: 'email', value: 'info@domain.com' },
-      ],
-    },
+    // {
+    //   title: 'Contact Information',
+    //   contacts: [
+    //     { type: 'address', value: '3557 Derek Drive, Orlando, Florida' },
+    //     { type: 'phone', value: '+1(456)657-887' },
+    //     { type: 'email', value: 'info@domain.com' },
+    //   ],
+    // },
   ],
   copyright: `Copyright © ${new Date().getFullYear()} JT. All rights reserved.`,
 } as const
 
+export const companyLocation = {
+  name: "JT",
+  description: "We build awesome things",
+  address: "Bhubaneswar, Odisha, India",  
+};
 
