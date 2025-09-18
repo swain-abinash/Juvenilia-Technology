@@ -1,4 +1,4 @@
-import { footerData, companyLocation } from "../mock/footer";
+import { footerData } from "../mock/footer";
 import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import {

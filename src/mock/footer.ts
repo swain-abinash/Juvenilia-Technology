@@ -24,7 +24,7 @@ export const footerData = {
     {
       title: 'Support',
       links: [
-        { label: 'Help Center', href: '/help' },
+        { label: 'Terms of Use', href: '/terms' },
         { label: 'Privacy Policy', href: '/privacypolicy' },
         { label: 'Helps', href: '/help' },
         { label: 'FAQS', href: '/faq' },
@@ -43,9 +43,4 @@ export const footerData = {
   copyright: `Copyright © ${new Date().getFullYear()} JT. All rights reserved.`,
 } as const
 
-export const companyLocation = {
-  name: "JT",
-  description: "We build awesome things",
-  address: "Bhubaneswar, Odisha, India",  
-};
 
