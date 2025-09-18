@@ -22,19 +22,19 @@ const ResponsiveNavbar = () => {
       { link: "/home", text: "Home", dropdown: [] },
     { link: "/about", text: "About", dropdown: [] },
       { link: "/services", text: "Services", dropdown: [] },
-    { link: "/case-study", text: "Case Study", dropdown: [] },
-    { link: "/pricing", text: "Pricing", dropdown: [] },
 
-    {
-      link: "",
-      text: "MOU",
-      dropdown: [
-        { link: "/mou/college_student", text: "College Student", desc: "One for College for students" },
-        { link: "/mou/employment", text: "Employement", desc: "Another as Companies for employment" },
+    // {
+    //   link: "",
+    //   text: "MOU",
+    //   dropdown: [
+    //     { link: "/mou/college_student", text: "College Student", desc: "One for College for students" },
+    //     { link: "/mou/employment", text: "Employement", desc: "Another as Companies for employment" },
        
-      ],
-    },
-    { link: "/contactus", text: "Contact Us", dropdown: [] },
+    //   ],
+    // },
+    { link: "/plans", text: "Plans", dropdown: [] },
+    { link: "/career", text: "Career", dropdown: [] },
+
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -75,20 +75,22 @@ const ResponsiveNavbar = () => {
           : "bg-gradient-to-r from-orange-50 to-white"
       } sticky top-0 z-50`}
     >
-      <div className="max-w-[1600px] xl:mx-auto flex justify-between items-center py-3 md:px-20 lg:px-12 px-8 md:mx-10">
+      <div className="max-w-[1600px] xl:mx-auto flex justify-between items-center lg:py-1 md:px-18 lg:px-22 px-5 md:mx-10">
         {/* Logo */}
         <div className="flex justify-center items-center gap-24 relative">
           <div className="flex items-center space-x-2">
             <img
               src={logo}
-              alt="Matrix AI"
+              alt="JT"
               className="lg:w-[70px] lg:h-[54px] w-[60px] h-[45px] cursor-pointer"
               onClick={handleHomePageClick}
             />
           </div>
 
-          {/* Desktop Menu */}
-          <nav className="hidden lg:flex space-x-6 text-[#000000] md:text-[16px] md:font-semibold">
+        </div>
+
+         {/* Desktop Menu */}
+         <nav className="hidden lg:flex space-x-6 text-[#000000] md:text-[16px] md:font-semibold">
             {listitem.map((item, index) => (
               <div
                 key={index}
@@ -129,7 +131,7 @@ const ResponsiveNavbar = () => {
                     {item.text}
                   </Link>
                 )}
-                {hoveredItem === item.text && item.dropdown.length > 0 && (
+                {/* {hoveredItem === item.text && item.dropdown.length > 0 && (
                   <div className="absolute  mt-0 rounded-md bg-white shadow-lg text-left space-y-2 z-50 w-[10vw] md:w-[15vw] lg:w-[20vw] grid grid-cols-1 gap-1 p-5 pb-8">
                     {item.dropdown.map((dropdownItem, dropdownIndex) => (
                       <Link
@@ -152,14 +154,14 @@ const ResponsiveNavbar = () => {
                       </Link>
                     ))}
                   </div>
-                )}
+                )} */}
               </div>
             ))}
           </nav>
-        </div>
+
 
         {/* Desktop CTA */}
-        <div className="hidden lg:flex space-x-4 text-center rounded-lg hover:bg-orange-100 transition">
+        {/* <div className="hidden lg:flex space-x-4 text-center rounded-lg hover:bg-orange-100 transition">
           <a
             href=""
             target="_blank"
@@ -168,7 +170,7 @@ const ResponsiveNavbar = () => {
           >
             TRY JT NOW
           </a>
-        </div>
+        </div> */}
 
         {/* Mobile Menu Button */}
         <button className="lg:hidden flex flex-col space-y-1.5 my-8" onClick={toggleMenu}>
@@ -189,7 +191,7 @@ const ResponsiveNavbar = () => {
             <div className="flex justify-between mx-5">
               <img
                 src={logo}
-                alt="Matrix AI"
+                alt="JT"
                 className="lg:w-[70px] lg:h-[54px] w-[60px] h-[45px] cursor-pointer"
                 onClick={() => navigate("/")}
               />
@@ -215,7 +217,7 @@ const ResponsiveNavbar = () => {
                         }`}
                       >
                         {item.text}
-                        {activeDropdown === index && (
+                        {/* {activeDropdown === index && (
                           <div className="mt-2 text-left">
                             {item.dropdown.map((dropdownItem, dropdownIndex) => (
                               <Link
@@ -235,7 +237,7 @@ const ResponsiveNavbar = () => {
                               </Link>
                             ))}
                           </div>
-                        )}
+                        )} */}
                       </div>
                     )}
                     {item.link && (
@@ -263,7 +265,7 @@ const ResponsiveNavbar = () => {
                   )}
                 </div>
               ))}
-              <div className="flex flex-col flex-nowrap space-y-4 p-4 mt-4">
+              {/* <div className="flex flex-col flex-nowrap space-y-4 p-4 mt-4">
                 <a
                   href=""
                   target="_blank"
@@ -272,7 +274,7 @@ const ResponsiveNavbar = () => {
                 >
                   TRY JT NOW
                 </a>
-              </div>
+              </div> */}
             </div>
           </nav>
         </div>, document.body)}
