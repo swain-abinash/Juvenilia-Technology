@@ -1,16 +1,21 @@
-import { careerContent } from '../../mock/pages';
+import { careerData } from '../../mock/career';
+import { CareerHeader } from '../../components/common/career/CareerHeader';
+import { CareerValues } from '../../components/common/career/CareerValues';
+import { CareerBenefits } from '../../components/common/career/CareerBenefits';
+import { CareerOpenings } from '../../components/common/career/CareerOpenings';
 
-export default function Career() {
+const Career = () => {
   return (
-    <section>
-      <h1 className="text-2xl font-semibold mb-3">{careerContent.title}</h1>
-      <ul className="list-disc pl-6 space-y-1 text-gray-700">
-        {careerContent.openings.map(role => (
-          <li key={role}>{role}</li>
-        ))}
-      </ul>
-    </section>
-  )
-}
+    <div className="bg-white">
+      <CareerHeader headerData={careerData.header} />
+      <main>
+        <CareerValues values={careerData.values} />
+        <CareerBenefits benefits={careerData.benefits} />
+        <CareerOpenings openings={careerData.openings} />
+      </main>
+    </div>
+  );
+};
 
+export default Career;
 

@@ -40,3 +40,34 @@ export interface TabItem {
   label: string;
   icon: string;
 }
+
+
+
+export interface CareerPageData {
+  header: {
+    title: string;
+    subtitle: string;
+    mainImage: string;
+  };
+  values: {
+    icon: string;
+    title: string;
+    description: string;
+  }[];
+  benefits: {
+    icon: string; // Using string for icon names from a library like lucide-react
+    title: string;
+    description: string;
+  }[];
+  openings: {
+    id: number;
+    title: string;
+    department: string;
+    location: string;
+    type: 'Full-time' | 'Part-time' | 'Contract';
+    description: string;
+    responsibilities: string[];
+    qualifications: string[];
+  }[];
+}
+

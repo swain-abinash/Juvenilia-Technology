@@ -3,7 +3,8 @@ import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
-import Services from "./pages/services/Services";
+import Services from "./pages/service/Services";
+import ServiceDetail from "./pages/service/ServiceDetail";
 import Products from "./pages/products/Products";
 import Career from "./pages/career/Career";
 // import industryRoutes from "./routes/industryRoutes"; // import here
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/services/:id" element={<ServiceDetail/>} />
         <Route path="/products" element={<Products />} />
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
