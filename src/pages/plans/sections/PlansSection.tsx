@@ -3,7 +3,7 @@ import { planData } from '../../../mock/plan';
 
 const PlansSection: React.FC = () => {
   const { plans } = planData;
-  const [openAccordion, setOpenAccordion] = useState<string | null>("Initial Review and Analysis");
+  const [openAccordion, setOpenAccordion] = useState<string | null>("SERVICES");
 
   // Define accordion sections based on Excel headers (yellow rows)
   const accordionSections = [
