@@ -1,8 +1,8 @@
 export const footerData = {
   company: {
-    name: 'JT',
+    name: 'Juvenilia Technology Pvt. Ltd.',
     description:
-      'Auctor blandit dolorem primis eius odit soluta molestie? Malesuada elementum aut doloremque labo.',
+      'Juvenilia Technology describes a company that offers inventive Information Technology solutions. It is a company that takes the lead in digital innovation, offering tailored solutions that change the global impact of the business market since 2015.',
     socials: [
       { key: 'facebook', label: 'Facebook', href: 'https://facebook.com' },
       { key: 'instagram', label: 'Instagram', href: 'https://instagram.com' },

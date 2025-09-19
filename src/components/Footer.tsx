@@ -26,20 +26,21 @@ export default function Footer() {
   return (
     <footer className="bg-[#1f1f1f] text-gray-300">
       <div className="max-w-[1200px] mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-8">
-        <div>
+        <div className="text-left">
           <div className="flex items-center gap-2">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2  gap-2">
               <img
                 src={logo}
                 alt="JT"
-                className="lg:w-[70px] lg:h-[54px] w-[60px] h-[45px] cursor-pointer"
+                className="lg:w-[50px] lg:h-[44px] w-[50px] h-[40px] cursor-pointer"
                 onClick={handleHomePageClick}
               />
             </div>
-            <span className="text-xl font-semibold text-white ">
+            <span className="text-sx font-normal text-white ">
               {company.name}
             </span>
           </div>
+          
           <p className="mt-4 text-sm leading-6 text-gray-400 text-left">
             {company.description}
           </p>

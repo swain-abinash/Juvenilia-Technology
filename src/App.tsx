@@ -10,6 +10,7 @@ import Career from "./pages/career/Career";
 // import industryRoutes from "./routes/industryRoutes"; // import here
 
 import "./App.css";
+import Plan from "./pages/plans/Plan";
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/plans" element={<Plan />} />
+
 
         {/* Industries (Dynamic) */}
         {/* {industryRoutes.map((route, i) => (
