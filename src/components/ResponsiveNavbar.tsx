@@ -4,7 +4,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { IoIosClose } from "react-icons/io";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { HiMenuAlt3 } from "react-icons/hi";
-import logo from "../assets/logo.png";
+import logo from "/logo.png";
 
 
 const ResponsiveNavbar = () => {
@@ -19,7 +19,7 @@ const ResponsiveNavbar = () => {
   const [isFixed, setIsFixed] = useState(false);
 
   const listitem = [
-      { link: "/home", text: "Home", dropdown: [] },
+      { link: "/", text: "Home", dropdown: [] },
     { link: "/about", text: "About", dropdown: [] },
       { link: "/services", text: "Services", dropdown: [] },
 

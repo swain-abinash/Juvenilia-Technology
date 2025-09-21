@@ -12,20 +12,33 @@ import Career from "./pages/career/Career";
 import "./App.css";
 import Plan from "./pages/plans/Plan";
 
+
+import Terms from "./pages/terms/Terms";
+import Privacy from "./pages/privacy/Privacy";
+import Helps from "./pages/helps/Helps";
+import Faqs from "./pages/faqs/Faqs";
+
 function App() {
   return (
     <Routes>
       <Route element={<MainLayout />}>
         {/* Main Pages */}
         <Route path="/" element={<Home />} />
+        {/* <Route path="/home" element={<Home />} /> */}
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/services/:id" element={<ServiceDetail/>} />
+        <Route path="/services/:id" element={<ServiceDetail />} />
         <Route path="/products" element={<Products />} />
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/plans" element={<Plan />} />
 
+
+
+<Route path="/terms" element={<Terms />} />
+<Route path="/privacy" element={<Privacy />} />
+<Route path="/helps" element={<Helps />} />
+<Route path="/faqs" element={<Faqs />} />
 
         {/* Industries (Dynamic) */}
         {/* {industryRoutes.map((route, i) => (

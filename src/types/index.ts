@@ -1,46 +1,79 @@
-// types/index.ts
-export interface Product {
-  id: number;
-  name: string;
-  description: string;
-  icon: string;
-  color: string;
-}
+// // types/index.ts
+// export interface Product {
+//   id: number;
+//   name: string;
+//   description: string;
+//   icon: string;
+//   color: string;
+// }
 
-export interface Project {
-  id: number;
-  title: string;
-  client: string;
-  image: string;
-  status: 'Completed' | 'In Progress' | 'Planning';
-}
+// export interface Project {
+//   id: number;
+//   title: string;
+//   client: string;
+//   image: string;
+//   status: 'Completed' | 'In Progress' | 'Planning';
+// }
 
-export interface Course {
-  id: number;
-  title: string;
-  students: number;
-  rating: number;
-  duration: string;
-}
+// export interface Course {
+//   id: number;
+//   title: string;
+//   students: number;
+//   rating: number;
+//   duration: string;
+// }
 
-export interface Stat {
-  label: string;
-  value: string;
-  icon: string;
-}
+// export interface Stat {
+//   label: string;
+//   value: string;
+//   icon: string;
+// }
 
-export interface HomeContent {
-  title: string;
-  intro: string;
-  subtitle: string;
-}
+// export interface HomeContent {
+//   title: string;
+//   intro: string;
+//   subtitle: string;
+// }
 
-export interface TabItem {
-  key: string;
-  label: string;
-  icon: string;
-}
+// export interface TabItem {
+//   key: string;
+//   label: string;
+//   icon: string;
+// }
 
+import React from 'react';
+
+export type Cta = { text: string; link: string; type: 'primary' | 'secondary' };
+export type Service = { icon: React.ComponentType<any>; title: string; description: string; };
+export type CaseStudy = { problem: string; solution: string; result: string; };
+export type Testimonial = { quote: string; name: string; company: string; image: string; };
+export type Stat = { value: number; label: string; suffix: string; };
+export type ProcessStep = { icon: React.ComponentType<any>; title: string; description: string; };
+export type Industry = { icon: React.ComponentType<any>; name: string; image: string; };
+export type Award = { name: string; issuer: string; year: string; };
+export type Resource = { title: string; description: string; link: string; };
+
+export interface HomeData {
+  hero: { 
+    headline: string; 
+    subheadline: string; 
+    ctas: Cta[];
+    images: string[];
+  };
+  aboutPreview: { intro: string; cta: { text: string; link: string; }; };
+  services: { title: string; items: Service[]; cta: { text: string; link: string; }; };
+  caseStudies: { title: string; items: CaseStudy[]; cta: { text: string; link: string; }; };
+  testimonials: { title: string; items: Testimonial[]; };
+  clients: { title: string; logos: { src: string; alt: string; }[]; };
+  stats: { items: Stat[]; };
+  process: { title:string; items: ProcessStep[]; };
+  techStack: { title: string; logos: { src: string; alt: string; }[]; };
+  industries: { title: string; items: Industry[]; };
+  culture: { title: string; quote: string; author: string; role: string; videoUrl: string; };
+  awards: { title: string; items: Award[]; };
+  resources: { title: string; items: Resource[]; cta: { text: string; link: string; }; };
+  stickyCta: { text: string; buttonText: string; link: string; };
+}
 
 
 export interface CareerPageData {

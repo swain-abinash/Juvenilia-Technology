@@ -1,5 +1,5 @@
 import { footerData } from "../mock/footer";
-import logo from "../assets/logo.png";
+import logo from "/logo.png";
 import { useNavigate } from "react-router-dom";
 import {
   FaFacebookF,
