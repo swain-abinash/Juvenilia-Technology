@@ -2,9 +2,12 @@ import { Outlet } from 'react-router-dom'
 import Footer from '../components/Footer'
 import ResponsiveNavbar from '../components/ResponsiveNavbar'
 import Topbar from '../components/Topbar'
+import { ThemeProvider } from '../context/ThemeContext'
 
 export default function MainLayout() {
   return (
+    <ThemeProvider>
+
     <div className="min-h-screen flex flex-col">
       {/*Top bar */}
       <Topbar />
@@ -15,6 +18,7 @@ export default function MainLayout() {
       </main>
       <Footer />
     </div>
+    </ThemeProvider>
   )
 }
 

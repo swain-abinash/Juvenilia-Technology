@@ -5,6 +5,7 @@ import {
   FaLinkedinIn,
   FaTwitter,
 } from "react-icons/fa";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Topbar() {
   return (
@@ -45,10 +46,13 @@ export default function Topbar() {
             >
               <FaTwitter className="hover:text-black cursor-pointer" />
             </a>
+            <ThemeToggle />
+            
           </div>
 
           {/* Right - Contact Info */}
           <div className="text-gray-700 font-medium">
+            
             <span className="md:mr-4">+91 1234567890</span> |{" "}
             <span className="ml-4">demo@gmail.com</span>
           </div>

@@ -1,6 +1,6 @@
 const Herosection = () => {
   return (
-    <div>Herosection</div>
+    <div className="hero-bg-dark hero-bg-light">Herosection</div>
   )
 }
 

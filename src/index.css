@@ -2,7 +2,8 @@
 
 /* Base tweaks for Tailwind */
 :root {
-  color-scheme: light;
+  /* color-scheme: light; */
+  --hero-bg: #f97316; /* orange-500 */
 }
 
 body {
@@ -10,4 +11,22 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background: linear-gradient(to bottom, #ffffff, #fef3e2, #1f1f1f);
+}
+
+
+
+/* Dark theme colors */
+[data-theme="dark"] {
+  --hero-text: #ffffff;   /* white */
+  --hero-bg: #999999;     /* gray-900 */
+  --text-primary: #ffffff; /* white */
+  --bg-primary: #111827;   /* gray-900 */
+  --bg-secondary: #1f2937; /* gray-800 */
+}
+
+.hero-bg-dark {
+  background-color: var(--hero-bg);
+}
+.hero-bg-light {
+  background-color: var(--hero-bg);
 }
