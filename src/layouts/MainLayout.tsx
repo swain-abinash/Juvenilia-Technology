@@ -3,6 +3,7 @@ import Footer from '../components/Footer'
 import ResponsiveNavbar from '../components/ResponsiveNavbar'
 import Topbar from '../components/Topbar'
 import { ThemeProvider } from '../context/ThemeContext'
+import ScrollToTopButton from '../components/ScrollToTopButton'
 
 export default function MainLayout() {
   return (
@@ -17,6 +18,7 @@ export default function MainLayout() {
         <Outlet />  
       </main>
       <Footer />
+       <ScrollToTopButton />
     </div>
     </ThemeProvider>
   )

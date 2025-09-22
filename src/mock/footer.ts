@@ -1,34 +1,35 @@
 export const footerData = {
   company: {
-    name: 'Juvenilia Technology',
+    name: "Juvenilia Technology",
     description:
-      'Juvenilia Technology describes a company that offers inventive Information Technology solutions. It is a company that takes the lead in digital innovation, offering tailored solutions that change the global impact of the business market since 2015.',
+      "Juvenilia Technology describes a company that offers inventive Information Technology solutions. It is a company that takes the lead in digital innovation, offering tailored solutions that change the global impact of the business market since 2015.",
     socials: [
-      { key: 'facebook', label: 'Facebook', href: 'https://facebook.com' },
-      { key: 'instagram', label: 'Instagram', href: 'https://instagram.com' },
-      { key: 'linkedin', label: 'LinkedIn', href: 'https://youtube.com' },
-      { key: 'twitter', label: 'Twitter', href: 'https://twitter.com' },
+      { key: "facebook", label: "Facebook", href: "https://facebook.com" },
+      { key: "instagram", label: "Instagram", href: "https://instagram.com" },
+      { key: "linkedin", label: "LinkedIn", href: "https://youtube.com" },
+      { key: "twitter", label: "Twitter", href: "https://twitter.com" },
     ],
-    logo:"/logo.png"
+    logo: "/logo.png",
   },
+
   columns: [
     {
-      title: 'Short Links',
+      title: "Short Links",
       links: [
-        { label: 'Products', href: '/products' },
-        { label: 'MOU', href: '/mou' },
-        { label: 'Blog', href: '/blogs' },
-        { label: 'News & Articles', href: '/news' },
+        { label: "Products", href: "/products" },
+        { label: "MOU", href: "/mou" },
+        { label: "Blog", href: "/blogs" },
+        { label: "News & Articles", href: "/news-article" },
       ],
     },
     {
-      title: 'Support',
+      title: "Support",
       links: [
-        { label: 'Terms of Use', href: '/terms' },
-        { label: 'Privacy Policy', href: '/privacy' },
-        { label: 'Helps', href: '/helps' },
-        { label: 'FAQS', href: '/faqs' },
-        { label: 'Contact', href: '/contact' },
+        { label: "Terms of Use", href: "/terms" },
+        { label: "Privacy Policy", href: "/privacy" },
+        { label: "Helps", href: "/helps" },
+        { label: "FAQS", href: "/faqs" },
+        { label: "Contact", href: "/contact" },
       ],
     },
     // {
@@ -41,6 +42,4 @@ export const footerData = {
     // },
   ],
   copyright: `Copyright © ${new Date().getFullYear()} JT. All rights reserved.`,
-} as const
-
-
+} as const;
