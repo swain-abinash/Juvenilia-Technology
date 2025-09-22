@@ -1,24 +1,35 @@
 import React from "react";
+import { privacyPolicy } from "../../mock/privacy";
+import type { PrivacySection } from "../../mock/privacy";
 
 const Privacy: React.FC = () => {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12">
-      <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
-      <p className="text-gray-600 leading-relaxed mb-4">
-        We respect your privacy and are committed to protecting your personal
-        data. This Privacy Policy explains how we collect, use, and safeguard
-        your information.
-      </p>
-      <h2 className="text-xl font-semibold mt-6 mb-2">1. Data Collection</h2>
-      <p className="text-gray-600 leading-relaxed mb-4">
-        We collect information that you provide directly and automatically
-        through our services.
-      </p>
-      <h2 className="text-xl font-semibold mt-6 mb-2">2. Data Usage</h2>
-      <p className="text-gray-600 leading-relaxed mb-4">
-        Your data is used to improve our services, communicate with you, and
-        ensure security.
-      </p>
+    <div className="min-h-screen bg-black text-white flex flex-col">
+      {/* Main Content */}
+      <main className="flex-1 max-w-5xl mx-auto px-6 py-16 space-y-12">
+        <h1 className="text-5xl font-bold mb-12 text-center text-orange-400 tracking-wide">
+          Privacy Policy
+        </h1>
+
+        <div className="space-y-10">
+          {privacyPolicy.map((section: PrivacySection) => (
+            <section
+              key={section.id}
+              id={section.id}
+              className="bg-gray-900 rounded-xl border-l-4 border-orange-500 shadow-lg p-8 hover:shadow-orange-600 transition duration-300"
+            >
+              <h2 className="text-2xl font-bold mb-4 text-orange-400">
+                {section.title}
+              </h2>
+              <div className="text-gray-200 text-base leading-relaxed space-y-3">
+                {section.content.map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+      </main>
     </div>
   );
 };
