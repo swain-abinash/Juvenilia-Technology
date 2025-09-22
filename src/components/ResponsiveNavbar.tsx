@@ -75,14 +75,14 @@ const ResponsiveNavbar = () => {
           : "bg-gradient-to-r from-orange-50 to-white"
       } sticky top-0 z-50`}
     >
-      <div className="max-w-[1600px] xl:mx-auto flex justify-between items-center lg:py-1 md:px-18 lg:px-22 px-5 md:mx-10">
+      <div className="max-w-[1600px] xl:mx-auto flex justify-between items-center lg:py-1 md:px-18 lg:px-19 px-5 md:mx-10">
         {/* Logo */}
         <div className="flex justify-center items-center gap-24 relative">
           <div className="flex items-center space-x-2">
             <img
               src={logo}
               alt="JT"
-              className="lg:w-[70px] lg:h-[54px] w-[60px] h-[45px] cursor-pointer"
+              className="lg:w-[75px] lg:h-[65px] w-[60px] h-[45px] cursor-pointer"
               onClick={handleHomePageClick}
             />
           </div>
