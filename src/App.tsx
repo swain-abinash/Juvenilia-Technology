@@ -17,6 +17,7 @@ import Terms from "./pages/terms/Terms";
 import Privacy from "./pages/privacy/Privacy";
 import Helps from "./pages/helps/Helps";
 import Faqs from "./pages/faqs/Faqs";
+import News_Article from "./pages/news-article/News_Article";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
 <Route path="/privacy" element={<Privacy />} />
 <Route path="/helps" element={<Helps />} />
 <Route path="/faqs" element={<Faqs />} />
+        <Route path="/news-article" element={<News_Article />} />
 
         {/* Industries (Dynamic) */}
         {/* {industryRoutes.map((route, i) => (
