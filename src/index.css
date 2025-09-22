@@ -3,7 +3,8 @@
 @import "tailwindcss";
 /* Base tweaks for Tailwind */
 :root {
-  color-scheme: light;
+  /* color-scheme: light; */
+  --hero-bg: #f97316; /* orange-500 */
 }
 
 /* body {
@@ -49,4 +50,22 @@ body {
 
 .animate-pulse-slow {
     animation: pulse-slow 2.5s infinite;
+}
+
+
+
+/* Dark theme colors */
+[data-theme="dark"] {
+  --hero-text: #ffffff;   /* white */
+  --hero-bg: #999999;     /* gray-900 */
+  --text-primary: #ffffff; /* white */
+  --bg-primary: #111827;   /* gray-900 */
+  --bg-secondary: #1f2937; /* gray-800 */
+}
+
+.hero-bg-dark {
+  background-color: var(--hero-bg);
+}
+.hero-bg-light {
+  background-color: var(--hero-bg);
 }
