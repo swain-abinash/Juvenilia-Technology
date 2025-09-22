@@ -1,7 +1,7 @@
 export const planData = {
   "plans": [
     {
-      "name": "STANDARD",
+      "name": "STARTER",
       "price": "USD 300/Month",
       "keywords": 20,
       "SERVICES": "USD 300/Month",
@@ -40,7 +40,7 @@ export const planData = {
       "Guest Blogging": "No",
       "Blog Commenting ": "Yes",
       "Classified Ads Posting": "Yes",
-      "Articles per Month": "No",
+      "Articles per Month": 0,
       "Social Media Optimization": "No",
       "Facebook": "No",
       "Instagram": "No",
@@ -60,7 +60,7 @@ export const planData = {
       "Google meet ": "Yes"
     },
     {
-      "name": "PREMIUM",
+      "name": "POPULAR",
       "price": "USD 500/Month",
       "keywords": 30,
       "SERVICES": "USD 500/Month",
@@ -119,7 +119,7 @@ export const planData = {
       "Google meet ": "Yes"
     },
     {
-      "name": "BUSINESS",
+      "name": "PREMIUM",
       "price": "USD 800/Month",
       "keywords": 50,
       "SERVICES": "USD 800/Month",
@@ -178,7 +178,7 @@ export const planData = {
       "Google meet ": "Yes"
     },
     {
-      "name": "PLATINUM",
+      "name": "BUSINESS",
       "price": "USD 6000/Year",
       "keywords": 100,
       "SERVICES": "USD 6000/Year",
@@ -237,84 +237,129 @@ export const planData = {
       "Google meet ": "Yes"
     }
   ],
-  "categories": [
-    {
-      "title": "Services",
-      "items": [
-        "Website Analysis ",
-        "Competitor Analysis",
-        "Keywrords Research"
-      ]
-    },
-    {
-      "title": "On-Page SEO",
-      "items": [
-        "Meta Titles ",
-        "Meta Description",
-        "Page Title",
-        "Page Speed",
-        "Broken Link",
-        "404 Error Page",
-        "Google Analytics Set up",
-        "Google Webmaster Tool Set up",
-        "XML Sitemap",
-        "Robots.txt",
-        "HTML Validation",
-        "CSS Validation",
-        "Mobile Responsive",
-        "Schema Markup",
-        "Optimize Images",
-        "Page Indexing",
-        "Optimiza Alt Tags",
-        "Duplicate Content"
-      ]
-    },
-    {
-      "title": "Off-Page SEO",
-      "items": [
-        "Social Bookmarking",
-        "Blog Directory Submission",
-        "Article Submission",
-        "Video Submission",
-        "Image Submission",
-        "Infographics Submission",
-        "Document Sharing",
-        "Web2.0 Submission",
-        "Guest Blogging",
-        "Blog Commenting ",
-        "Classified Ads Posting",
-        "Articles per Month"
-      ]
-    },
-    {
-      "title": "Social Media Optimization",
-      "items": [
-        "Facebook",
-        "Instagram",
-        "X",
-        "LinkedIn",
-        "YouTube"
-      ]
-    },
-    {
-      "title": "Additional Services",
-      "items": [
-        "Conversion Rate Optimiztion",
-        "Local SEO",
-        "Online Reputation Management",
-        "Email Marketing",
-        "Leads Generation",
-        "Reporting"
-      ]
-    },
-    {
-      "title": "Communication",
-      "items": [
-        "Email",
-        "WhatsApp",
-        "Zoom ",
-        "Google meet "
-      ]
-    }
-  ]
+  // "categories": [
+  //   {
+  //     "title": "Services",
+  //     "items": [
+  //       "Website Analysis ",
+  //       "Competitor Analysis",
+  //       "Keywrords Research"
+  //     ]
+  //   },
+  //   {
+  //     "title": "On-Page SEO",
+  //     "items": [
+  //       "Meta Titles ",
+  //       "Meta Description",
+  //       "Page Title",
+  //       "Page Speed",
+  //       "Broken Link",
+  //       "404 Error Page",
+  //       "Google Analytics Set up",
+  //       "Google Webmaster Tool Set up",
+  //       "XML Sitemap",
+  //       "Robots.txt",
+  //       "HTML Validation",
+  //       "CSS Validation",
+  //       "Mobile Responsive",
+  //       "Schema Markup",
+  //       "Optimize Images",
+  //       "Page Indexing",
+  //       "Optimiza Alt Tags",
+  //       "Duplicate Content"
+  //     ]
+  //   },
+  //   {
+  //     "title": "Off-Page SEO",
+  //     "items": [
+  //       "Social Bookmarking",
+  //       "Blog Directory Submission",
+  //       "Article Submission",
+  //       "Video Submission",
+  //       "Image Submission",
+  //       "Infographics Submission",
+  //       "Document Sharing",
+  //       "Web2.0 Submission",
+  //       "Guest Blogging",
+  //       "Blog Commenting ",
+  //       "Classified Ads Posting",
+  //       "Articles per Month"
+  //     ]
+  //   },
+  //   {
+  //     "title": "Social Media Optimization",
+  //     "items": [
+  //       "Facebook",
+  //       "Instagram",
+  //       "X",
+  //       "LinkedIn",
+  //       "YouTube"
+  //     ]
+  //   },
+  //   {
+  //     "title": "Additional Services",
+  //     "items": [
+  //       "Conversion Rate Optimiztion",
+  //       "Local SEO",
+  //       "Online Reputation Management",
+  //       "Email Marketing",
+  //       "Leads Generation",
+  //       "Reporting"
+  //     ]
+  //   },
+  //   {
+  //     "title": "Communication",
+  //     "items": [
+  //       "Email",
+  //       "WhatsApp",
+  //       "Zoom ",
+  //       "Google meet "
+  //     ]
+  //   }
+  // ]
 };
+
+ // Define accordion sections based on Excel headers (yellow rows)
+ export const accordionSections = [
+    {
+      title: "SERVICES",
+      items: ["Keywords","Website Analysis ", "Competitor Analysis", "Keywrords Research"]
+    },
+    {
+      title: "On Page SEO", 
+      items: ["Meta Titles ", "Meta Description", "Page Title", "Page Speed", "Broken Link", "404 Error Page", "Google Analytics Set up", "Google Webmaster Tool Set up", "XML Sitemap", "Robots.txt", "HTML Validation", "CSS Validation", "Mobile Responsive", "Schema Markup", "Optimize Images", "Page Indexing", "Optimiza Alt Tags", "Duplicate Content"]
+    },
+    {
+      title: "Off Page SEO",
+      items: ["Social Bookmarking", "Blog Directory Submission", "Article Submission", "Video Submission", "Image Submission", "Infographics Submission", "Document Sharing", "Web2.0 Submission", "Guest Blogging", "Blog Commenting ", "Classified Ads Posting","Articles per Month"]
+    },
+    {
+      title: "Social Media Optimization",
+      items: ["Facebook", "Instagram", "X", "LinkedIn", "YouTube"]
+    },
+    {
+      title: "Conversion Rate Optimiztion",
+      items: ["Conversion Rate Optimiztion"]
+    },
+    
+    {
+      title: "Local SEO",
+      items: ["Local SEO"]
+    },
+    {
+      title: "Email Marketing",
+      items: ["Email Marketing"]
+    },
+    {
+      title: "Leads Generation",
+      items: ["Leads Generation"]
+    },
+    {
+      title: "Reporting",
+      items: ["Reporting"]
+    },
+    {
+      title: "Communication (24X6)",
+      items: ["Email", "WhatsApp", "Zoom ", "Google meet "]
+    }
+  ];
