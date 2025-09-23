@@ -53,8 +53,8 @@ export default function Topbar() {
           {/* Right - Contact Info */}
           <div className="text-gray-700 font-medium">
             
-            <span className="md:mr-4">+91 1234567890</span> |{" "}
-            <span className="ml-4">demo@gmail.com</span>
+            <span className="md:mr-4">+91 9437010139</span> |{" "}
+            <span className="ml-4">support@juveniliatechnology.com</span>
           </div>
         </div>
       </div>

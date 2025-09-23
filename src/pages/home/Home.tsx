@@ -12,6 +12,7 @@ import Stats from './sections/StatCounter';
 import OurProcess from './sections/OurProcess';
 import TechStack from './sections/TechStack';
 import Industries from './sections/Industries';
+import GamifiedSection from './sections/GamifiedSection';
 import CultureTeaser from './sections/CultureTeaser';
 import Awards from './sections/Awards';
 import FreeResources from './sections/FreeResources';
@@ -31,9 +32,10 @@ const Home = () => {
       <OurProcess data={homeData.process} />
       <TechStack data={homeData.techStack} />
       <Industries data={homeData.industries} />
-      <CultureTeaser data={homeData.culture} />
+      {/* <CultureTeaser data={homeData.culture} /> */}     
       <Awards data={homeData.awards} />
       <FreeResources data={homeData.resources} />
+       <GamifiedSection />
       <StickyCta data={homeData.stickyCta} />
     </>
   );

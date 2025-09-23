@@ -1,3 +1,17 @@
+import rashmiImage from "../assets/RASHMISIR.jpg";
+import ushaImage from "../assets/USHAMAM.jpg";
+import ranjanImage from "../assets/RANJANSIR.jpg";
+import rajeebImage from "../assets/RAJEEBSIR.jpg";
+import binitImage from "../assets/BINITSIR.jpg";
+import sudarsanImage from "../assets/SUBHA.jpg";
+import amayaImage from "../assets/AMIYASIR.jpg";
+import subhadarshiniImage from "../assets/SUBHA.jpg";
+import rozysmitaImage from "../assets/ROZYSMITA DAS.jpg";
+import swarnaImage from "../assets/SWARNAMAM.jpg";
+import harapriyaImage from "../assets/HARAPRIYA MAM.jpg";
+
+
+
 export const aboutData = {
   hero: {
     title: "About Us",
@@ -11,19 +25,19 @@ export const aboutData = {
       Software Development, and Web Portal Development.`,
     philosophy: "Innovation, Design, and Technology must come together to create solutions that empower businesses and inspire growth."
   },
-  
+
   mission: {
     title: "Our Mission",
     content: "To deliver innovative, scalable, and reliable IT solutions that help businesses succeed in a competitive digital-first world.",
     icon: "🎯"
   },
-  
+
   vision: {
-    title: "Our Vision", 
+    title: "Our Vision",
     content: "To become a global leader in technology innovation, trusted by businesses worldwide for redefining possibilities with cutting-edge IT solutions.",
     icon: "🚀"
   },
-  
+
   milestones: [
     { year: "2015", title: "Company Founded", description: "Started our journey in India with a mission to simplify IT solutions" },
     { year: "2017", title: "Service Expansion", description: "Expanded services to include Digital Marketing & Mobile App Development" },
@@ -32,67 +46,79 @@ export const aboutData = {
     { year: "2023", title: "AI Integration", description: "Expanded into AI-driven solutions and cloud-based platforms" },
     { year: "2025", title: "Global Growth", description: "Continuing to grow as a global technology innovation partner" }
   ],
-  
+
   leadership: [
     {
       name: "Rashmikanta Das",
       position: "Managing Director",
       bio: "Visionary leader driving strategy and innovation since the company's inception.",
-      image: "/api/placeholder/150/150"
+      image: rashmiImage
     },
     {
       name: "Usha Kiran Das",
       position: "Co-Managing Director",
       bio: "Brings operational excellence and customer-first focus to every initiative.",
-      image: "/api/placeholder/150/150"
+      image: ushaImage
     },
     {
       name: "Ranjan Kumar Sahoo",
-      position: "Director",
+      position: "Director & CFO",
       bio: "Expert in technology solutions and business growth strategies.",
-      image: "/api/placeholder/150/150"
+      image: ranjanImage
     },
     {
       name: "Rajeeb Lochan Narendra",
       position: "CEO",
       bio: "Passionate about building scalable businesses and digital transformation.",
-      image: "/api/placeholder/150/150"
+      image: rajeebImage
     },
     {
       name: "Binit Mohanty",
-      position: "Director",
-      bio: "Focused on client relations and delivering value-driven solutions.",
-      image: "/api/placeholder/150/150"
+      position: "Marketing Executive",
+      bio: "Expert in campaigns and client engagement.",
+      image: binitImage
     }
   ],
-  
+
   team: [
     {
-      name: "Sudershan Patra",
+      name: "Sudarsan Patra",
       position: "SEO Manager",
       tagline: "Crafting strategies that put brands on the map",
       image: "/api/placeholder/120/120"
     },
     {
       name: "Amaya Ranjan Martha",
-      position: "Lead Executive",
+      position: "Trainer & Lead Executive",
       tagline: "Driving projects with precision and passion",
-      image: "/api/placeholder/120/120"
+      image: amayaImage
     },
     {
       name: "Subhadarshini Behera",
       position: "SEO Executive",
       tagline: "Delivering measurable results with smart SEO practices",
-      image: "/api/placeholder/120/120"
+      image: subhadarshiniImage
     },
     {
       name: "Rozysmita Sahoo",
       position: "Counsellor",
       tagline: "Ensuring client needs are understood and met with care",
-      image: "/api/placeholder/120/120"
+      image: rozysmitaImage
+    },
+    {
+      name: "Swarnaprava Swain",
+      position: "Counsellor",
+      tagline: "Guiding clients with clarity and care",
+      image: swarnaImage
+    },
+    {
+      name: "Harapriya Dhal",
+      position: "Business Development Executive",
+      tagline: "Driving growth through strategic partnerships",
+      image: harapriyaImage 
     }
   ],
-  
+
   whyChooseUs: [
     { icon: "✅", text: "10+ years of trusted IT expertise" },
     { icon: "✅", text: "100+ successful projects delivered worldwide" },
