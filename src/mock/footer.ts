@@ -1,6 +1,6 @@
 export const footerData = {
   company: {
-    name: "Juvenilia Technology",
+    name: "Juvenilia Technology pvt. ltd",
     description:
       "Juvenilia Technology describes a company that offers inventive Information Technology solutions. It is a company that takes the lead in digital innovation, offering tailored solutions that change the global impact of the business market since 2015.",
     socials: [
@@ -27,7 +27,7 @@ export const footerData = {
       links: [
         { label: "Terms of Use", href: "/terms" },
         { label: "Privacy Policy", href: "/privacy" },
-        { label: "Helps", href: "/helps" },
+        { label: "Site Map", href: "/site-map" },
         { label: "FAQS", href: "/faqs" },
         { label: "Contact", href: "/contact" },
       ],

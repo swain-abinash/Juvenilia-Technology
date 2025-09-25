@@ -82,7 +82,7 @@ const ResponsiveNavbar = () => {
             <img
               src={logo}
               alt="JT"
-              className="lg:w-[75px] lg:h-[65px] w-[60px] h-[45px] cursor-pointer"
+              className="lg:w-[85px] lg:h-[80px] w-[60px] h-[45px] cursor-pointer"
               onClick={handleHomePageClick}
             />
           </div>

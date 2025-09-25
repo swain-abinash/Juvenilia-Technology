@@ -3,7 +3,7 @@ import ushaImage from "../assets/USHAMAM.jpg";
 import ranjanImage from "../assets/RANJANSIR.jpg";
 import rajeebImage from "../assets/RAJEEBSIR.jpg";
 import binitImage from "../assets/BINITSIR.jpg";
-import sudarsanImage from "../assets/SUBHA.jpg";
+import sudarsanImage from "../assets/SUDARSANSIR.jpg";
 import amayaImage from "../assets/AMIYASIR.jpg";
 import subhadarshiniImage from "../assets/SUBHA.jpg";
 import rozysmitaImage from "../assets/ROZYSMITA DAS.jpg";
@@ -85,7 +85,7 @@ export const aboutData = {
       name: "Sudarsan Patra",
       position: "SEO Manager",
       tagline: "Crafting strategies that put brands on the map",
-      image: "/api/placeholder/120/120"
+      image: sudarsanImage
     },
     {
       name: "Amaya Ranjan Martha",
