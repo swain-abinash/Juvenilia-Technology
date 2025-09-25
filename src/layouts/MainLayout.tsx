@@ -11,7 +11,9 @@ export default function MainLayout() {
 
     <div className="min-h-screen flex flex-col">
       {/*Top bar */}
+     <div className='hidden md:block'>
       <Topbar />
+      </div> 
       {/* <Navbar /> */}
       <ResponsiveNavbar />
       <main className="flex-1">
