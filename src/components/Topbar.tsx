@@ -51,10 +51,10 @@ export default function Topbar() {
           </div>
 
           {/* Right - Contact Info */}
-          <div className="text-gray-700 font-medium">
+          <div className="text-gray-700 font-medium flex ">
             
-            <span className="md:mr-4">+91 9437010139</span> |{" "}
-            <span className="ml-4">support@juveniliatechnology.com</span>
+            <p className="md:mr-4">+91 9437010139</p> |{" "}
+            <p className="ml-4">support@juveniliatechnology.com</p>
           </div>
         </div>
       </div>
