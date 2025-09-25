@@ -173,7 +173,7 @@ const ResponsiveNavbar = () => {
         </div> */}
 
         {/* Mobile Menu Button */}
-        <button className="lg:hidden flex flex-col space-y-1.5 my-8" onClick={toggleMenu}>
+        <button className="lg:hidden flex flex-col space-y-1.5 my-8 text-black" onClick={toggleMenu}>
           <HiMenuAlt3 className="text-3xl" />
         </button>
       </div>
