@@ -239,12 +239,12 @@ const SoftwareDevelopment = () => {
                 </div>
 
                 {/* Bottom Buy Now Buttons */}
-                {/* <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 bg-gray-50">
+                <div className="grid grid-cols-2 sm:grid-cols-1 gap-4 p-4 bg-gray-50">
                   {plans.map((plan, index) => (
                     <div key={index} className="text-center">
                       <div className="mb-2">
                         <h4 className="font-semibold text-black">{plan.name}</h4>
-                        <div className="text-sm text-gray-600">UPTO {plan.keywords} KEYWORDS</div>
+                        {/* <div className="text-sm text-gray-600">UPTO {plan.keywords} KEYWORDS</div> */}
                         <div className="text-sm text-gray-600">6 MONTHS</div>
                       </div>
                       <button 
@@ -258,7 +258,7 @@ const SoftwareDevelopment = () => {
                       </button>
                     </div>
                   ))}
-                </div> */}
+                </div>
               </div>
             )}
           </div>

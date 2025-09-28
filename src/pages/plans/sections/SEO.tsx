@@ -218,10 +218,13 @@ import { getValue } from "../../../utils/GetValue";
 import { renderValue } from "../../../utils/RenderValue";
 import { toggleAccordion } from "../../../utils/ToggleAccordian";
 import { PayPalButtons } from "@paypal/react-paypal-js";
+import SuccessModal from "../../../components/common/SuccessModal";
 
 const SEO = () => {
   const { plans } = planData;
   const [openAccordion, setOpenAccordion] = useState("SERVICES");
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -352,40 +355,7 @@ const SEO = () => {
                               <div className="text-xs sm:text-sm mb-1">
                                 UPTO {plan.keywords} KEYWORDS
                               </div>
-                             
-
-                              {/* 🔹 PayPal Buy Now Button */}
-                              <PayPalButtons
-                                style={{ layout: "vertical" }}
-                                createOrder={(data, actions:any) => {
-                                  return actions.order.create({
-                                    purchase_units: [
-                                      {
-                                        amount: {
-                                          currency_code: "USD", 
-                                          value: plan.price.toString(),
-                                        },
-                                        description: plan.description
-                                      },
-                                    ],
-                                  });
-                                }}
-                                onApprove={async (data, actions?: any) => {
-                                  const details =
-                                    await actions?.order.capture();
-                                  alert(
-                                    "Payment completed by " +
-                                      details.payer.name.given_name
-                                  );
-                                  console.log(
-                                    "Full Payment Details: ",
-                                    details
-                                  );
-                                }}
-                                onError={(err) => {
-                                  console.error("PayPal Checkout Error:", err);
-                                }}
-                              />
+                              <h3>Price:{plan.price}/Month</h3>
                             </div>
                           </th>
                         ))}
@@ -408,9 +378,53 @@ const SEO = () => {
                             ))}
                           </tr>
                         ))}
+
+                      {/* 🔹 Row for PayPal Buttons */}
+                      <tr>
+                        {plans.map((plan, index) => (
+                          <td key={index} className="px-4 py-3 text-center">
+                            <div className="flex justify-center">
+                              <PayPalButtons
+                                style={{ layout: "vertical", height: 40 }}
+                                createOrder={(data, actions: any) => {
+                                  return actions.order.create({
+                                    purchase_units: [
+                                      {
+                                        amount: {
+                                          currency_code: "USD", // or INR (with backend capture)
+                                          value: plan.price.toString(),
+                                        },
+                                        description: plan.description,
+                                      },
+                                    ],
+                                  });
+                                }}
+                                onApprove={async (data, actions?: any) => {
+                                  const details =
+                                    await actions?.order.capture();
+                                  setSuccessMessage(
+                              `✅ Payment completed by ${details.payer.name.given_name}`
+                            );
+                                  console.log(
+                                    "Full Payment Details: ",
+                                    details
+                                  );
+                                }}
+                                onError={(err) => {
+                                  console.error("PayPal Checkout Error:", err);
+                                }}
+                              />
+                            </div>
+                          </td>
+                        ))}
+                      </tr>
                     </tbody>
                   </table>
                 </div>
+                {/* 🔹 Success Popup */}
+                 {successMessage && (
+                   <SuccessModal  successMessage={successMessage} setSuccessMessage={setSuccessMessage}/>
+                 )}
               </div>
             )}
           </div>
