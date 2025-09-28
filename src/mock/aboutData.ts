@@ -3,7 +3,7 @@ import ushaImage from "../assets/USHAMAM.jpg";
 import ranjanImage from "../assets/RANJANSIR.jpg";
 import rajeebImage from "../assets/RAJEEBSIR.jpg";
 import binitImage from "../assets/BINITSIR.jpg";
-import sudarsanImage from "../assets/SUBHA.jpg";
+import sudarsanImage from "../assets/SUDARSANSIR.jpg";
 import amayaImage from "../assets/AMIYASIR.jpg";
 import subhadarshiniImage from "../assets/SUBHA.jpg";
 import rozysmitaImage from "../assets/ROZYSMITA DAS.jpg";
@@ -16,7 +16,7 @@ export const aboutData = {
   hero: {
     title: "About Us",
     subtitle: "Welcome to Our Story",
-    tagline: "Crafting technology that inspires innovation and drives growth",
+    tagline: "Innovating Success Through Professional Expertise And Honesty!",
     description: `Founded in <span class="text-orange-400 font-semibold">2015</span>, 
       <span class="text-orange-500 font-semibold">Juvenilia Technologies Pvt Ltd</span> 
       has grown into one of India's most trusted IT solution providers. We are a 
@@ -85,7 +85,7 @@ export const aboutData = {
       name: "Sudarsan Patra",
       position: "SEO Manager",
       tagline: "Crafting strategies that put brands on the map",
-      image: "/api/placeholder/120/120"
+      image: sudarsanImage
     },
     {
       name: "Amaya Ranjan Martha",

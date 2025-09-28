@@ -40,14 +40,14 @@ export default function Footer() {
               {company.name}
             </span>
           </div>
-          
+
           <p className="mt-4 text-sm leading-6 text-gray-400  mb-3">
             {company.description}
           </p>
           <h4>GSTIN: 21AAECJ1425H1Z4</h4>
 
           <div className="flex gap-3 mt-5">
-            
+
             {company.socials.map((s) => (
               <a
                 key={s.key}
@@ -61,7 +61,7 @@ export default function Footer() {
                 {socialIcons[s.key]} {/* render icon here */}
               </a>
             ))}
-            
+
           </div>
         </div>
 
@@ -102,15 +102,15 @@ export default function Footer() {
               style={{border:0}}
               loading="lazy"
             ></iframe> */}
-           
-                <iframe
-                  src="https://www.google.com/maps?q=Juvenilia%20Technology%20Pvt%20Limited%20Bhubaneswar&z=13&output=embed"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  loading="lazy"
-                ></iframe>
-             
+
+            <iframe
+              src="https://www.google.com/maps?q=Juvenilia%20Technology%20Pvt%20Limited%20Bhubaneswar&z=13&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+            ></iframe>
+
           </div>
         </div>
       </div>
@@ -118,7 +118,7 @@ export default function Footer() {
         <div className="max-w-[1200px] mx-auto px-6 py-5 text-center text-sm text-gray-400">
           {copyright}
         </div>
-      </div>
+      </div>  
     </footer>
   );
 }

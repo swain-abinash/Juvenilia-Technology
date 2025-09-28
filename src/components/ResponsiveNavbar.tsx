@@ -73,7 +73,7 @@ const ResponsiveNavbar = () => {
         isFixed 
           ? "bg-white/90 backdrop-blur-md shadow-md" 
           : "bg-gradient-to-r from-orange-50 to-white"
-      } sticky top-0 z-50`}
+      } sticky top-0 z-500`}
     >
       <div className="max-w-[1600px] xl:mx-auto flex justify-between items-center lg:py-1 md:px-18 lg:px-19 px-5 md:mx-10">
         {/* Logo */}
@@ -82,7 +82,7 @@ const ResponsiveNavbar = () => {
             <img
               src={logo}
               alt="JT"
-              className="lg:w-[75px] lg:h-[65px] w-[60px] h-[45px] cursor-pointer"
+              className="lg:w-[85px] lg:h-[80px] w-[60px] h-[45px] cursor-pointer"
               onClick={handleHomePageClick}
             />
           </div>

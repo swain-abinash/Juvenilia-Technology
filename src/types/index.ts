@@ -1,46 +1,3 @@
-// // types/index.ts
-// export interface Product {
-//   id: number;
-//   name: string;
-//   description: string;
-//   icon: string;
-//   color: string;
-// }
-
-// export interface Project {
-//   id: number;
-//   title: string;
-//   client: string;
-//   image: string;
-//   status: 'Completed' | 'In Progress' | 'Planning';
-// }
-
-// export interface Course {
-//   id: number;
-//   title: string;
-//   students: number;
-//   rating: number;
-//   duration: string;
-// }
-
-// export interface Stat {
-//   label: string;
-//   value: string;
-//   icon: string;
-// }
-
-// export interface HomeContent {
-//   title: string;
-//   intro: string;
-//   subtitle: string;
-// }
-
-// export interface TabItem {
-//   key: string;
-//   label: string;
-//   icon: string;
-// }
-
 import React from 'react';
 
 export type Cta = { text: string; link: string; type: 'primary' | 'secondary' };
@@ -50,7 +7,13 @@ export type Testimonial = { quote: string; name: string; company: string; image:
 export type Stat = { value: number; label: string; suffix: string; };
 export type ProcessStep = { icon: React.ComponentType<any>; title: string; description: string; };
 export type Industry = { icon: React.ComponentType<any>; name: string; image: string; };
-export type Award = { name: string; issuer: string; year: string; };
+export type Award = { 
+  name: string; 
+  issuer: string; 
+  year: string; 
+  image?: string; // ✅ optional image for award
+};
+
 export type Resource = { title: string; description: string; link: string; };
 
 export interface HomeData {
