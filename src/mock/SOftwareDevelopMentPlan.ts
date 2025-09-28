@@ -3,7 +3,8 @@
   "plans": [
     {
       "name": "SOFTWARE DEVELOPMENT",
-      "price": "USD 5000",
+      "price": 5000,
+      "description":"Monthly Subscription",
       "Requirement Analysis":"Yes",
       "Design": "Yes",
       "Language": "Java/Python/Spring Boot",

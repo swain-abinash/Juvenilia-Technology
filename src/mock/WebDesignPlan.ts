@@ -2,7 +2,8 @@ export const planData = {
   "plans": [
     {
       "name": "BASIC",
-      "price": "USD 400",
+      "price": 400,
+      "description":"Monthly Subscription",
       "Custom Theme": "Yes",
       "HTML5": "Yes",
       "CSS": "Yes",
@@ -23,7 +24,8 @@ export const planData = {
     },
     {
       "name": "CORPORATE",
-      "price": "USD 800",
+      "price": 800,
+      "description":"Monthly Subscription",
       "Custom Theme": "Yes",
       "HTML5": "Yes",
       "CSS": "Yes",
@@ -44,7 +46,8 @@ export const planData = {
     },
     {
       "name": "ECOMMERCE",
-      "price": "USD 1600",
+      "price": 1600,
+      "description":"Monthly Subscription",
       "Custom Theme": "Yes",
       "HTML5": "Yes",
       "CSS": "Yes",
