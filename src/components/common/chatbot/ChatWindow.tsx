@@ -16,12 +16,13 @@ const ChatWindow = ({
   inputMessage,
   setInputMessage,
   onSend,
+  positionClass = 'fixed bottom-6 right-6'
 }) => (
   <motion.div
     initial={{ opacity: 0, y: 100, scale: 0.8 }}
     animate={{ opacity: 1, y: 0, scale: 1 }}
     exit={{ opacity: 0, y: 100, scale: 0.8 }}
-    className={`fixed bottom-6 right-6 z-50 bg-white border border-gray-200 rounded-2xl shadow-2xl
+    className={`${positionClass} z-50 bg-white border border-gray-200 rounded-2xl shadow-2xl
                ${isMinimized ? "w-80 h-16" : "w-80 h-96"} 
                transition-all duration-300 overflow-hidden`}
   >

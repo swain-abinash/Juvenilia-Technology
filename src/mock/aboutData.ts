@@ -16,7 +16,7 @@ export const aboutData = {
   hero: {
     title: "About Us",
     subtitle: "Welcome to Our Story",
-    tagline: "Crafting technology that inspires innovation and drives growth",
+    tagline: "Innovating Success Through Professional Expertise And Honesty!",
     description: `Founded in <span class="text-orange-400 font-semibold">2015</span>, 
       <span class="text-orange-500 font-semibold">Juvenilia Technologies Pvt Ltd</span> 
       has grown into one of India's most trusted IT solution providers. We are a 

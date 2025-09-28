@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { motion } from 'framer-motion';
 
 // The following are inline SVG icons for a single-file app
 // They are used to represent the contact information.
@@ -15,6 +16,9 @@ const MailIcon = () => (
 );
 const ClockIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-orange-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+);
+const WhatsAppIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-green-500" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
 );
 
 // Component for the Headline and Intro
@@ -33,29 +37,68 @@ const ContactHero: React.FC = () => {
 
 // Component for Contact Information
 const ContactInfo: React.FC = () => {
+  const handleWhatsAppClick = () => {
+    const message = "Hi! I'm interested in your services. Can we discuss my project requirements?";
+    const phoneNumber = "+91-XXXXXXXXXX"; // Replace with actual WhatsApp number
+    const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const handleCallClick = () => {
+    window.open('tel:+91-XXXXXXXXXX', '_self');
+  };
+
+  const handleEmailClick = () => {
+    window.open('mailto:contact@juvenilia.com?subject=Project Inquiry', '_self');
+  };
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+      <motion.div 
+        className="flex flex-col items-center text-center p-6 bg-gray-800 rounded-xl shadow-lg transition-transform transform hover:scale-105 cursor-pointer"
+        whileHover={{ y: -5 }}
+        onClick={handleWhatsAppClick}
+      >
+        <WhatsAppIcon />
+        <h3 className="text-lg font-semibold text-green-500 mt-4">WhatsApp</h3>
+        <p className="text-gray-300 mt-2">Quick Chat</p>
+        <span className="text-xs text-green-400 mt-1">Click to message</span>
+      </motion.div>
+      
+      <motion.div 
+        className="flex flex-col items-center text-center p-6 bg-gray-800 rounded-xl shadow-lg transition-transform transform hover:scale-105 cursor-pointer"
+        whileHover={{ y: -5 }}
+        onClick={handleCallClick}
+      >
+        <PhoneIcon />
+        <h3 className="text-lg font-semibold text-orange-500 mt-4">Phone</h3>
+        <p className="text-gray-300 mt-2">+91-XXXXXXXXXX</p>
+        <span className="text-xs text-orange-400 mt-1">Click to call</span>
+      </motion.div>
+      
+      <motion.div 
+        className="flex flex-col items-center text-center p-6 bg-gray-800 rounded-xl shadow-lg transition-transform transform hover:scale-105 cursor-pointer"
+        whileHover={{ y: -5 }}
+        onClick={handleEmailClick}
+      >
+        <MailIcon />
+        <h3 className="text-lg font-semibold text-orange-500 mt-4">Email</h3>
+        <p className="text-gray-300 mt-2">contact@juvenilia.com</p>
+        <span className="text-xs text-orange-400 mt-1">Click to email</span>
+      </motion.div>
+      
       <div className="flex flex-col items-center text-center p-6 bg-gray-800 rounded-xl shadow-lg transition-transform transform hover:scale-105">
         <LocationIcon />
         <h3 className="text-lg font-semibold text-orange-500 mt-4">Office Address</h3>
         <p className="text-gray-300 mt-2">
-          Juvenilia Technologies Pvt Ltd, [Your City, State, Country]
+          Juvenilia Technologies Pvt Ltd, Odisha, India
         </p>
       </div>
-      <div className="flex flex-col items-center text-center p-6 bg-gray-800 rounded-xl shadow-lg transition-transform transform hover:scale-105">
-        <PhoneIcon />
-        <h3 className="text-lg font-semibold text-orange-500 mt-4">Phone</h3>
-        <p className="text-gray-300 mt-2">+91-XXXXXXXXXX</p>
-      </div>
-      <div className="flex flex-col items-center text-center p-6 bg-gray-800 rounded-xl shadow-lg transition-transform transform hover:scale-105">
-        <MailIcon />
-        <h3 className="text-lg font-semibold text-orange-500 mt-4">Email</h3>
-        <p className="text-gray-300 mt-2">contact@juvenilia.com</p>
-      </div>
+      
       <div className="flex flex-col items-center text-center p-6 bg-gray-800 rounded-xl shadow-lg transition-transform transform hover:scale-105">
         <ClockIcon />
         <h3 className="text-lg font-semibold text-orange-500 mt-4">Working Hours</h3>
-        <p className="text-300 mt-2">Mon–Fri, 9:00 AM – 6:00 PM (IST)</p>
+        <p className="text-gray-300 mt-2">Mon–Fri, 9:00 AM – 6:00 PM (IST)</p>
       </div>
     </div>
   );
@@ -63,10 +106,15 @@ const ContactInfo: React.FC = () => {
 
 // Component for the Contact Form
 const ContactForm: React.FC = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const validationSchema = Yup.object().shape({
     name: Yup.string().required('Name is required'),
     email: Yup.string().email('Invalid email address').required('Email is required'),
-    phone: Yup.string().matches(/^[0-9]+$/, 'Phone number is not valid').required('Phone number is required'),
+    phone: Yup.string().matches(/^[0-9+\-\s()]+$/, 'Phone number is not valid').required('Phone number is required'),
+    company: Yup.string(),
+    projectType: Yup.string().required('Please select a project type'),
+    budget: Yup.string(),
     subject: Yup.string().required('Subject is required'),
     message: Yup.string().required('Message is required'),
   });
@@ -76,80 +124,156 @@ const ContactForm: React.FC = () => {
       <h2 className="text-3xl font-bold text-white mb-2">Fill out the form below</h2>
       <p className="text-gray-300 mb-6">Our team will get back to you within 24 hours.</p>
       <Formik
-        initialValues={{ name: '', email: '', phone: '', subject: '', message: '' }}
+        initialValues={{ 
+          name: '', 
+          email: '', 
+          phone: '', 
+          company: '', 
+          projectType: '', 
+          budget: '', 
+          subject: '', 
+          message: '' 
+        }}
         validationSchema={validationSchema}
-        onSubmit={(values, { setSubmitting }) => {
+        onSubmit={(values, { setSubmitting, resetForm }) => {
           // In a real application, you would handle form submission here
           console.log(values);
           setTimeout(() => {
-            alert('Form submitted successfully!');
+            setIsSubmitted(true);
+            resetForm();
             setSubmitting(false);
+            setTimeout(() => setIsSubmitted(false), 5000);
           }, 400);
         }}
       >
         {({ isSubmitting }) => (
-          <Form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="md:col-span-1">
-              <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">Name</label>
-              <Field
-                type="text"
-                name="name"
-                className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-              />
-              <ErrorMessage name="name" component="div" className="text-red-500 text-sm mt-1" />
-            </div>
-
-            <div className="md:col-span-1">
-              <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-1">Email</label>
-              <Field
-                type="email"
-                name="email"
-                className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-              />
-              <ErrorMessage name="email" component="div" className="text-red-500 text-sm mt-1" />
-            </div>
-
-            <div className="md:col-span-1">
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-400 mb-1">Phone Number</label>
-              <Field
-                type="text"
-                name="phone"
-                className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-              />
-              <ErrorMessage name="phone" component="div" className="text-red-500 text-sm mt-1" />
-            </div>
-
-            <div className="md:col-span-1">
-              <label htmlFor="subject" className="block text-sm font-medium text-gray-400 mb-1">Subject</label>
-              <Field
-                type="text"
-                name="subject"
-                className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-              />
-              <ErrorMessage name="subject" component="div" className="text-red-500 text-sm mt-1" />
-            </div>
-
-            <div className="md:col-span-2">
-              <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-1">Message</label>
-              <Field
-                as="textarea"
-                name="message"
-                rows={5}
-                className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-              />
-              <ErrorMessage name="message" component="div" className="text-red-500 text-sm mt-1" />
-            </div>
-
-            <div className="md:col-span-2 text-center">
-              <button
-                type="submit"
-                className="w-full py-3 px-6 text-white font-bold bg-orange-500 rounded-lg shadow-md hover:bg-orange-600 transition-colors duration-300 disabled:opacity-50"
-                disabled={isSubmitting}
+          <>
+            {isSubmitted && (
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-6 p-4 bg-green-500/20 border border-green-500 rounded-lg"
               >
-                {isSubmitting ? 'Submitting...' : 'Send Message'}
-              </button>
-            </div>
-          </Form>
+                <p className="text-green-400 text-center font-semibold">
+                  ✅ Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+                </p>
+              </motion.div>
+            )}
+            
+            <Form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="md:col-span-1">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">Full Name *</label>
+                <Field
+                  type="text"
+                  name="name"
+                  placeholder="Enter your full name"
+                  className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder-gray-400"
+                />
+                <ErrorMessage name="name" component="div" className="text-red-500 text-sm mt-1" />
+              </div>
+
+              <div className="md:col-span-1">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-1">Email Address *</label>
+                <Field
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email address"
+                  className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder-gray-400"
+                />
+                <ErrorMessage name="email" component="div" className="text-red-500 text-sm mt-1" />
+              </div>
+
+              <div className="md:col-span-1">
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-400 mb-1">Phone Number *</label>
+                <Field
+                  type="text"
+                  name="phone"
+                  placeholder="Enter your phone number"
+                  className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder-gray-400"
+                />
+                <ErrorMessage name="phone" component="div" className="text-red-500 text-sm mt-1" />
+              </div>
+
+              <div className="md:col-span-1">
+                <label htmlFor="company" className="block text-sm font-medium text-gray-400 mb-1">Company Name</label>
+                <Field
+                  type="text"
+                  name="company"
+                  placeholder="Enter your company name"
+                  className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder-gray-400"
+                />
+                <ErrorMessage name="company" component="div" className="text-red-500 text-sm mt-1" />
+              </div>
+
+              <div className="md:col-span-1">
+                <label htmlFor="projectType" className="block text-sm font-medium text-gray-400 mb-1">Project Type *</label>
+                <Field
+                  as="select"
+                  name="projectType"
+                  className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                >
+                  <option value="">Select project type</option>
+                  <option value="web-development">Web Development</option>
+                  <option value="mobile-app">Mobile App Development</option>
+                  <option value="digital-marketing">Digital Marketing</option>
+                  <option value="software-development">Software Development</option>
+                  <option value="consultation">Consultation</option>
+                  <option value="other">Other</option>
+                </Field>
+                <ErrorMessage name="projectType" component="div" className="text-red-500 text-sm mt-1" />
+              </div>
+
+              <div className="md:col-span-1">
+                <label htmlFor="budget" className="block text-sm font-medium text-gray-400 mb-1">Budget Range</label>
+                <Field
+                  as="select"
+                  name="budget"
+                  className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                >
+                  <option value="">Select budget range</option>
+                  <option value="under-10k">Under ₹10,000</option>
+                  <option value="10k-50k">₹10,000 - ₹50,000</option>
+                  <option value="50k-1lakh">₹50,000 - ₹1,00,000</option>
+                  <option value="1lakh-5lakh">₹1,00,000 - ₹5,00,000</option>
+                  <option value="above-5lakh">Above ₹5,00,000</option>
+                </Field>
+                <ErrorMessage name="budget" component="div" className="text-red-500 text-sm mt-1" />
+              </div>
+
+              <div className="md:col-span-2">
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-400 mb-1">Subject *</label>
+                <Field
+                  type="text"
+                  name="subject"
+                  placeholder="Brief description of your inquiry"
+                  className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder-gray-400"
+                />
+                <ErrorMessage name="subject" component="div" className="text-red-500 text-sm mt-1" />
+              </div>
+
+              <div className="md:col-span-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-1">Message *</label>
+                <Field
+                  as="textarea"
+                  name="message"
+                  rows={5}
+                  placeholder="Tell us about your project requirements, goals, and any specific needs..."
+                  className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder-gray-400"
+                />
+                <ErrorMessage name="message" component="div" className="text-red-500 text-sm mt-1" />
+              </div>
+
+              <div className="md:col-span-2 text-center">
+                <button
+                  type="submit"
+                  className="w-full py-3 px-6 text-white font-bold bg-orange-500 rounded-lg shadow-md hover:bg-orange-600 transition-colors duration-300 disabled:opacity-50"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Submitting...' : 'Start Your Journey with Us'}
+                </button>
+              </div>
+            </Form>
+          </>
         )}
       </Formik>
     </div>

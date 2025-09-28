@@ -12,7 +12,11 @@ const TechStack = ({ data }: { data: HomeData['techStack'] }) => {
                 <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 animate-infinite-scroll">
                     {duplicatedLogos.map((logo, index) => (
                         <li key={index} className="flex-shrink-0">
-                            <img src={logo.src} alt={logo.alt} className="h-16 w-auto object-contain grayscale transition duration-300 hover:grayscale-0 hover:scale-110" />
+                            <img
+                                src={logo.src}
+                                alt={logo.alt}
+                                className="h-15 w-auto object-contain transition duration-300 hover:scale-110"
+                            />
                         </li>
                     ))}
                 </ul>

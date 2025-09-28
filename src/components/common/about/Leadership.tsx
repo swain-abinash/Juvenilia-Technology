@@ -50,18 +50,19 @@ export const Leadership: React.FC = () => {
                           </div>
                         </div> */}
 
-<div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 p-1 overflow-hidden group">
-  <div className="w-full h-full rounded-full bg-black flex items-center justify-center overflow-hidden">
-    {leader.image ? (
-      <img
-        src={leader.image}
-        alt={leader.name}
-        className="w-full h-full object-cover rounded-full transform transition-transform duration-300 group-hover:scale-110"
-      />
-    ) : (
-      <User className="w-12 h-12 text-orange-400" />
-    )}
-  </div>
+<div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden group bg-white">
+  {leader.image ? (
+    <img
+      src={leader.image}
+      alt={leader.name}
+      className="w-full h-full object-cover object-center transform transition-transform duration-300 group-hover:scale-110"
+      style={{ objectFit: 'cover', objectPosition: 'center' }}
+    />
+  ) : (
+    <div className="w-full h-full rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+      <User className="w-16 h-16 text-white" />
+    </div>
+  )}
 </div>
 
                         <h3 className="text-xl font-bold text-white text-center mb-1">

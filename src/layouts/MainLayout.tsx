@@ -19,8 +19,12 @@ export default function MainLayout() {
       </main>
       <Footer />
     {/* Floating buttons */}
-    <div className="fixed bottom-4 right-4 flex flex-col gap-4 z-50">
+    {/* ChatBot - bottom right */}
+    <div className="fixed bottom-4 right-4 z-50">
       <ChatBot />
+    </div>
+    {/* Scroll to top - bottom right */}
+    <div className="fixed bottom-4 right-4 z-50">
       <ScrollToTopButton />
     </div>
     </div>

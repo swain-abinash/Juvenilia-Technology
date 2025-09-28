@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { Award, TrendingUp, Shield, Users, Zap } from 'lucide-react';
 import { aboutData } from '../../../mock/aboutData';
 import { SectionTitle } from './SectionTitle';
@@ -7,6 +8,12 @@ import { SectionTitle } from './SectionTitle';
 const icons = [Award, TrendingUp, Shield, Users, Zap];
 
 export const WhyChooseUs: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleStartJourney = () => {
+    navigate('/contact');
+  };
+
   return (
     <section className="py-20 px-6 bg-gradient-to-b from-gray-900 to-black">
       <div className="max-w-7xl mx-auto">
@@ -39,7 +46,10 @@ export const WhyChooseUs: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <button className="px-8 py-3 bg-gradient-to-r from-orange-400 to-orange-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-orange-400/30 transition-all transform hover:scale-105">
+          <button 
+            onClick={handleStartJourney}
+            className="px-8 py-3 bg-gradient-to-r from-orange-400 to-orange-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-orange-400/30 transition-all transform hover:scale-105"
+          >
             Start Your Journey With Us
           </button>
         </motion.div>

@@ -6,10 +6,9 @@ const ScrollToTopButton = ({ threshold = 0.1, className = '' }) => {
   const { showScrollTop, scrollToTop } = useScrollToTop(threshold);
 
   return (
-    <button
+  <button
       onClick={scrollToTop}
       className={`
-        fixed bottom-6 right-6 z-50 
         bg-gradient-to-r from-orange-500 to-orange-600 
         hover:from-orange-600 hover:to-orange-700 
         text-white p-4 rounded-full 

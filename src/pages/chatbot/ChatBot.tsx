@@ -7,16 +7,16 @@ import { chatbotData } from "../../mock/chatbotData";
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
-  const [messages, setMessages] = useState([
+  const [messages, setMessages] = useState<{ id: number; text: string; isBot: boolean }[]>([
     { id: 1, text: "Hello! Welcome 👋 How can I help you?", isBot: true },
   ]);
   const [inputMessage, setInputMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
 
-  const addMessage = (text, isBot = false) =>
+  const addMessage = (text: string, isBot: boolean = false) =>
     setMessages((prev) => [...prev, { id: prev.length + 1, text, isBot }]);
 
-  const handleQuickReply = (reply) => {
+  const handleQuickReply = (reply: string) => {
     addMessage(reply, false);
     setTimeout(() => {
       setIsTyping(true);
@@ -43,7 +43,7 @@ const ChatBot = () => {
 
   return (
     <>
-      <ChatToggle isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
+      <ChatToggle isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} positionClass="fixed bottom-24 right-6" />
       <AnimatePresence>
         {isOpen && (
           <ChatWindow
@@ -57,10 +57,11 @@ const ChatBot = () => {
             inputMessage={inputMessage}
             setInputMessage={setInputMessage}
             onSend={handleSendMessage}
+            positionClass="fixed bottom-40 right-6"
           />
         )}
       </AnimatePresence>
-      <style jsx>{`
+      <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-8px); }

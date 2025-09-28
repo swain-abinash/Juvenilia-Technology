@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import type { HomeData } from '../../../types';
 import { ArrowDownIcon, RocketIcon, PhoneIcon } from '../../../components/Icons';
 
 const HeroSection = ({ data }: { data: HomeData['hero'] }) => {
   const [index, setIndex] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -53,12 +55,18 @@ const HeroSection = ({ data }: { data: HomeData['hero'] }) => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <a href={data.ctas[0].link} className="inline-flex items-center gap-2 px-8 py-3 bg-orange-500 text-white font-semibold rounded-lg shadow-lg hover:bg-orange-600 transition-all duration-300 transform hover:scale-105">
+          <button 
+            onClick={() => navigate('/contact')} 
+            className="inline-flex items-center gap-2 px-8 py-3 bg-orange-500 text-white font-semibold rounded-lg shadow-lg hover:bg-orange-600 transition-all duration-300 transform hover:scale-105"
+          >
               <RocketIcon className="w-5 h-5" /> {data.ctas[0].text}
-          </a>
-          <a href={data.ctas[1].link} className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-all duration-300">
+          </button>
+          <button 
+            onClick={() => navigate('/contact')} 
+            className="inline-flex items-center gap-2 px-8 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-all duration-300"
+          >
               <PhoneIcon className="w-5 h-5" /> {data.ctas[1].text}
-          </a>
+          </button>
         </motion.div>
       </div>
 

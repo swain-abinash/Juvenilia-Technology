@@ -2,10 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 
-const ChatToggle = ({ isOpen, onClick }) => (
+const ChatToggle = ({ isOpen, onClick, positionClass = 'fixed bottom-6 right-6' }) => (
   <motion.button
     onClick={onClick}
-    className={`fixed bottom-6 right-6 z-50 bg-gradient-to-r from-orange-500 to-orange-600 
+    className={`${positionClass} z-50 bg-gradient-to-r from-orange-500 to-orange-600 
                hover:from-orange-600 hover:to-orange-700 text-white p-4 rounded-full 
                shadow-lg hover:shadow-xl transition-all duration-300 animate-float
                ${isOpen ? 'scale-0' : 'scale-100'}`}
