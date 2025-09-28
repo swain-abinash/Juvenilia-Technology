@@ -53,6 +53,61 @@ export const services: Service[] = [
     },
     icon: '🔍'
   },
+  // Mobile App Development Services
+  {
+    id: 'android-app',
+    title: 'Android App Development',
+    category: 'Mobile App Development',
+    shortDescription: 'High-quality Android apps with reliable performance and scalability',
+    description: 'Our Android app development team of professionals already has the know-how of the respective fields, and they can perfectly exploit it for the best delivery of results. Juvenilia Technology is known for the quality services it provides. We put in a lot of work every time to ensure that the apps we create run smoothly and do not have downtime. After the release of your application in the Google Play Store, we take care of the update, resolve the bug, and constantly measure the performance.',
+    benefits: [
+      'Wider Market Reach',
+      'Reduced Time to Market',
+      'Amplified ROI Opportunity',
+      'Compatibility with Various Devices',
+      'Free and Open Source',
+      'Advanced Security Features',
+      'Loyal Community Support'
+    ],
+    whyChooseUs: {
+      title: 'Why Choose JT for Android App Development?',
+      description: 'We deliver robust, scalable Android apps using modern architectures and best practices, with continuous support after launch.',
+      features: [
+        'Experienced Android engineers',
+        'Post-launch maintenance & updates',
+        'Performance and reliability focused',
+        'End-to-end delivery from design to deploy'
+      ]
+    },
+    icon: '🤖'
+  },
+  {
+    id: 'ios-app',
+    title: 'iOS App Development',
+    category: 'Mobile App Development',
+    shortDescription: 'Premium iOS apps aligned with Apple ecosystem and UX standards',
+    description: 'Our iOS App development team operates in accordance with typical professional methods, which are common in the process of creating iOS applications. The methodology of iOS development has always been essential in the generation of new, bright, and attractive ideas for the whole idea of innovation. We mix components of different web and mobile technologies for building our standard software, which is either isolated or dependent on the framework.',
+    benefits: [
+      'Quality User Experience of a High Standard',
+      'Prominent Market Position',
+      'Consistent User Retention Over Time',
+      'Better Security',
+      'More Rapid Development and Deployment',
+      'Compatibility with Apple Ecosystem',
+      'Regular Updates and Support'
+    ],
+    whyChooseUs: {
+      title: 'Why Choose JT for iOS App Development?',
+      description: 'We craft polished iOS apps that leverage Apple design guidelines and ecosystem capabilities for superior UX and performance.',
+      features: [
+        'Native Swift/SwiftUI expertise',
+        'App Store submission guidance',
+        'Security and privacy best practices',
+        'Seamless integration with Apple services'
+      ]
+    },
+    icon: '🍎'
+  },
   {
     id: 'smo',
     title: 'Social Media Optimization (SMO)',

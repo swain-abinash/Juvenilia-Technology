@@ -17,6 +17,7 @@ import Terms from "./pages/terms/Terms";
 import Privacy from "./pages/privacy/Privacy";
 import Helps from "./pages/helps/Helps";
 import Faqs from "./pages/faqs/Faqs";
+import Mou from "./pages/mou/Mou";
 import News_Article from "./pages/news-article/News_Article";
 
 function App() {
@@ -33,13 +34,13 @@ function App() {
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/plans" element={<Plan />} />
+        <Route path="/mou" element={<Mou />} />
 
 
-
-<Route path="/terms" element={<Terms />} />
-<Route path="/privacy" element={<Privacy />} />
-<Route path="/helps" element={<Helps />} />
-<Route path="/faqs" element={<Faqs />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/helps" element={<Helps />} />
+        <Route path="/faqs" element={<Faqs />} />
         <Route path="/news-article" element={<News_Article />} />
 
         {/* Industries (Dynamic) */}

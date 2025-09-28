@@ -13,11 +13,21 @@ const Awards = ({ data }: { data: HomeData['awards'] }) => {
                     <motion.div 
                         key={index}
                         className="relative p-6 text-center bg-black rounded-xl border border-white/10"
-                        whileHover={{ y: -5, boxShadow: "0 10px 20px rgba(249, 115, 22, 0.1)" }}
+                        whileHover={{ y: -5, boxShadow: "0 10px 20px rgba(249, 115, 22, 0.2)" }}
                     >
-                         <div className="mb-2 text-4xl">🏆</div>
-                         <h3 className="text-xl font-bold text-white">{award.name}</h3>
-                         <p className="text-gray-400">{award.issuer} {award.year && `(${award.year})`}</p>
+                        {award.image ? (
+                            <img 
+                                src={award.image} 
+                                alt={award.name} 
+                                className="mx-auto mb-4 h-20 object-contain"
+                            />
+                        ) : (
+                            <div className="mb-2 text-4xl">🏆</div>
+                        )}
+                        <h3 className="text-xl font-bold text-white">{award.name}</h3>
+                        <p className="text-gray-400">
+                            {award.issuer} {award.year && `(${award.year})`}
+                        </p>
                     </motion.div>
                 ))}
             </div>
