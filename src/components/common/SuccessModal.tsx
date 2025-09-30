@@ -1,6 +1,12 @@
 import React from "react";
 
-const SuccessModal = ({ successMessage, setSuccessMessage }: any) => {
+type SuccessModalProps = {
+  successMessage: string;
+  setSuccessMessage: (value: any) => void;
+  title?: string;
+};
+
+const SuccessModal = ({ successMessage, setSuccessMessage, title = "🎉 Success" }: SuccessModalProps) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-[1000] backdrop-blur-sm">
       <div
@@ -9,9 +15,7 @@ const SuccessModal = ({ successMessage, setSuccessMessage }: any) => {
                  animate-[zoomIn_0.3s_ease-out]"
       >
         {/* Header */}
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-orange-600 mb-4">
-          🎉 Payment Successful
-        </h2>
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-orange-600 mb-4">{title}</h2>
 
         {/* Message */}
         <p className="text-gray-800 text-sm sm:text-base md:text-lg mb-6">

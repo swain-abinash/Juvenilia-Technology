@@ -146,7 +146,7 @@ const ContactForm: React.FC = () => {
   });
 
   return (
-    <div className="p-8 bg-gray-800 rounded-xl shadow-lg">
+    <div className="p-8 bg-gray-800 rounded-xl shadow-lg text-left">
       <h2 className="text-3xl font-bold text-white mb-2">Fill out the form below</h2>
       <p className="text-gray-300 mb-6">Our team will get back to you within 24 hours.</p>
       <Formik
@@ -188,7 +188,7 @@ const ContactForm: React.FC = () => {
             
             <Form className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="md:col-span-1">
-                <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">Full Name *</label>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1 text-left">Full Name *</label>
                 <Field
                   type="text"
                   name="name"
@@ -199,7 +199,7 @@ const ContactForm: React.FC = () => {
               </div>
 
               <div className="md:col-span-1">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-1">Email Address *</label>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-1 text-left">Email Address *</label>
                 <Field
                   type="email"
                   name="email"
@@ -210,7 +210,7 @@ const ContactForm: React.FC = () => {
               </div>
 
               <div className="md:col-span-1">
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-400 mb-1">Phone Number *</label>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-400 mb-1 text-left">Phone Number *</label>
                 <Field
                   type="text"
                   name="phone"
@@ -221,7 +221,7 @@ const ContactForm: React.FC = () => {
               </div>
 
               <div className="md:col-span-1">
-                <label htmlFor="company" className="block text-sm font-medium text-gray-400 mb-1">Company Name</label>
+                <label htmlFor="company" className="block text-sm font-medium text-gray-400 mb-1 text-left">Company Name</label>
                 <Field
                   type="text"
                   name="company"
@@ -232,7 +232,7 @@ const ContactForm: React.FC = () => {
               </div>
 
               <div className="md:col-span-1">
-                <label htmlFor="projectType" className="block text-sm font-medium text-gray-400 mb-1">Project Type *</label>
+                <label htmlFor="projectType" className="block text-sm font-medium text-gray-400 mb-1 text-left">Project Type *</label>
                 <Field
                   as="select"
                   name="projectType"
@@ -267,7 +267,7 @@ const ContactForm: React.FC = () => {
               </div>
 
               <div className="md:col-span-2">
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-400 mb-1">Subject *</label>
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-400 mb-1 text-left">Subject *</label>
                 <Field
                   type="text"
                   name="subject"
@@ -278,7 +278,7 @@ const ContactForm: React.FC = () => {
               </div>
 
               <div className="md:col-span-2">
-                <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-1">Message *</label>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-1 text-left">Message *</label>
                 <Field
                   as="textarea"
                   name="message"
