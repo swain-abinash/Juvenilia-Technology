@@ -39,7 +39,7 @@ const Services: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-orange-50">
+    <div className="min-h-screen bg-black">
       {/* Hero Section with Animations */}
       <div className="bg-gradient-to-r from-black via-gray-900 to-black py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -108,7 +108,7 @@ const Services: React.FC = () => {
             className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
               activeCategory === 'all'
                 ? 'bg-orange-500 text-white shadow-lg transform scale-105'
-                : 'bg-white text-gray-700 hover:bg-orange-100 shadow-md hover:shadow-lg'
+                : 'bg-gray-800 text-white hover:bg-gray-700 border border-gray-600 shadow-md hover:shadow-lg'
             }`}
           >
             All Services
@@ -120,7 +120,7 @@ const Services: React.FC = () => {
               className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                 activeCategory === category
                   ? 'bg-orange-500 text-white shadow-lg transform scale-105'
-                  : 'bg-white text-gray-700 hover:bg-orange-100 shadow-md hover:shadow-lg'
+                  : 'bg-gray-800 text-white hover:bg-gray-700 border border-gray-600 shadow-md hover:shadow-lg'
               }`}
             >
               {category}
@@ -154,8 +154,8 @@ const Services: React.FC = () => {
         {getFilteredServices().length === 0 && (
           <div className="text-center py-16">
             <div className="text-6xl mb-4">🔍</div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">No Services Found</h3>
-            <p className="text-gray-600">Try selecting a different category or view all services.</p>
+            <h3 className="text-2xl font-bold text-white mb-2">No Services Found</h3>
+            <p className="text-gray-300">Try selecting a different category or view all services.</p>
           </div>
         )}
       </div>

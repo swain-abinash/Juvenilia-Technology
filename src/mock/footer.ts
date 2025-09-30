@@ -4,10 +4,10 @@ export const footerData = {
     description:
       "Juvenilia Technology describes a company that offers inventive Information Technology solutions. It is a company that takes the lead in digital innovation, offering tailored solutions that change the global impact of the business market since 2015.",
     socials: [
-      { key: "facebook", label: "Facebook", href: "https://facebook.com" },
-      { key: "instagram", label: "Instagram", href: "https://instagram.com" },
-      { key: "linkedin", label: "LinkedIn", href: "https://youtube.com" },
-      { key: "twitter", label: "Twitter", href: "https://twitter.com" },
+      { key: "facebook", label: "Facebook", href: "https://www.facebook.com/profile.php?id=61581051792812" },
+      // { key: "instagram", label: "Instagram", href: "https://instagram.com" },
+      // { key: "linkedin", label: "LinkedIn", href: "https://youtube.com" },
+      { key: "twitter", label: "Twitter", href: "https://x.com/JuveniliaTech" },
     ],
     logo: "/logo.png",
   },

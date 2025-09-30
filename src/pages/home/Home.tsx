@@ -35,7 +35,7 @@ const Home = () => {
       {/* <CultureTeaser data={homeData.culture} /> */}     
       <Awards data={homeData.awards} />
       <FreeResources data={homeData.resources} />
-       <GamifiedSection />
+       {/* <GamifiedSection /> */}
       <StickyCta data={homeData.stickyCta} />
     </>
   );

@@ -29,6 +29,6 @@ export const mouData = {
     contact: {
         person: 'Placement & Partnership Team',
         email: 'partnerships@juveniliatech.com',
-        phone: '+91-XXXXXXXXXX',
+        phone: '+91 9437010139',
     },
 };

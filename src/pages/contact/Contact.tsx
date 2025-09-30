@@ -35,70 +35,96 @@ const ContactHero: React.FC = () => {
   );
 };
 
-// Component for Contact Information
+// Component for Contact Information (compact, aligned cards)
 const ContactInfo: React.FC = () => {
   const handleWhatsAppClick = () => {
     const message = "Hi! I'm interested in your services. Can we discuss my project requirements?";
-    const phoneNumber = "+91-XXXXXXXXXX"; // Replace with actual WhatsApp number
+    const phoneNumber = "+91 9437010139";
     const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
   const handleCallClick = () => {
-    window.open('tel:+91-XXXXXXXXXX', '_self');
+    window.open('tel:+919437010139', '_self');
   };
 
   const handleEmailClick = () => {
-    window.open('mailto:contact@juvenilia.com?subject=Project Inquiry', '_self');
+    window.open('mailto:support@juveniliatechnology.com?subject=Project Inquiry', '_self');
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-      <motion.div 
-        className="flex flex-col items-center text-center p-6 bg-gray-800 rounded-xl shadow-lg transition-transform transform hover:scale-105 cursor-pointer"
-        whileHover={{ y: -5 }}
-        onClick={handleWhatsAppClick}
-      >
-        <WhatsAppIcon />
-        <h3 className="text-lg font-semibold text-green-500 mt-4">WhatsApp</h3>
-        <p className="text-gray-300 mt-2">Quick Chat</p>
-        <span className="text-xs text-green-400 mt-1">Click to message</span>
-      </motion.div>
-      
-      <motion.div 
-        className="flex flex-col items-center text-center p-6 bg-gray-800 rounded-xl shadow-lg transition-transform transform hover:scale-105 cursor-pointer"
-        whileHover={{ y: -5 }}
-        onClick={handleCallClick}
-      >
-        <PhoneIcon />
-        <h3 className="text-lg font-semibold text-orange-500 mt-4">Phone</h3>
-        <p className="text-gray-300 mt-2">+91-XXXXXXXXXX</p>
-        <span className="text-xs text-orange-400 mt-1">Click to call</span>
-      </motion.div>
-      
-      <motion.div 
-        className="flex flex-col items-center text-center p-6 bg-gray-800 rounded-xl shadow-lg transition-transform transform hover:scale-105 cursor-pointer"
-        whileHover={{ y: -5 }}
-        onClick={handleEmailClick}
-      >
-        <MailIcon />
-        <h3 className="text-lg font-semibold text-orange-500 mt-4">Email</h3>
-        <p className="text-gray-300 mt-2">contact@juvenilia.com</p>
-        <span className="text-xs text-orange-400 mt-1">Click to email</span>
-      </motion.div>
-      
-      <div className="flex flex-col items-center text-center p-6 bg-gray-800 rounded-xl shadow-lg transition-transform transform hover:scale-105">
-        <LocationIcon />
-        <h3 className="text-lg font-semibold text-orange-500 mt-4">Office Address</h3>
-        <p className="text-gray-300 mt-2">
-          Juvenilia Technologies Pvt Ltd, Odisha, India
-        </p>
+    <div className="space-y-8">
+      {/* Primary contact actions */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        <motion.button
+          type="button"
+          className="h-full w-full flex flex-col items-start text-left p-6 bg-gray-800 rounded-xl shadow-lg focus:outline-none"
+          whileHover={{ y: -4 }}
+          onClick={handleWhatsAppClick}
+        >
+          <WhatsAppIcon />
+          <h3 className="text-base md:text-lg font-semibold text-green-500 mt-4">WhatsApp</h3>
+          <p className="text-sm text-gray-300 mt-1">Quick Chat</p>
+          <span className="text-xs text-green-400 mt-2">Tap to message</span>
+        </motion.button>
+
+        <motion.button
+          type="button"
+          className="h-full w-full flex flex-col items-start text-left p-6 bg-gray-800 rounded-xl shadow-lg focus:outline-none"
+          whileHover={{ y: -4 }}
+          onClick={handleCallClick}
+        >
+          <PhoneIcon />
+          <h3 className="text-base md:text-lg font-semibold text-orange-500 mt-4">Phone</h3>
+          <p className="text-sm text-gray-300 mt-1">+91 9437010139</p>
+          <span className="text-xs text-orange-400 mt-2">Tap to call</span>
+        </motion.button>
+
+        <motion.button
+          type="button"
+          className="h-full w-full flex flex-col items-start text-left p-6 bg-gray-800 rounded-xl shadow-lg focus:outline-none"
+          whileHover={{ y: -4 }}
+          onClick={handleEmailClick}
+        >
+          <MailIcon />
+          <h3 className="text-base md:text-lg font-semibold text-orange-500 mt-4">Email</h3>
+          <p className="text-sm text-gray-300 mt-1">support@juveniliatechnology.com</p>
+          <span className="text-xs text-orange-400 mt-2">Tap to email</span>
+        </motion.button>
       </div>
-      
-      <div className="flex flex-col items-center text-center p-6 bg-gray-800 rounded-xl shadow-lg transition-transform transform hover:scale-105">
-        <ClockIcon />
-        <h3 className="text-lg font-semibold text-orange-500 mt-4">Working Hours</h3>
-        <p className="text-gray-300 mt-2">Mon–Fri, 9:00 AM – 6:00 PM (IST)</p>
+
+      {/* Offices and hours */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+        <div className="h-full p-6 bg-gray-800 rounded-xl shadow-lg">
+          <div className="flex items-center gap-3">
+            <LocationIcon />
+            <h3 className="text-base md:text-lg font-semibold text-orange-500">Our Offices</h3>
+          </div>
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-gray-300">
+            <div>
+              <p className="font-semibold text-white">Bhubaneswar Office</p>
+              <p className="mt-1">Plot No – A/54, Saheed Nagar</p>
+              <p>Opp. Side of DDCE Utkal University</p>
+              <p>Bhubaneswar - 751004</p>
+            </div>
+            <div>
+              <p className="font-semibold text-white">Cuttack Office</p>
+              <p className="mt-1">Plot No-1344, Mahanadi Bihar</p>
+              <p>Cuttack-753004</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="h-full p-6 bg-gray-800 rounded-xl shadow-lg">
+          <div className="flex items-center gap-3">
+            <ClockIcon />
+            <h3 className="text-base md:text-lg font-semibold text-orange-500">Working Hours</h3>
+          </div>
+          <div className="mt-4 text-sm text-gray-300">
+            <p>Monday to Saturday</p>
+            <p className="mt-1">7:00 AM – 7:00 PM (IST)</p>
+          </div>
+        </div>
       </div>
     </div>
   );
