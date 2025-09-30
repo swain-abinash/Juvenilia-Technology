@@ -30,6 +30,7 @@ const Career = () => {
                 setSuccessMessage('Thank you for applying! We have received your application.');
                 setSelectedJob(null);
               }}
+               onClose={() => setSelectedJob(null)}
             />
           </div>
         )}

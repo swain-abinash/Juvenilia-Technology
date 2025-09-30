@@ -3,9 +3,10 @@ import React, { useState } from "react";
 interface JobApplicationFormProps {
   jobTitle: string;
   onSuccess: () => void;
+  onClose: () => void;
 }
 
-const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ jobTitle, onSuccess }) => {
+const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ jobTitle, onSuccess, onClose }) => {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -41,7 +42,15 @@ const JobApplicationForm: React.FC<JobApplicationFormProps> = ({ jobTitle, onSuc
   };
 
   return (
-    <form className="space-y-5 p-6 bg-black rounded-xl shadow-lg max-w-md mx-auto border border-orange-500" onSubmit={handleSubmit}>
+    <form className="space-y-5 p-6 bg-black rounded-xl shadow-lg max-w-md mx-auto border border-orange-500 relative" onSubmit={handleSubmit}>
+      <button
+        type="button"
+        onClick={onClose}
+        className="absolute top-3 right-3 text-orange-400 hover:text-orange-600 text-lg font-bold px-2 py-1 rounded focus:outline-none"
+        aria-label="Close form"
+      >
+        ×
+      </button>
       <div>
         <label className="block text-sm font-semibold text-left text-orange-400 mb-1">Job Title</label>
         <input
