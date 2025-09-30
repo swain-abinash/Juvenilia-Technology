@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Star } from 'lucide-react';
 import { aboutData } from '../../../mock/aboutData';
-import aboutImg1 from '../../../assets/about1.jpg';
-import aboutImg2 from '../../../assets/about2.jpg';
+import aboutImg1 from '../../../assets/ABOUT-US.jpg';
+import aboutImg2 from '../../../assets/ABOUT-US2.jpg';
 
 // A new component for a sparkle effect
 const SparkleEffect = ({ count = 50, mousePosition }: { count?: number; mousePosition: { x: number; y: number } }) => {
@@ -64,7 +64,7 @@ export const AboutHero: React.FC = () => {
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center bg-black px-6 py-16 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black opacity-90" />
-      
+
       <SparkleEffect mousePosition={mousePosition} />
 
       {/* Enhanced mouse-based glow effect */}
@@ -80,7 +80,7 @@ export const AboutHero: React.FC = () => {
       {/* Grid with 40/60 width split */}
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-10 gap-12 items-center max-w-7xl w-full">
         {/* Left side: Animated images (40% width) */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -88,29 +88,33 @@ export const AboutHero: React.FC = () => {
         >
           <div className="relative w-full h-[500px]">
             {/* Top image, positioned partially outside the main grid area to create a unique flow */}
+            {/* Top image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8, x: -50 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ delay: 0.2, type: 'spring', stiffness: 100 }}
-              className="absolute w-[80%] max-w-[320px] h-[200px] top-0 left-0 rounded-xl overflow-hidden border-2 border-orange-400 shadow-2xl z-10"
+              className="absolute w-[90%] max-w-[360px] h-[240px] top-0 left-0 rounded-xl overflow-hidden shadow-2xl z-10"
             >
               <img src={aboutImg1} alt="Tech Setup" className="w-full h-full object-cover" />
             </motion.div>
-            
-            {/* Bottom image, adjusted to overlap the top one */}
+
+            {/* Bottom image */}
+            {/* Bottom image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8, x: 50 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ delay: 0.4, type: 'spring', stiffness: 100 }}
-              className="absolute w-[80%] max-w-[320px] h-[200px] top-[140px] left-[80px] rounded-xl overflow-hidden border-2 border-orange-500 shadow-2xl z-20"
+              className="absolute w-[90%] max-w-[360px] h-[240px] top-[140px] left-[120px] rounded-xl overflow-hidden shadow-2xl z-20"
             >
               <img src={aboutImg2} alt="Office Setup" className="w-full h-full object-cover" />
             </motion.div>
+
+
           </div>
         </motion.div>
 
         {/* Right side: Animated text content (60% width) */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -120,22 +124,22 @@ export const AboutHero: React.FC = () => {
             <Sparkles className="w-4 h-4" />
             {aboutData.hero.subtitle}
           </span>
-          
+
           <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-white">
             <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent">
               {aboutData.hero.title}
             </span>
           </h1>
-          
+
           <p className="text-lg text-white/70 mb-6 italic">
             {aboutData.hero.tagline}
           </p>
-          
-          <div 
+
+          <div
             className="text-base text-white/80 leading-relaxed mb-6"
             dangerouslySetInnerHTML={{ __html: aboutData.hero.description }}
           />
-          
+
           <p className="text-base text-orange-400/90 italic border-l-4 border-orange-400 pl-4">
             "{aboutData.hero.philosophy}"
           </p>

@@ -15,14 +15,14 @@ export default function Topbar() {
           {/* Left - Social Media */}
           <div className="flex space-x-2 text-gray-600 text-xl">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/profile.php?id=61581051792812"
               target="_blank"
               rel="noreferrer"
               className="w-7 h-7 rounded-full bg-orange-600/90 hover:bg-orange-600 transition inline-flex items-center justify-center text-white"
             >
               <FaFacebookF className="hover:text-black cursor-pointer" />
             </a>
-            <a
+            {/* <a
               href="https://facebook.com"
               target="_blank"
               rel="noreferrer"
@@ -37,9 +37,9 @@ export default function Topbar() {
               className="w-7 h-7 rounded-full bg-orange-600/90 hover:bg-orange-600 transition inline-flex items-center justify-center text-white"
             >
               <FaLinkedinIn className="hover:text-black cursor-pointer" />
-            </a>
+            </a> */}
             <a
-              href="https://facebook.com"
+              href="https://x.com/JuveniliaTech"
               target="_blank"
               rel="noreferrer"
               className="w-7 h-7 rounded-full bg-orange-600/90 hover:bg-orange-600 transition inline-flex items-center justify-center text-white"

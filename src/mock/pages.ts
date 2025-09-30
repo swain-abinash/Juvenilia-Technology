@@ -10,8 +10,8 @@ export const aboutContent = {
 
 export const contactContent = {
   title: 'Contact',
-  email: 'hello@example.com',
-  phone: '+1 (555) 123-4567',
+  email: 'support@juveniliatechnology.com',
+  phone: '+91 9437010139',
 }
 
 export const productsContent = {

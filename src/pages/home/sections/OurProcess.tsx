@@ -154,7 +154,7 @@ const OurProcess = ({ data }: { data: HomeData['process'] }) => {
                             transition={{ duration: 0.5 }}
                         >
                             {/* Step node with progress ring */}
-                            <div className="absolute left-1/2 -translate-x-1/2 z-10">
+                            <div className="hidden md:block absolute left-1/2 -translate-x-1/2 z-10">
                                 <div className="relative w-12 h-12">
                                     <svg className="absolute inset-0" viewBox="0 0 36 36">
                                         <circle

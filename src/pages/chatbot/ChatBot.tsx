@@ -4,6 +4,44 @@ import ChatToggle from "../../components/common/chatbot/ChatToggle";
 import ChatWindow from "../../components/common/chatbot/ChatWindow";
 import { chatbotData } from "../../mock/chatbotData";
 
+// Build a simple static reply based on mock data and user intent
+function buildStaticReply(input: string): string {
+  const text = input.toLowerCase();
+  const { responses } = chatbotData as any;
+
+  if (/\b(hi|hello|hey)\b/.test(text)) {
+    return responses.greeting[0];
+  }
+  if (/(service|services|offer|provide)/.test(text)) {
+    return [
+      responses.services.message,
+      ...responses.services.details,
+    ].join("\n");
+  }
+  if (/(price|pricing|plan|plans|cost)/.test(text)) {
+    return [
+      responses.pricing.message,
+      ...responses.pricing.plans,
+    ].join("\n");
+  }
+  if (/(about|company|who are you)/.test(text)) {
+    return [
+      responses.about.message,
+      ...responses.about.points,
+    ].join("\n");
+  }
+  if (/(contact|email|phone|call)/.test(text)) {
+    return [
+      responses.contact.message,
+      ...responses.contact.details,
+    ].join("\n");
+  }
+  if (/(portfolio|work|case study|case studies)/.test(text)) {
+    return "You can explore our portfolio and case studies on our website. If you share your project type, I can suggest relevant examples.";
+  }
+  return "I can help with Services, Pricing, Portfolio, Contact details, or About the company. What would you like to know?";
+}
+
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
@@ -16,29 +54,27 @@ const ChatBot = () => {
   const addMessage = (text: string, isBot: boolean = false) =>
     setMessages((prev) => [...prev, { id: prev.length + 1, text, isBot }]);
 
-  const handleQuickReply = (reply: string) => {
+  const handleQuickReply = async (reply: string) => {
     addMessage(reply, false);
+    setIsTyping(true);
     setTimeout(() => {
-      setIsTyping(true);
-      setTimeout(() => {
-        setIsTyping(false);
-        addMessage(`Bot response for: ${reply}`, true);
-      }, 1200);
-    }, 500);
+      const botText = buildStaticReply(reply);
+      setIsTyping(false);
+      addMessage(botText, true);
+    }, 400);
   };
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (!inputMessage.trim()) return;
     const msg = inputMessage;
     addMessage(msg, false);
     setInputMessage("");
+    setIsTyping(true);
     setTimeout(() => {
-      setIsTyping(true);
-      setTimeout(() => {
-        setIsTyping(false);
-        addMessage(`Bot response for: ${msg}`, true);
-      }, 1200);
-    }, 500);
+      const botText = buildStaticReply(msg);
+      setIsTyping(false);
+      addMessage(botText, true);
+    }, 400);
   };
 
   return (

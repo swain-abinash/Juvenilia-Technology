@@ -27,7 +27,7 @@ export const Team: React.FC = () => {
                 ${index >= 3 ? 'mt-8' : 'mt-0'}`} // second row top margin
             >
               {/* Profile Image */}
-              <div className="w-32 h-32 mx-auto -mt-12 mb-4 rounded-full overflow-hidden shadow-lg bg-white">
+              <div className="w-20 h-25 mx-auto -mt-12 mb-4 rounded-full overflow-hidden shadow-lg bg-white">
                 <img
                   src={member.image}
                   alt={member.name}

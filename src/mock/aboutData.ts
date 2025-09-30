@@ -1,14 +1,14 @@
-import rashmiImage from "../assets/RASHMISIR.jpg";
-import ushaImage from "../assets/USHAMAM.jpg";
-import ranjanImage from "../assets/RANJANSIR.jpg";
-import rajeebImage from "../assets/RAJEEBSIR.jpg";
-import binitImage from "../assets/BINITSIR.jpg";
-import sudarsanImage from "../assets/SUDARSANSIR.jpg";
-import amayaImage from "../assets/AMIYASIR.jpg";
-import subhadarshiniImage from "../assets/SUBHA.jpg";
-import rozysmitaImage from "../assets/ROZYSMITA DAS.jpg";
-import swarnaImage from "../assets/SWARNAMAM.jpg";
-import harapriyaImage from "../assets/HARAPRIYA MAM.jpg";
+import rashmiImage from "../assets/RASHMI.png";
+import ushaImage from "../assets/USHA.png";
+import ranjanImage from "../assets/RANJAN.png";
+import rajeebImage from "../assets/RAJEEB.png";
+import binitImage from "../assets/BINIT.png";
+import sudarsanImage from "../assets/SUDARSHAN.png";
+import amayaImage from "../assets/AMIYA.png";
+import subhadarshiniImage from "../assets/SUBHADARSHINI.png";
+import rozysmitaImage from "../assets/ROZY.png";
+import swarnaImage from "../assets/SWARNA.png";
+import harapriyaImage from "../assets/HARAPRIYA.png";
 
 
 
