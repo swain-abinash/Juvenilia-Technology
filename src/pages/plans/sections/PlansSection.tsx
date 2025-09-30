@@ -9,7 +9,7 @@ const PlansSection: React.FC = () => {
    const categories = ['Web Design Plans', 'Development Plans', 'Software Development'];
      return (
     <>
-     <div className="flex flex-wrap justify-center gap-4 mb-12">
+     <div className="flex flex-wrap justify-center gap-4 mb-8 mt-8">
           <button
             onClick={() => setActiveCategory('SEO')}
             className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${

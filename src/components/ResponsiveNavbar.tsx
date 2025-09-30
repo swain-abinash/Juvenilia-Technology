@@ -82,7 +82,7 @@ const ResponsiveNavbar = () => {
             <img
               src={logo}
               alt="JT"
-              className="lg:w-[85px] lg:h-[80px] w-[60px] h-[45px] cursor-pointer"
+              className="lg:w-[85px] lg:h-[80px] md:w-[80px] md:h-[75px]  w-[75px] h-[70px] cursor-pointer"
               onClick={handleHomePageClick}
             />
           </div>
@@ -192,7 +192,7 @@ const ResponsiveNavbar = () => {
               <img
                 src={logo}
                 alt="JT"
-                className="lg:w-[70px] lg:h-[54px] w-[60px] h-[45px] cursor-pointer"
+                className="lg:w-[85px] lg:h-[80px] md:w-[80px] md:h-[75px]  w-[75px] h-[70px] cursor-pointer"
                 onClick={() => navigate("/")}
               />
               <button onClick={() => setIsOpen(false)} className="text-4xl">
