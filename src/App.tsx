@@ -19,6 +19,7 @@ import Helps from "./pages/helps/Helps";
 import Faqs from "./pages/faqs/Faqs";
 import Mou from "./pages/mou/Mou";
 import News_Article from "./pages/news-article/News_Article";
+import SiteMap from "./pages/site-map/SiteMap";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/helps" element={<Helps />} />
         <Route path="/faqs" element={<Faqs />} />
         <Route path="/news-article" element={<News_Article />} />
+        <Route path="/site-map" element={<SiteMap />} />
 
         {/* Industries (Dynamic) */}
         {/* {industryRoutes.map((route, i) => (

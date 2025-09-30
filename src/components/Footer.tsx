@@ -135,6 +135,7 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import type { JSX } from "react";
+import { siteMap } from "../mock/sitemap";
 
 export default function Footer() {
   const navigate = useNavigate();
@@ -226,6 +227,8 @@ export default function Footer() {
             </ul>
           </div>
         ))}
+
+        
 
         {/* Map */}
         <div className="my-3">
