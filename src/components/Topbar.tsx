@@ -29,15 +29,15 @@ export default function Topbar() {
               className="w-7 h-7 rounded-full bg-orange-600/90 hover:bg-orange-600 transition inline-flex items-center justify-center text-white"
             >
               <FaInstagram className="hover:text-black cursor-pointer" />
-            </a>
+            </a> */}
             <a
-              href="https://facebook.com"
+              href="https://www.linkedin.com/company/juveniliatechnology/"
               target="_blank"
               rel="noreferrer"
               className="w-7 h-7 rounded-full bg-orange-600/90 hover:bg-orange-600 transition inline-flex items-center justify-center text-white"
             >
               <FaLinkedinIn className="hover:text-black cursor-pointer" />
-            </a> */}
+            </a>
             <a
               href="https://x.com/JuveniliaTech"
               target="_blank"
