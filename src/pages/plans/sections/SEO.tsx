@@ -225,7 +225,6 @@ const SEO = () => {
   const [openAccordion, setOpenAccordion] = useState("SERVICES");
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
-
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -249,11 +248,11 @@ const SEO = () => {
                   <svg
                     className="w-5 h-5 sm:w-6 sm:h-6"
                     fill="currentColor"
-                    viewBox="0 0 20 20"
+                    viewBox="0 0 24 24"
                   >
-                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    <path d="M2.25 4.5A2.25 2.25 0 0 1 4.5 2.25h15a2.25 2.25 0 0 1 2.25 2.25v15a2.25 2.25 0 0 1-2.25 2.25h-15A2.25 2.25 0 0 1 2.25 19.5v-15zm2.28.75 7.47 5.33a.75.75 0 0 0 .9 0l7.47-5.33H4.53zM19.5 18V7.27l-6.75 4.82a2.25 2.25 0 0 1-2.5 0L3.5 7.27V18A.75.75 0 0 0 4.25 18h15a.75.75 0 0 0 .75-.75z" />
                   </svg>
-                  +91 9437010139
+                  support@juveniliatechnology.com
                 </button>
               </div>
 
@@ -381,37 +380,35 @@ const SEO = () => {
 
                       {/* 🔹 Row for PayPal Buttons */}
                       <tr>
-                        {plans.map((plan, index) => (
+                        {plans.map((plan: any, index) => (
                           <td key={index} className="px-4 py-3 text-center">
                             <div className="flex justify-center">
                               <PayPalButtons
-                                style={{ layout: "vertical", height: 40 }}
-                                createOrder={(data, actions: any) => {
-                                  return actions.order.create({
-                                    purchase_units: [
-                                      {
-                                        amount: {
-                                          currency_code: "USD", // or INR (with backend capture)
-                                          value: plan.price.toString(),
-                                        },
-                                        description: plan.description,
-                                      },
-                                    ],
+                                style={{
+                                  layout: "vertical",
+                                  color: "gold",
+                                  shape: "rect",
+                                  label: "subscribe",
+                                }}
+                                createSubscription={(data, actions) => {
+                                  return actions.subscription.create({
+                                    plan_id: plan.planid, // Make sure this comes from your plan object
                                   });
                                 }}
-                                onApprove={async (data, actions?: any) => {
-                                  const details =
-                                    await actions?.order.capture();
+                                onApprove={async (data, actions) => {
                                   setSuccessMessage(
-                              `✅ Payment completed by ${details.payer.name.given_name}`
-                            );
+                                    `Subscription successful! ID: ${data.subscriptionID}`
+                                  );
                                   console.log(
-                                    "Full Payment Details: ",
-                                    details
+                                    "Subscription ID:",
+                                    data.subscriptionID
                                   );
                                 }}
                                 onError={(err) => {
-                                  console.error("PayPal Checkout Error:", err);
+                                  console.error(err);
+                                  setSuccessMessage(
+                                    "Something went wrong with the subscription."
+                                  );
                                 }}
                               />
                             </div>
@@ -422,9 +419,12 @@ const SEO = () => {
                   </table>
                 </div>
                 {/* 🔹 Success Popup */}
-                 {successMessage && (
-                   <SuccessModal  successMessage={successMessage} setSuccessMessage={setSuccessMessage}/>
-                 )}
+                {successMessage && (
+                  <SuccessModal
+                    successMessage={successMessage}
+                    setSuccessMessage={setSuccessMessage}
+                  />
+                )}
               </div>
             )}
           </div>
