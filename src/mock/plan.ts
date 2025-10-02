@@ -2,7 +2,8 @@ export const planData = {
   "plans": [
     {
       "name": "STARTER",
-      "price": 300,
+      "price": "$300",
+       "planid":"P-64V85592K3798744HNDPI7YA",
       "description":"Monthly Subscription",
       "keywords": 20,
       "SERVICES": "USD 300/Month",
@@ -62,7 +63,8 @@ export const planData = {
     },
     {
       "name": "POPULAR",
-      "price": 500,
+      "price": "$500",
+       "planid":"P-6V109447P8735183LNDPJFKI",
       "description":"Monthly Subscription",
       "keywords": 30,
       "SERVICES": "USD 500/Month",
@@ -122,7 +124,8 @@ export const planData = {
     },
     {
       "name": "PREMIUM",
-      "price": 800,
+      "price": "$800",
+       "planid":"P-3JE01309BW3244127NDPJKSA",
       "description":"Monthly Subscription",
       "keywords": 50,
       "SERVICES": "USD 800/Month",
@@ -182,7 +185,8 @@ export const planData = {
     },
     {
       "name": "BUSINESS",
-      "price": 6000,
+      "price": "$6000",
+       "planid":"P-6RT36634A2935143HNDPJQII",
       "description":"Yearly Subscription",
       "keywords": 100,
       "SERVICES": "USD 6000/Year",

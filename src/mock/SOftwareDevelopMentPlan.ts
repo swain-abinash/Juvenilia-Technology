@@ -3,7 +3,9 @@
   "plans": [
     {
       "name": "SOFTWARE DEVELOPMENT",
-      "price": 5000,
+      "price": "USD 5000",
+            "value":"9TPYE59N4LRPY",
+
       "description":"Monthly Subscription",
       "Requirement Analysis":"Yes",
       "Design": "Yes",

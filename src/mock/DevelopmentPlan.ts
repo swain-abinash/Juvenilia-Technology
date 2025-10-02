@@ -2,7 +2,9 @@ export const planData = {
   "plans": [
     {
       "name": "ANDROID APP DEVELOPMENT",
-      "price": 2500,
+      "price": "USD 2500",
+            "value":"59QB4BZAP8U5L",
+
       "description":"Monthly Subscription",
       "Idea and Planning": "Yes",
       "UX/UI Design": "Yes",
@@ -17,7 +19,9 @@ export const planData = {
     },
     {
       "name": "IOS APP DEVELOPMENT",
-      "price": 2500,
+      "price": "USD 2500",
+            "value":"WPPY8WRBAGP7N",
+
       "description":"Monthly Subscription",
       "Idea and Planning": "Yes",
       "UX/UI Design": "Yes",
