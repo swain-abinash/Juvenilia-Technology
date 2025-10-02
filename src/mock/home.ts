@@ -42,7 +42,7 @@ import StartupIndiaLogo from '../assets/Startup-INDIA.svg';
 
 export const homeData: HomeData = {
     hero: {
-        headline: "Our Cutting Edge Technology That Will Take Your Business To The Next Level",
+        headline: "Smart Technology to Boost Your Business",
         subheadline: "We build digital solutions that help companies grow faster.",
         ctas: [
             { text: "Get Started", link: "#contact", type: "primary" },
