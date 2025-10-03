@@ -9,6 +9,8 @@ import {
   FaLinkedinIn,
   FaTwitter,
 } from "react-icons/fa";
+import { FaXTwitter } from 'react-icons/fa6';
+
 import type { JSX } from "react";
 import { siteMap } from "../mock/sitemap";
 
@@ -21,12 +23,12 @@ export default function Footer() {
   };
 
   // map key → icon component
-  const socialIcons: Record<string, JSX.Element> = {
-    facebook: <FaFacebookF className="text-lg" />,
-    instagram: <FaInstagram className="text-lg" />,
-    linkedin: <FaLinkedinIn className="text-lg" />,
-    twitter: <FaTwitter className="text-lg" />,
-  };
+const socialIcons: Record<string, JSX.Element> = {
+  facebook: <FaFacebookF className="text-lg" />,
+  instagram: <FaInstagram className="text-lg" />,
+  linkedin: <FaLinkedinIn className="text-lg" />,
+  x: <FaXTwitter className="text-lg" />, // X icon
+};
 
   return (
     <footer className="bg-[#1f1f1f] text-gray-300">

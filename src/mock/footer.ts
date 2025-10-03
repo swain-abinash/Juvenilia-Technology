@@ -7,7 +7,7 @@ export const footerData = {
       { key: "facebook", label: "Facebook", href: "https://www.facebook.com/profile.php?id=61581051792812" },
       // { key: "instagram", label: "Instagram", href: "https://instagram.com" },
       { key: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/company/juveniliatechnology/" },
-      { key: "twitter", label: "Twitter", href: "https://x.com/JuveniliaTech" },
+      { key: "x", label: "X", href: "https://x.com/JuveniliaTech" },
     ],
     logo: "/logo.png",
   },
