@@ -51,7 +51,7 @@ const CaseStudies = ({ data }: { data: HomeData['caseStudies'] }) => {
       </div>
 
       {/* CTA */}
-      <div className="text-center mt-12">
+      {/* <div className="text-center mt-12">
         <a
           href={data.cta.link}
           className="inline-block px-10 py-4 bg-gradient-to-r from-orange-500 to-black-400 text-white font-semibold rounded-full shadow-lg 
@@ -59,7 +59,7 @@ const CaseStudies = ({ data }: { data: HomeData['caseStudies'] }) => {
         >
           {data.cta.text}
         </a>
-      </div>
+      </div> */}
     </SectionWrapper>
   );
 };

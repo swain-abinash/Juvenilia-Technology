@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import checker from 'vite-plugin-checker';
 // https://vite.dev/config/
 export default defineConfig({
+   base: '/', 
   plugins: [react(), tailwindcss(),
     checker({ typescript: true })
   ],

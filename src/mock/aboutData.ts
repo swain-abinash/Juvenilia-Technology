@@ -121,7 +121,7 @@ export const aboutData = {
 
   whyChooseUs: [
     { icon: "✅", text: "10+ years of trusted IT expertise" },
-    { icon: "✅", text: "100+ successful projects delivered worldwide" },
+    { icon: "✅", text: "300+ successful projects delivered worldwide" },
     { icon: "✅", text: "End-to-end solutions from idea to execution" },
     { icon: "✅", text: "Customer-first approach with long-term partnerships" },
     { icon: "✅", text: "Scalable, secure, and innovative solutions" }

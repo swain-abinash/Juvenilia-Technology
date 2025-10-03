@@ -127,7 +127,7 @@ export const homeData: HomeData = {
     },
     stats: {
         items: [
-            { value: 100, label: "Projects Delivered", suffix: "+" },
+            { value: 300, label: "Projects Delivered", suffix: "+" },
             { value: 10, label: "Countries Served", suffix: "+" },
             { value: 50, label: "Experts Onboard", suffix: "+" },
         ]

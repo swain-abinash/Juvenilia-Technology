@@ -21,36 +21,43 @@ import Mou from "./pages/mou/Mou";
 import News_Article from "./pages/news-article/News_Article";
 import SiteMap from "./pages/site-map/SiteMap";
 
+import ScrollToTop from "./components/common/ScrollToTop";
+
+
 function App() {
   return (
-    <Routes>
-      <Route element={<MainLayout />}>
-        {/* Main Pages */}
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/home" element={<Home />} /> */}
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/services/:id" element={<ServiceDetail />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/career" element={<Career />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/plans" element={<Plan />} />
-        <Route path="/mou" element={<Mou />} />
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route element={<MainLayout />}>
+          {/* Main Pages */}
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/home" element={<Home />} /> */}
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/:id" element={<ServiceDetail />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/career" element={<Career />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/plans" element={<Plan />} />
+          <Route path="/mou" element={<Mou />} />
 
 
-        <Route path="/terms" element={<Terms />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/helps" element={<Helps />} />
-        <Route path="/faqs" element={<Faqs />} />
-        <Route path="/news-article" element={<News_Article />} />
-        <Route path="/site-map" element={<SiteMap />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/helps" element={<Helps />} />
+          <Route path="/faqs" element={<Faqs />} />
+          <Route path="/news-article" element={<News_Article />} />
+          <Route path="/site-map" element={<SiteMap />} />
 
-        {/* Industries (Dynamic) */}
-        {/* {industryRoutes.map((route, i) => (
+          {/* Industries (Dynamic) */}
+          {/* {industryRoutes.map((route, i) => (
           <Route key={i} path={route.path} element={route.element} />
         ))} */}
-      </Route>
-    </Routes>
+        </Route>
+      </Routes>
+    </>
+
   );
 }
 
