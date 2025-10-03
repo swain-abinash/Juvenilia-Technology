@@ -171,7 +171,17 @@ const SoftwareDevelopment = () => {
                               <h3 className="text-sm sm:text-lg font-bold mb-1 sm:mb-2">
                                 {plan.name}
                               </h3>
-                              <h3>Price:{plan.price}</h3>
+                              <div className="flex justify-center">
+
+
+                              <h3
+                                className={`w-[50%]
+                                     bg-orange-500
+                                 text-white  p-2 rounded-2xl`}
+                              >
+                                Price:{plan.price}
+                              </h3>
+                              </div>
                             </div>
                           </th>
                         ))}
