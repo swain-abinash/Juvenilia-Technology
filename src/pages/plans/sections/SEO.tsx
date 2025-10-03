@@ -354,7 +354,15 @@ const SEO = () => {
                               <div className="text-xs sm:text-sm mb-1">
                                 UPTO {plan.keywords} KEYWORDS
                               </div>
-                              <h3>Price:{plan.price}/Month</h3>
+                              <h3
+                                className={`${
+                                  plan.name === "PREMIUM"
+                                    ? "bg-gray-500"
+                                    : "bg-orange-500"
+                                } text-white  p-2 rounded-2xl`}
+                              >
+                                Price:{plan.price}
+                              </h3>
                             </div>
                           </th>
                         ))}
@@ -383,7 +391,7 @@ const SEO = () => {
                         {plans.map((plan: any, index) => (
                           <td key={index} className="px-4 py-3 text-center">
                             <div className="flex justify-center">
-                              <PayPalButtons
+                              {/* <PayPalButtons
                                 style={{
                                   layout: "vertical",
                                   color: "gold",
@@ -410,7 +418,35 @@ const SEO = () => {
                                     "Something went wrong with the subscription."
                                   );
                                 }}
-                              />
+                              /> */}
+                              <form
+                                action="https://www.paypal.com/cgi-bin/webscr"
+                                method="post"
+                                target="_top"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="cmd"
+                                  value="_s-xclick"
+                                />
+                                <input
+                                  type="hidden"
+                                  name="hosted_button_id"
+                                  value={plan.planid}
+                                />
+                                <input
+                                  type="hidden"
+                                  name="currency_code"
+                                  value="USD"
+                                />
+                                <input
+                                  type="image"
+                                  src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribe_LG.gif"
+                                  name="submit"
+                                  title="PayPal - The safer, easier way to pay online!"
+                                  alt="Subscribe"
+                                />
+                              </form>
                             </div>
                           </td>
                         ))}

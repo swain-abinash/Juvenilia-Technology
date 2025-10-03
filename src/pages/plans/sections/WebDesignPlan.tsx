@@ -30,7 +30,7 @@ const WebDesignPlan = () => {
               {/* Contact Button */}
               <div className="mb-8">
                 <button className="bg-orange-500 hover:bg-orange-600 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg flex items-center gap-3 transition-colors duration-200 shadow-lg w-full sm:w-auto">
-                 <svg
+                  <svg
                     className="w-5 h-5 sm:w-6 sm:h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
@@ -168,7 +168,13 @@ const WebDesignPlan = () => {
                               <h3 className="text-sm sm:text-lg font-bold mb-1 sm:mb-2">
                                 {plan.name}
                               </h3>
-                              <h3>Price:{plan.price}</h3>
+                              <h3
+                                className={`
+                                     bg-orange-500
+                                 text-white  p-2 rounded-2xl`}
+                              >
+                                Price:{plan.price}
+                              </h3>
                             </div>
                           </th>
                         ))}

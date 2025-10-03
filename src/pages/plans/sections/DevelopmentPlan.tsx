@@ -168,7 +168,13 @@ const DevelopmentPlan = () => {
                               <h3 className="text-sm sm:text-lg font-bold mb-1 sm:mb-2">
                                 {plan.name}
                               </h3>
-                              <h3>Price:{plan.price}</h3>
+                              <h3
+                                className={`
+                                     bg-orange-500
+                                 text-white  p-2 rounded-2xl`}
+                              >
+                                Price:{plan.price}
+                              </h3>
                             </div>
                           </th>
                         ))}
