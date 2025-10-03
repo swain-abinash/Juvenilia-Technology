@@ -1,10 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom'; // ✅ import Link
 import SectionWrapper from '../ui/SectionWrapper';
 import type { HomeData } from '../../../types';
 
 // 👇 import image directly
-import aboutImage from '../../../assets/juvenilia.jpg';
+import aboutImage from '../../../assets/Juvenilia.jpg';
 
 const AboutPreview = ({ data }: { data: HomeData['aboutPreview'] }) => {
     return (
@@ -24,13 +25,13 @@ const AboutPreview = ({ data }: { data: HomeData['aboutPreview'] }) => {
                 </motion.div>
                 <div className="text-center md:text-left">
                     <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">{data.intro}</p>
-                    <a 
-                        href={data.cta.link} 
+                    <Link 
+                        to={data.cta.link} 
                         className="group text-orange-500 font-bold text-lg inline-flex items-center gap-2"
                     >
                         {data.cta.text} &rarr;
                         <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-orange-500"></span>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </SectionWrapper>

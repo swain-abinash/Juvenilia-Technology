@@ -4,7 +4,6 @@ import * as Yup from "yup";
 import { motion } from "framer-motion";
 import Swal from "sweetalert2";
 
-// The following are inline SVG icons for a single-file app
 // They are used to represent the contact information.
 const LocationIcon = () => (
   <svg
@@ -166,6 +165,7 @@ const ContactInfo: React.FC = () => {
         </motion.button>
       </div>
 
+
       {/* Offices and hours */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
         <div className="h-full p-6 bg-gray-800 rounded-xl shadow-lg">
@@ -177,15 +177,12 @@ const ContactInfo: React.FC = () => {
           </div>
           <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-gray-300">
             <div>
-              <p className="font-semibold text-white">Bhubaneswar Office</p>
-              <p className="mt-1">Plot No – A/54, Saheed Nagar</p>
-              <p>Opp. Side of DDCE Utkal University</p>
-              <p>Bhubaneswar - 751004</p>
+              <p className="font-semibold text-white">Bhubaneswar</p>
+              <p className="mt-1">Bhubaneswar, India</p>
             </div>
             <div>
-              <p className="font-semibold text-white">Cuttack Office</p>
-              <p className="mt-1">Plot No-1344, Mahanadi Bihar</p>
-              <p>Cuttack-753004</p>
+              <p className="font-semibold text-white">Cuttack</p>
+              <p className="mt-1">Cuttack, India</p>
             </div>
           </div>
         </div>
@@ -203,6 +200,7 @@ const ContactInfo: React.FC = () => {
           </div>
         </div>
       </div>
+
     </div>
   );
 };
@@ -225,7 +223,7 @@ const ContactForm: React.FC = () => {
     subject: Yup.string().required("Subject is required"),
     message: Yup.string().required("Message is required"),
   });
-const scriptURL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
+  const scriptURL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
 
   return (
     <div className="p-8 bg-gray-800 rounded-xl shadow-lg text-left">
@@ -245,14 +243,14 @@ const scriptURL = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
           budget: "",
           subject: "",
           message: "",
-          formType:"userresponse"
+          formType: "userresponse"
         }}
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting, resetForm }) => {
-           console.log("values",values) 
+          console.log("values", values)
           fetch(scriptURL, {
             method: "POST",
-            mode: "no-cors", 
+            mode: "no-cors",
             body: new URLSearchParams(values), // FormData style
           })
             .then((res) => res.text())

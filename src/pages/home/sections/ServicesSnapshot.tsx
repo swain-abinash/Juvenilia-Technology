@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { NavLink } from 'react-router-dom'; // ✅ use NavLink
 import SectionWrapper from '../ui/SectionWrapper';
 import SectionTitle from '../ui/SectionTitle';
-import type{ HomeData } from '../../../types';
+import type { HomeData } from '../../../types';
 
 const ServicesSnapshot = ({ data }: { data: HomeData['services'] }) => {
     const containerVariants = {
@@ -46,13 +47,22 @@ const ServicesSnapshot = ({ data }: { data: HomeData['services'] }) => {
                 ))}
             </motion.div>
             <div className="text-center mt-12">
-                <a href={data.cta.link} className="inline-block px-8 py-3 bg-gray-800 text-white font-semibold rounded-lg border border-white/20 hover:bg-orange-500 hover:border-orange-500 transition-all duration-300">
+                <NavLink 
+                    to={data.cta.link} 
+                    end
+                    className={({ isActive }) =>
+                        `inline-block px-8 py-3 font-semibold rounded-lg border transition-all duration-300 ${
+                            isActive
+                                ? 'bg-orange-500 border-orange-500 text-white'
+                                : 'bg-gray-800 border-white/20 text-white hover:bg-orange-500 hover:border-orange-500'
+                        }`
+                    }
+                >
                     {data.cta.text} &rarr;
-                </a>
+                </NavLink>
             </div>
         </SectionWrapper>
     );
 };
 
 export default ServicesSnapshot;
-

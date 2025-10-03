@@ -173,12 +173,12 @@ const FreeResources = ({ data }: { data: HomeData["resources"] }) => {
                 </button>
               ))}
             </div>
-            <a
+            {/* <a
               href={data.cta.link}
               className="inline-block px-8 py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-all duration-300"
             >
               {data.cta.text}
-            </a>
+            </a> */}
           </div>
 
           {/* Right: Free Audit Form */}
