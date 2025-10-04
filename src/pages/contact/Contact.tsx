@@ -167,39 +167,43 @@ const ContactInfo: React.FC = () => {
 
 
       {/* Offices and hours */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-        <div className="h-full p-6 bg-gray-800 rounded-xl shadow-lg">
-          <div className="flex items-center gap-3">
-            <LocationIcon />
-            <h3 className="text-base md:text-lg font-semibold text-orange-500">
-              Our Offices
-            </h3>
-          </div>
-          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-gray-300">
-            <div>
-              <p className="font-semibold text-white">Bhubaneswar</p>
-              <p className="mt-1">Bhubaneswar, India</p>
-            </div>
-            <div>
-              <p className="font-semibold text-white">Cuttack</p>
-              <p className="mt-1">Cuttack, India</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="h-full p-6 bg-gray-800 rounded-xl shadow-lg">
-          <div className="flex items-center gap-3">
-            <ClockIcon />
-            <h3 className="text-base md:text-lg font-semibold text-orange-500">
-              Working Hours
-            </h3>
-          </div>
-          <div className="mt-4 text-sm text-gray-300">
-            <p>Monday to Saturday</p>
-            <p className="mt-1">7:00 AM – 7:00 PM (IST)</p>
-          </div>
-        </div>
+{/* Offices and hours */}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+  <div className="h-full p-6 bg-gray-800 rounded-xl shadow-lg">
+    <div className="flex items-center gap-3">
+      <LocationIcon />
+      <h3 className="text-base md:text-lg font-semibold text-orange-500">
+        Our Offices
+      </h3>
+    </div>
+    <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-gray-300">
+      <div>
+        <p className="font-semibold text-white">Bhubaneswar Office</p>
+        <p className="mt-1">Plot No – A/54, Saheed Nagar</p>
+        <p>Opp. Side of DDCE Utkal University</p>
+        <p>Bhubaneswar - 751004, India</p>
       </div>
+      <div>
+        <p className="font-semibold text-white">Cuttack Office</p>
+        <p className="mt-1">Plot No-1344, Mahanadi Bihar</p>
+        <p>Cuttack - 753004, India</p>
+      </div>
+    </div>
+  </div>
+
+  <div className="h-full p-6 bg-gray-800 rounded-xl shadow-lg">
+    <div className="flex items-center gap-3">
+      <ClockIcon />
+      <h3 className="text-base md:text-lg font-semibold text-orange-500">
+        Working Hours
+      </h3>
+    </div>
+    <div className="mt-4 text-sm text-gray-300">
+      <p>Monday to Saturday</p>
+      <p className="mt-1">7:00 AM – 7:00 PM (IST)</p>
+    </div>
+  </div>
+</div>
 
     </div>
   );
