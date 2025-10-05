@@ -2,7 +2,7 @@ export const planData = {
   "plans": [
     {
       "name": "BASIC",
-      "price": "USD 400",
+      "price": " $400/30 Days",
       "value":"49VWBQU9877VY",
       "description":"Monthly Subscription",
       "Custom Theme": "Yes",
@@ -21,11 +21,10 @@ export const planData = {
       "Products Included": "-",
       "Maintaince Free": "Upto 30 days",
       "Dedicated Team": "Yes",
-      "Duration": "30 Days"
     },
     {
       "name": "CORPORATE",
-      "price": "USD 800",
+      "price": " $800/60 Days",
       "value":"JXYX26Y8N29R8",
 
       "description":"Monthly Subscription",
@@ -45,11 +44,10 @@ export const planData = {
       "Products Included": "-",
       "Maintaince Free": "Upto 30 days",
       "Dedicated Team": "Yes",
-      "Duration": "60 Days"
     },
     {
       "name": "ECOMMERCE",
-      "price": "USD 1600",
+      "price": " $1600/90 Days",
       "value":"S2USQUD5JGSNQ",
 
       "description":"Monthly Subscription",
@@ -69,7 +67,6 @@ export const planData = {
       "Products Included": "Upto 80",
       "Maintaince Free": "Upto 30 days",
       "Dedicated Team": "Yes",
-      "Duration": "90 Days"
     }
   ]
 };
@@ -97,7 +94,6 @@ export const accordionSections = [
       "Products Included",
       "Maintaince Free",
       "Dedicated Team",
-      "Duration"
     ],
   },
 ];
