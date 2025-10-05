@@ -2,7 +2,7 @@ export const planData = {
   "plans": [
     {
       "name": "ANDROID APP DEVELOPMENT",
-      "price": "USD 2500",
+      "price": " $2500/90 Days",
             "value":"59QB4BZAP8U5L",
 
       "description":"Monthly Subscription",
@@ -15,11 +15,10 @@ export const planData = {
       "Launch": "Yes",
       "Post Launch Maintaince": "Yes",
       "Dedicated Team": "Yes",
-      "Duration": "90 Days"
     },
     {
       "name": "IOS APP DEVELOPMENT",
-      "price": "USD 2500",
+      "price": " $2500/90 Days",
             "value":"WPPY8WRBAGP7N",
 
       "description":"Monthly Subscription",
@@ -32,7 +31,6 @@ export const planData = {
       "Launch": "Yes",
       "Post Launch Maintaince": "Yes",
       "Dedicated Team": "Yes",
-      "Duration": "90 Days"
     }
   ]
 };
@@ -53,7 +51,6 @@ export const accordionSections = [
       "Launch",
       "Post Launch Maintaince",
       "Dedicated Team",
-      "Duration"
     ],
   },
 ];
