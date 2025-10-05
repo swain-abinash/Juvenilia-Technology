@@ -1,5 +1,6 @@
 import React from 'react';
 import { siteMap } from '../../mock/sitemap';
+import { Link } from 'react-router-dom';
 
 const SiteMap: React.FC = () => {
   return (
@@ -16,13 +17,13 @@ const SiteMap: React.FC = () => {
         {/* Quick access chips */}
         <div className="flex flex-wrap gap-2 mb-10">
           {siteMap.flatMap((s) => s.items).slice(0, 10).map((item) => (
-            <a
+            <Link
               key={item.label}
-              href={item.href}
+              to={item.href}
               className="px-3 py-1 rounded-full bg-gray-800 text-gray-200 hover:bg-gray-700 hover:text-white border border-white/10 text-sm"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -38,17 +39,17 @@ const SiteMap: React.FC = () => {
                       <div className="flex items-start gap-3">
                         <span className="mt-1 inline-block w-2 h-2 rounded-full bg-orange-500 group-hover:scale-110 transition" />
                         <div>
-                          <a href={item.href} className="text-white hover:text-orange-400 transition">
+                          <Link to={item.href} className="text-white hover:text-orange-400 transition">
                             {item.label}
-                          </a>
+                          </Link>
                           {item.children && item.children.length > 0 && (
                             <ul className="mt-2 pl-4 border-l border-white/10 space-y-2">
                               {item.children.map((child) => (
                                 <li key={child.label} className="flex items-start gap-2">
                                   <span className="mt-[9px] inline-block w-1 h-1 rounded-full bg-gray-400" />
-                                  <a href={child.href} className="text-gray-300 hover:text-orange-300 transition text-sm">
+                                  <Link to={child.href} className="text-gray-300 hover:text-orange-300 transition text-sm">
                                     {child.label}
-                                  </a>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
