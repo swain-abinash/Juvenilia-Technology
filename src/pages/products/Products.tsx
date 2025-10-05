@@ -80,12 +80,12 @@ const Products: React.FC = () => {
                 </a>
               )}
 
-              <a
+              {/* <a
                 href="#contact"
                 className="inline-flex items-center gap-2 border border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-white px-6 py-3 rounded-xl font-semibold transition"
               >
                 Talk to Advisor
-              </a>
+              </a> */}
             </div>
           </motion.div>
         </div>
