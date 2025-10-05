@@ -359,7 +359,7 @@ const SEO = () => {
                                   plan.name === "PREMIUM"
                                     ? "bg-gray-500"
                                     : "bg-orange-500"
-                                } text-white  p-2 rounded-2xl`}
+                                } text-white  p-2 rounded-2xl w-40`}
                               >
                                 Price:{plan.price}
                               </h3>
