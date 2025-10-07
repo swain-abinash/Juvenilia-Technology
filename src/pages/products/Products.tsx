@@ -100,7 +100,7 @@ const Products: React.FC = () => {
               "50+ Live Interactive Sessions",
               "Access to Recorded Sessions",
               "Hands-on Industry Projects",
-              "Live Classes from IIT Faculty",
+              "Live classes from Oracle-certified faculty",
               "JT Professional Certification",
               "Job Referrals through JT Network",
             ].map((item, idx) => (

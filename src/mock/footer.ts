@@ -1,6 +1,6 @@
 export const footerData = {
   company: {
-    name: "Juvenilia Technology Pvt. Ltd",
+    name: "Juvenilia Technology Pvt. Ltd.",
     description:
       "Juvenilia Technology describes a company that offers inventive Information Technology solutions. It is a company that takes the lead in digital innovation, offering tailored solutions that change the global impact of the business market since 2015.",
     socials: [

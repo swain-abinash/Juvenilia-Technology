@@ -4,8 +4,8 @@ import ranjanImage from "../assets/RANJAN.png";
 import rajeebImage from "../assets/RAJEEB.png";
 import binitImage from "../assets/BINIT.png";
 import sudarsanImage from "../assets/SUDARSHAN.png";
-import amayaImage from "../assets/AMIYA.png";
-import subhadarshiniImage from "../assets/SUBHADARSHINI.png";
+import amayaImage from "../assets/AMIYARANJAN.png";
+import subhadarshiniImage from "../assets/SUBHA.png";
 import rozysmitaImage from "../assets/ROZY.png";
 import swarnaImage from "../assets/SWARNA.png";
 import harapriyaImage from "../assets/HARAPRIYA.png";
@@ -88,7 +88,7 @@ export const aboutData = {
       image: sudarsanImage
     },
     {
-      name: "Amaya Ranjan Martha",
+      name: "Amiya Ranjan Martha",
       position: "Trainer & Lead Executive",
       tagline: "Driving projects with precision and passion",
       image: amayaImage
