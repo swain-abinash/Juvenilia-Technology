@@ -35,31 +35,7 @@ export const siteMap: SiteMapSection[] = [
       // { label: 'Helps', href: '/helps' },
       { label: 'Site Map', href: '/site-map' },
     ],
-  },
-  {
-    title: 'Highlights',
-    items: [
-      {
-        label: 'Free Resources',
-        href: '/free-resources',
-        children: [
-          { label: 'Guides', href: '/free-resources' },
-          { label: 'Free Audit', href: '/free-resources' },
-        ],
-      },
-      {
-        label: 'Case Studies',
-        href: '/case-studies',
-        children: [
-          { label: 'eCommerce Growth', href: '/case-studies' },
-          { label: 'ERP for Manufacturing', href: '/case-studies' },
-        ],
-      },
-      { label: 'Tech Stack', href: '/tech-stack' },
-      // { label: 'Industries', href: '/industries' },
-      { label: 'Testimonials', href: '/testimonials' },
-    ],
-  },
+  }
 ];
 
 

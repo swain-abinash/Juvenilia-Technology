@@ -20,6 +20,10 @@ import Faqs from "./pages/faqs/Faqs";
 import Mou from "./pages/mou/Mou";
 import News_Article from "./pages/news-article/News_Article";
 import SiteMap from "./pages/site-map/SiteMap";
+// import FreeResources from "./pages/home/sections/FreeResources";
+// import Testimonials from "./pages/home/sections/Testimonials";
+// import CaseStudies from "./pages/home/sections/CaseStudies";
+
 
 import ScrollToTop from "./components/common/ScrollToTop";
 
@@ -49,6 +53,10 @@ function App() {
           <Route path="/faqs" element={<Faqs />} />
           <Route path="/news-article" element={<News_Article />} />
           <Route path="/site-map" element={<SiteMap />} />
+
+          {/* <Route path="/free-resources" element={<FreeResources />} />
+          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/case-studies" element={<CaseStudies />} /> */}
 
           {/* Industries (Dynamic) */}
           {/* {industryRoutes.map((route, i) => (
