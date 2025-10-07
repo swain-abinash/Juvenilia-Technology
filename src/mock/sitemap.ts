@@ -32,7 +32,7 @@ export const siteMap: SiteMapSection[] = [
       { label: 'Terms of Use', href: '/terms' },
       { label: 'Privacy Policy', href: '/privacy' },
       { label: 'FAQs', href: '/faqs' },
-      { label: 'Helps', href: '/helps' },
+      // { label: 'Helps', href: '/helps' },
       { label: 'Site Map', href: '/site-map' },
     ],
   },
@@ -41,23 +41,23 @@ export const siteMap: SiteMapSection[] = [
     items: [
       {
         label: 'Free Resources',
-        href: '/#free-resources',
+        href: '/free-resources',
         children: [
-          { label: 'Guides', href: '/#free-resources' },
-          { label: 'Free Audit', href: '/#free-resources' },
+          { label: 'Guides', href: '/free-resources' },
+          { label: 'Free Audit', href: '/free-resources' },
         ],
       },
       {
         label: 'Case Studies',
-        href: '/#case-studies',
+        href: '/case-studies',
         children: [
-          { label: 'eCommerce Growth', href: '/#case-studies' },
-          { label: 'ERP for Manufacturing', href: '/#case-studies' },
+          { label: 'eCommerce Growth', href: '/case-studies' },
+          { label: 'ERP for Manufacturing', href: '/case-studies' },
         ],
       },
-      { label: 'Tech Stack', href: '/#tech-stack' },
-      { label: 'Industries', href: '/#industries' },
-      { label: 'Testimonials', href: '/#testimonials' },
+      { label: 'Tech Stack', href: '/tech-stack' },
+      // { label: 'Industries', href: '/industries' },
+      { label: 'Testimonials', href: '/testimonials' },
     ],
   },
 ];
