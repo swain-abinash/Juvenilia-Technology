@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, Star } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Sparkles } from 'lucide-react';
 import { aboutData } from '../../../mock/aboutData';
 import aboutImg1 from '../../../assets/ABOUT-US.jpg';
 import aboutImg2 from '../../../assets/ABOUT-US2.jpg';
 
-// A new component for a sparkle effect
+// Sparkle Effect
 const SparkleEffect = ({ count = 50, mousePosition }: { count?: number; mousePosition: { x: number; y: number } }) => {
   const sparkles = [...Array(count)].map((_, i) => {
     const size = Math.random() * 5 + 2;
@@ -18,17 +18,8 @@ const SparkleEffect = ({ count = 50, mousePosition }: { count?: number; mousePos
       <motion.div
         key={i}
         initial={{ x, y, scale: 0, opacity: 0 }}
-        animate={{
-          scale: [0, 1, 0.5, 0],
-          opacity: [0, 1, 0.8, 0],
-        }}
-        transition={{
-          duration,
-          delay,
-          repeat: Infinity,
-          repeatType: 'reverse',
-          ease: 'easeInOut',
-        }}
+        animate={{ scale: [0, 1, 0.5, 0], opacity: [0, 1, 0.8, 0] }}
+        transition={{ duration, delay, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
         className="absolute"
         style={{
           width: size,
@@ -62,87 +53,90 @@ export const AboutHero: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center bg-black px-6 py-16 overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative min-h-screen flex items-center justify-center bg-black px-4 sm:px-6 md:px-10 py-16 overflow-hidden"
+    >
+      {/* Background Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black opacity-90" />
 
       <SparkleEffect mousePosition={mousePosition} />
 
-      {/* Enhanced mouse-based glow effect */}
+      {/* Mouse Glow */}
       <motion.div
-        className="absolute w-96 h-96 bg-gradient-to-tr from-orange-500/30 via-orange-400/20 to-transparent rounded-full blur-3xl pointer-events-none"
+        className="absolute w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-tr from-orange-500/30 via-orange-400/20 to-transparent rounded-full blur-3xl pointer-events-none"
         animate={{
-          left: `${mousePosition.x - 192}px`,
-          top: `${mousePosition.y - 192}px`,
+          left: `${mousePosition.x - 150}px`,
+          top: `${mousePosition.y - 150}px`,
         }}
-        transition={{ type: "tween", stiffness: 50, damping: 20 }}
+        transition={{ type: 'tween', stiffness: 50, damping: 20 }}
       />
 
-      {/* Grid with 40/60 width split */}
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-10 gap-12 items-center max-w-7xl w-full">
-        {/* Left side: Animated images (40% width) */}
+      {/* Grid Responsive */}
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-10 gap-8 md:gap-12 items-center max-w-7xl w-full">
+        {/* Left side - Images */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="lg:col-span-4 relative flex justify-center lg:justify-start"
+          className="lg:col-span-4 relative flex justify-center lg:justify-start mb-10 lg:mb-0"
         >
-          <div className="relative w-full h-[500px]">
-            {/* Top image, positioned partially outside the main grid area to create a unique flow */}
+          <div className="relative w-full max-w-[320px] sm:max-w-[360px] md:max-w-[400px] h-[380px] sm:h-[450px] md:h-[500px]">
             {/* Top image */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8, x: -50 }}
+              initial={{ opacity: 0, scale: 0.8, x: -40 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ delay: 0.2, type: 'spring', stiffness: 100 }}
-              className="absolute w-[90%] max-w-[360px] h-[240px] top-0 left-0 rounded-xl overflow-hidden shadow-2xl z-10"
+              className="absolute w-[85%] sm:w-[90%] h-[200px] sm:h-[240px] top-0 left-0 rounded-xl overflow-hidden shadow-2xl z-10"
             >
               <img src={aboutImg1} alt="Tech Setup" className="w-full h-full object-cover" />
             </motion.div>
 
             {/* Bottom image */}
-            {/* Bottom image */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8, x: 50 }}
+              initial={{ opacity: 0, scale: 0.8, x: 40 }}
               animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ delay: 0.4, type: 'spring', stiffness: 100 }}
-              className="absolute w-[90%] max-w-[360px] h-[240px] top-[140px] left-[120px] rounded-xl overflow-hidden shadow-2xl z-20"
+              className="absolute w-[85%] sm:w-[90%] h-[200px] sm:h-[240px] top-[140px] sm:top-[160px] left-[70px] sm:left-[100px] md:left-[120px] rounded-xl overflow-hidden shadow-2xl z-20"
             >
               <img src={aboutImg2} alt="Office Setup" className="w-full h-full object-cover" />
             </motion.div>
-
-
           </div>
         </motion.div>
 
-        {/* Right side: Animated text content (60% width) */}
+        {/* Right side - Text */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="lg:col-span-6 text-center lg:text-left"
+          className="lg:col-span-6 text-center lg:text-left relative"
         >
-          <span className="inline-flex items-center gap-2 text-orange-400 text-sm font-semibold tracking-wider uppercase mb-4">
-            <Sparkles className="w-4 h-4" />
+          {/* Background Glow */}
+          <div className="absolute -top-10 -left-10 w-80 sm:w-96 h-80 sm:h-96 bg-orange-500/10 blur-3xl rounded-full z-0" />
+
+          {/* Subtitle */}
+          <span className="inline-flex items-center justify-center lg:justify-start gap-2 text-transparent bg-clip-text bg-gradient-to-r from-[#ff914d] to-[#ffd4a3] text-xs sm:text-sm font-semibold tracking-wider uppercase mb-3 relative z-10">
+            <Sparkles className="w-4 h-4 text-[#ffb77a]" />
             {aboutData.hero.subtitle}
           </span>
 
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-white">
-            <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent">
+          {/* Title */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-snug relative z-10">
+            <span className="bg-gradient-to-r from-[#ff914d] via-[#ffb76b] to-[#ffd4a3] bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(255,140,0,0.25)]">
               {aboutData.hero.title}
             </span>
           </h1>
 
-          <p className="text-lg text-white/70 mb-6 italic">
+          {/* Tagline */}
+          <p className="text-base sm:text-lg font-medium text-gray-200/90 mb-5 italic tracking-wide relative z-10">
             {aboutData.hero.tagline}
           </p>
 
+          {/* Description */}
           <div
-            className="text-base text-white/80 leading-relaxed mb-6"
+            className="text-sm sm:text-base text-gray-300 leading-relaxed mb-5 bg-white/5 p-4 sm:p-5 rounded-xl border border-white/10 shadow-md backdrop-blur-sm relative z-10"
             dangerouslySetInnerHTML={{ __html: aboutData.hero.description }}
           />
-
-          <p className="text-base text-orange-400/90 italic border-l-4 border-orange-400 pl-4">
-            "{aboutData.hero.philosophy}"
-          </p>
         </motion.div>
       </div>
     </section>

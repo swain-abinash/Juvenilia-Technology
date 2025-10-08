@@ -41,19 +41,20 @@ import TinderLogo from '../assets/Tinder.svg';
 import StartupIndiaLogo from '../assets/Startup-INDIA.svg';
 
 export const homeData: HomeData = {
-    hero: {
-        headline: "Smart Technology to Boost Your Business",
-        subheadline: "We build digital solutions that help companies grow faster.",
-        ctas: [
-            { text: "Get Started", link: "#contact", type: "primary" },
-            { text: "Contact Us", link: "#contact", type: "secondary" },
-        ],
-        images: [
-            "https://placehold.co/1920x1080/000000/FFFFFF?text=Digital+Transformation",
-            "https://placehold.co/1920x1080/1a1a1a/FFFFFF?text=Cloud+Solutions",
-            "https://placehold.co/1920x1080/0a0a0a/FFFFFF?text=AI+Innovation"
-        ]
-    },
+hero: {
+    headline: "Digital Marketing, Website Designing & Development Agency in India",
+    subheadline: "Juvenilia Technology is an IT Solutions company that offers Digital Marketing, Website Designing, Web Development, App Development and Software Development services.",
+    ctas: [
+        { text: "Get Started", link: "#contact", type: "primary" },
+        { text: "Contact Us", link: "#contact", type: "secondary" },
+    ],
+    images: [
+        "https://placehold.co/1920x1080/111827/FFFFFF?text=Digital+Marketing+Solutions",
+        "https://placehold.co/1920x1080/1F2937/FFFFFF?text=Website+Design+%26+Development",
+        "https://placehold.co/1920x1080/374151/FFFFFF?text=App+%26+Software+Development"
+    ]
+}
+,
     aboutPreview: {
         intro: "Founded in 2015, Juvenilia Technologies Pvt Ltd has grown into one of India’s most trusted IT solution companies, delivering innovative digital solutions across industries.",
         cta: { text: "Learn More About Us", link: "/about" },

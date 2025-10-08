@@ -14,15 +14,12 @@ import harapriyaImage from "../assets/HARAPRIYA.png";
 
 export const aboutData = {
   hero: {
-    title: "About Us",
+    title: "About Juvenilia Technology | Your Digital Marketing Partner - Juvenilia Technology",
+
     subtitle: "Welcome to Our Story",
     tagline: "Innovating Success Through Professional Expertise And Honesty!",
-    description: `Founded in <span class="text-orange-400 font-semibold">2015</span>, 
-      <span class="text-orange-500 font-semibold">Juvenilia Technologies Pvt Ltd</span> 
-      has grown into one of India's most trusted IT solution providers. We are a 
-      <span class="text-orange-400 font-semibold">one-stop destination for digital transformation</span>, 
-      delivering services in Digital Marketing, Website Development, Mobile App Development, 
-      Software Development, and Web Portal Development.`,
+    description:
+      "An Innovative IT Solutions Company with a strong client base that counts more than a hundred clients worldwide. We are providing our services of Digital Marketing, Website Designing, Web Development, App Development, and Software Development all over the globe.",
     philosophy: "Innovation, Design, and Technology must come together to create solutions that empower businesses and inspire growth."
   },
 
@@ -115,7 +112,7 @@ export const aboutData = {
       name: "Harapriya Dhal",
       position: "Business Development Executive",
       tagline: "Driving growth through strategic partnerships",
-      image: harapriyaImage 
+      image: harapriyaImage
     }
   ],
 

@@ -22,14 +22,12 @@ const Services: React.FC = () => {
     return servicesByCategory[activeCategory] || [];
   };
 
-  // Define animation variants for a cleaner look
+  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { 
       opacity: 1, 
-      transition: {
-        staggerChildren: 0.1,
-      }
+      transition: { staggerChildren: 0.1 }
     },
   };
 
@@ -40,7 +38,7 @@ const Services: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      {/* Hero Section with Animations */}
+      {/* Hero Section */}
       <div className="bg-gradient-to-r from-black via-gray-900 to-black py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
@@ -49,19 +47,19 @@ const Services: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-6xl font-bold text-white mb-6"
           >
-            Our <span className="text-orange-500">Services</span>
+            Juvenilia Technology - <span className="text-orange-500">Leading the Way to Digital Transformation</span>
           </motion.h1>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            Comprehensive digital solutions to help your business thrive in the modern world. 
-            From digital marketing to custom development, we've got you covered.
+            Trying to find top-notch digital marketing services that can take your business to the next level? Juvenilia Technology is your go-to place to get the cutting-edge Technology in Digital Marketing services alongside Website design, Web Development, App Development, and Software Development at the most affordable prices.
           </motion.p>
           
-          {/* Service Categories Stats with Staggered Animation */}
+          {/* Service Categories Stats */}
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
             initial="hidden"
@@ -99,9 +97,8 @@ const Services: React.FC = () => {
         </div>
       </div>
 
-      {/* Filter Tabs and Service Cards */}
+      {/* Filter Tabs and Services */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* The filter buttons already have a smooth transition via Tailwind, so we don't need Framer Motion here */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           <button
             onClick={() => setActiveCategory('all')}
@@ -128,10 +125,10 @@ const Services: React.FC = () => {
           ))}
         </div>
 
-        {/* Services Grid with Staggered Animation */}
+        {/* Services Grid */}
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          key={activeCategory} // Use a key to re-trigger animation on category change
+          key={activeCategory}
           initial="hidden"
           animate="visible"
           variants={containerVariants}
@@ -160,7 +157,7 @@ const Services: React.FC = () => {
         )}
       </div>
 
-      {/* Bottom CTA Section */}
+      {/* Bottom CTA */}
       <div className="bg-gradient-to-r from-orange-500 to-orange-600 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2

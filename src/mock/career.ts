@@ -3,9 +3,9 @@ import type { CareerPageData } from '../types';
 
 export const careerData: CareerPageData = {
   header: {
-    title: 'Build The Future With Us',
+    title: 'Want to Build Your Career with Us | Juvenilia Technology',
     subtitle:
-      'We are looking for passionate, curious, and creative people to join our team. Explore our open roles and find your next great opportunity.',
+      'Whether you are a fresher or experienced in SEO, SEM, BDM, Web Design or Development? Grow your professional career journey with Juvenilia Technology, an Innovative IT Solutions Company in India.',
     mainImage: 'https://placehold.co/1200x600/1a202c/ffffff?text=Join+Our+Team',
   },
   values: [
