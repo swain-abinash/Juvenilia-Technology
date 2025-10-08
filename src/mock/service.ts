@@ -370,32 +370,33 @@ export const services: Service[] = [
     icon: '💻'
   },
   {
-    id: 'php-development',
-    title: 'PHP Website Development',
+    id: 'software-development',
+    title: 'Software Development',
     category: 'Web Development',
-    shortDescription: 'Robust and scalable web applications using PHP technology',
-    description: 'PHP is a widely used server-side scripting language for web development, commonly known as the Hypertext Preprocessor. Known for its flexibility, usability, and seamless integration with HTML.',
+    shortDescription: 'Comprehensive software solutions that drive digital transformation and business growth.',
+    description: 'Software development is the process of creating software programs or systems, which includes the phases of designing, coding, testing, documenting, and maintaining. It is a core function that most companies are gradually integrating into their organizational structure, playing a vital role in digital transformation — the application of technology to improve business strategy, products and services, and business processes.',
     benefits: [
-      'Cost-Effective',
-      'Easy to Learn and Use',
-      'Improved Performance & User Experience',
-      'E-commerce Functionality',
-      'Better Security & Trust',
-      'Flexible & Compatible',
-      'API Integration Support'
+      'Increases Efficiency',
+      'Improves Customer Experience',
+      'Enables Business Expansion',
+      'Ensures More Effective Data Management',
+      'Gives You an Edge Over Competitors',
+      'Saves Money in the Long Run',
+      'Customer Support and Maintenance'
     ],
     whyChooseUs: {
-      title: 'Why Choose JT for PHP Development?',
-      description: 'We build robust, scalable web applications using PHP technology.',
+      title: 'Why Choose JT for Software Development?',
+      description: 'We offer custom software development as a solution to unique challenges and goals, making it a worthwhile investment for any organization, large or small.',
       features: [
-        'Custom PHP solutions',
-        'Database integration',
-        'API development',
-        'Performance optimization'
+        'Distinct Custom-Made Solutions',
+        'Openness, Scalability, and Stability',
+        'Concentrated Business Plan',
+        'Improved Security'
       ]
     },
-    icon: '⚙️'
-  },
+     icon: '⚙️'
+  }
+  ,
   {
     id: 'ecommerce-development',
     title: 'E-Commerce Website Development',
@@ -451,8 +452,8 @@ export const getServicesByIds = (ids: string[]): Service[] => {
 export const searchServices = (query: string): Service[] => {
   const searchTerm = query.toLowerCase().trim();
   if (!searchTerm) return services;
-  
-  return services.filter(service => 
+
+  return services.filter(service =>
     service.title.toLowerCase().includes(searchTerm) ||
     service.category.toLowerCase().includes(searchTerm) ||
     service.shortDescription.toLowerCase().includes(searchTerm) ||
@@ -465,11 +466,11 @@ export const searchServices = (query: string): Service[] => {
 export const getRelatedServices = (currentServiceId: string, limit: number = 3): Service[] => {
   const currentService = getServiceById(currentServiceId);
   if (!currentService) return [];
-  
-  const relatedServices = services.filter(service => 
-    service.category === currentService.category && 
+
+  const relatedServices = services.filter(service =>
+    service.category === currentService.category &&
     service.id !== currentServiceId
   );
-  
+
   return relatedServices.slice(0, limit);
 };
