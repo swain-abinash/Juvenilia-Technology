@@ -1,3 +1,4 @@
+import { HelmetProvider } from 'react-helmet-async';
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/home/Home";
@@ -30,7 +31,7 @@ import ScrollToTop from "./components/common/ScrollToTop";
 
 function App() {
   return (
-    <>
+    <HelmetProvider>
       <ScrollToTop />
       <Routes>
         <Route element={<MainLayout />}>
@@ -53,18 +54,14 @@ function App() {
           <Route path="/faqs" element={<Faqs />} />
           <Route path="/news-article" element={<News_Article />} />
           <Route path="/site-map" element={<SiteMap />} />
-
-          {/* <Route path="/free-resources" element={<FreeResources />} />
-          <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/case-studies" element={<CaseStudies />} /> */}
-
+        
           {/* Industries (Dynamic) */}
           {/* {industryRoutes.map((route, i) => (
           <Route key={i} path={route.path} element={route.element} />
         ))} */}
         </Route>
       </Routes>
-    </>
+    </HelmetProvider>
 
   );
 }

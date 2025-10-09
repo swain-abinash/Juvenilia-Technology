@@ -4,10 +4,12 @@ import { motion } from 'framer-motion'; // Import motion
 import { getServicesByCategory } from '../../mock/service';
 import ServiceCard from '../../components/common/service/ServiceCard';
 
+import { SEO } from '../../components/common/SEO';
+
 const Services: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const navigate = useNavigate();
-  
+
   const servicesByCategory = getServicesByCategory();
   const categories = Object.keys(servicesByCategory);
 
@@ -25,8 +27,8 @@ const Services: React.FC = () => {
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       transition: { staggerChildren: 0.1 }
     },
   };
@@ -38,6 +40,12 @@ const Services: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black">
+
+      <SEO
+        title="Juvenilia Technology - Leading the Way to Digital Transformation"
+        description="Looking for top-notch digital marketing, web design, development, app development, or software solutions? Juvenilia Technology provides cutting-edge technology services to take your business to the next level."
+        keywords="Juvenilia Technology, Digital Marketing, Web Design, Web Development, App Development, Software Development, IT Solutions"
+      />
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-black via-gray-900 to-black py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -47,7 +55,7 @@ const Services: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-6xl font-bold text-white mb-6"
           >
-            Juvenilia Technology - <span className="text-orange-500">Leading the Way to Digital Transformation</span>
+            Our <span className="text-orange-500">Services</span>
           </motion.h1>
 
           <motion.p
@@ -56,17 +64,17 @@ const Services: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            Trying to find top-notch digital marketing services that can take your business to the next level? Juvenilia Technology is your go-to place to get the cutting-edge Technology in Digital Marketing services alongside Website design, Web Development, App Development, and Software Development at the most affordable prices.
+            Comprehensive digital solutions to help your business thrive in the modern world. From digital marketing to custom development, we've got you covered.
           </motion.p>
-          
+
           {/* Service Categories Stats */}
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
             initial="hidden"
             animate="visible"
             variants={containerVariants}
           >
-            <motion.div 
+            <motion.div
               className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
               variants={itemVariants}
             >
@@ -75,7 +83,7 @@ const Services: React.FC = () => {
               </div>
               <div className="text-white">Digital Marketing Services</div>
             </motion.div>
-            <motion.div 
+            <motion.div
               className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
               variants={itemVariants}
             >
@@ -84,7 +92,7 @@ const Services: React.FC = () => {
               </div>
               <div className="text-white">Web Design Solutions</div>
             </motion.div>
-            <motion.div 
+            <motion.div
               className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
               variants={itemVariants}
             >
@@ -102,11 +110,10 @@ const Services: React.FC = () => {
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           <button
             onClick={() => setActiveCategory('all')}
-            className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-              activeCategory === 'all'
+            className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${activeCategory === 'all'
                 ? 'bg-orange-500 text-white shadow-lg transform scale-105'
                 : 'bg-gray-800 text-white hover:bg-gray-700 border border-gray-600 shadow-md hover:shadow-lg'
-            }`}
+              }`}
           >
             All Services
           </button>
@@ -114,11 +121,10 @@ const Services: React.FC = () => {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                activeCategory === category
+              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${activeCategory === category
                   ? 'bg-orange-500 text-white shadow-lg transform scale-105'
                   : 'bg-gray-800 text-white hover:bg-gray-700 border border-gray-600 shadow-md hover:shadow-lg'
-              }`}
+                }`}
             >
               {category}
             </button>
@@ -126,7 +132,7 @@ const Services: React.FC = () => {
         </div>
 
         {/* Services Grid */}
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           key={activeCategory}
           initial="hidden"
@@ -176,11 +182,11 @@ const Services: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-orange-100 mb-8 leading-relaxed"
           >
-            Get in touch with our expert team to discuss your project requirements 
+            Get in touch with our expert team to discuss your project requirements
             and discover how we can help you achieve your digital goals.
           </motion.p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.button 
+            <motion.button
               initial={{ scale: 0.9, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               whileHover={{ scale: 1.05 }}
@@ -191,7 +197,7 @@ const Services: React.FC = () => {
             >
               Start Your Project
             </motion.button>
-            <motion.button 
+            <motion.button
               initial={{ scale: 0.9, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               whileHover={{ scale: 1.05 }}

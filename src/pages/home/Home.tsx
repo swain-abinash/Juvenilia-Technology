@@ -18,10 +18,16 @@ import Awards from './sections/Awards';
 import FreeResources from './sections/FreeResources';
 import StickyCta from './sections/StickyCta';
 
+import { SEO } from "../../components/common/SEO";
 
 const Home = () => {
   return (
     <>
+      <SEO       
+        title="Digital Marketing, Website Designing & Development Agency in India"
+        description="Juvenilia Technology is an IT Solutions company that offers Digital Marketing, Website Designing, Web Development, App Development and Software Development services."
+        keywords="Juvenilia Technology, Digital Marketing, IT Solutions"
+      />
       <HeroSection data={homeData.hero} />
       <AboutPreview data={homeData.aboutPreview} />
       <ServicesSnapshot data={homeData.services} />

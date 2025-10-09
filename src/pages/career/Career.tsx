@@ -8,12 +8,18 @@ import { CareerOpenings } from '../../components/common/career/CareerOpenings';
 import JobApplicationForm from '../../components/JobApplicationForm';
 import SuccessModal from '../../components/common/SuccessModal';
 
+import {SEO} from '../../components/common/SEO';
 const Career = () => {
   const [selectedJob, setSelectedJob] = useState<CareerPageData['openings'][0] | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   return (
     <div className="bg-white">
+       <SEO
+        title="Want to Build Your Career with Us | Juvenilia Technology"
+        description="Whether you are a fresher or experienced in SEO, SEM, BDM, Web Design, or Development, grow your professional career journey with Juvenilia Technology, an innovative IT Solutions Company in India."
+        keywords="Juvenilia Technology Careers, SEO Jobs, SEM Jobs, BDM Jobs, Web Design Jobs, Web Development Jobs, IT Careers India"
+      />
       <CareerHeader headerData={careerData.header} />
       <main>
         <CareerValues values={careerData.values} />

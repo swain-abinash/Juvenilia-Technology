@@ -42,8 +42,8 @@ import StartupIndiaLogo from '../assets/Startup-INDIA.svg';
 
 export const homeData: HomeData = {
 hero: {
-    headline: "Digital Marketing, Website Designing & Development Agency in India",
-    subheadline: "Juvenilia Technology is an IT Solutions company that offers Digital Marketing, Website Designing, Web Development, App Development and Software Development services.",
+    headline: "Smart Technology to Boost Your Business",
+    subheadline: "We build digital solutions that help companies grow faster.",
     ctas: [
         { text: "Get Started", link: "#contact", type: "primary" },
         { text: "Contact Us", link: "#contact", type: "secondary" },

@@ -1,107 +1,211 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import type { HomeData } from "../../../types";
-import { ArrowDownIcon, RocketIcon, PhoneIcon } from "../../../components/Icons";
+// import React, { useState, useEffect } from 'react';
+// import { motion, AnimatePresence } from 'framer-motion';
+// import { useNavigate } from 'react-router-dom';
+// import type { HomeData } from '../../../types';
+// import { ArrowDownIcon, RocketIcon, PhoneIcon } from '../../../components/Icons';
+// import { Typewriter } from 'react-simple-typewriter';
 
-const HeroSection = ({ data }: { data: HomeData["hero"] }) => {
+// const HeroSection = ({ data }: { data: HomeData['hero'] }) => {
+//   const [index, setIndex] = useState(0);
+//   const navigate = useNavigate();
+
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setIndex((prevIndex) => (prevIndex + 1) % data.images.length);
+//     }, 5000);
+//     return () => clearInterval(interval);
+//   }, [data.images.length]);
+
+//   return (
+//     <div className="relative flex items-center justify-center overflow-hidden bg-black min-h-[100vh] sm:min-h-[90vh] md:min-h-[100vh]">
+//       {/* Background Image Slider */}
+//       <AnimatePresence>
+//         <motion.img
+//           key={index}
+//           src={data.images[index]}
+//           alt="Background"
+//           className="absolute inset-0 w-full h-full object-cover"
+//           initial={{ opacity: 0, scale: 1.05 }}
+//           animate={{ opacity: 1, scale: 1 }}
+//           exit={{ opacity: 0, scale: 1.05 }}
+//           transition={{ duration: 1.5, ease: 'easeInOut' }}
+//         />
+//       </AnimatePresence>
+
+//       {/* Overlay */}
+//       <div className="absolute inset-0 bg-black/70 sm:bg-black/60 z-10"></div>
+
+//       {/* Text Content */}
+//       <div className="relative z-20 text-center px-4 sm:px-6 md:px-8 lg:px-12 max-w-[90%] sm:max-w-3xl mx-auto">
+//         {/* Headline */}
+//         <motion.h1
+//           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-3 sm:mb-4 tracking-tight leading-tight"
+//           initial={{ opacity: 0, y: -20 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.8 }}
+//         >
+//           {data.headline}
+//         </motion.h1>
+
+//         {/* Typewriter Subtitle */}
+//         <motion.p
+//           className="text-base sm:text-lg md:text-xl bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-500 bg-clip-text text-transparent font-medium max-w-2xl mx-auto mb-8 leading-relaxed"
+//           initial={{ opacity: 0, y: 20 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.8, delay: 0.2 }}
+//         >
+//           <Typewriter
+//             words={[data.subheadline]}
+//             loop={false}
+//             cursor
+//             cursorStyle="|"
+//             typeSpeed={60}
+//             deleteSpeed={30}
+//             delaySpeed={1500}
+//           />
+//         </motion.p>
+
+//         {/* CTA Buttons */}
+//         <motion.div
+//           className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 md:gap-6"
+//           initial={{ opacity: 0, scale: 0.9 }}
+//           animate={{ opacity: 1, scale: 1 }}
+//           transition={{ duration: 0.5, delay: 0.4 }}
+//         >
+//           <button
+//             onClick={() => navigate('/contact')}
+//             className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 bg-orange-500 text-white text-sm sm:text-base font-semibold rounded-lg shadow-lg hover:bg-orange-600 transition-all duration-300 transform hover:scale-105"
+//           >
+//             <RocketIcon className="w-4 h-4 sm:w-5 sm:h-5" /> {data.ctas[0].text}
+//           </button>
+//           <button
+//             onClick={() => navigate('/contact')}
+//             className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 bg-transparent border-2 border-white text-white text-sm sm:text-base font-semibold rounded-lg hover:bg-white hover:text-black transition-all duration-300"
+//           >
+//             <PhoneIcon className="w-4 h-4 sm:w-5 sm:h-5" /> {data.ctas[1].text}
+//           </button>
+//         </motion.div>
+//       </div>
+
+//       {/* Scroll Down Icon */}
+//       <motion.div
+//         className="absolute bottom-6 sm:bottom-8 md:bottom-10 z-20"
+//         animate={{ y: [0, 10, 0] }}
+//         transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+//       >
+//         <ArrowDownIcon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white/50" />
+//       </motion.div>
+//     </div>
+//   );
+// };
+
+// export default HeroSection;
+
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+import type { HomeData } from '../../../types';
+import { ArrowDownIcon, RocketIcon, PhoneIcon } from '../../../components/Icons';
+import { Typewriter } from 'react-simple-typewriter';
+
+const HeroSection = ({ data }: { data: HomeData['hero'] }) => {
   const [index, setIndex] = useState(0);
-  const [typedText, setTypedText] = useState("");
   const navigate = useNavigate();
 
-  // Background Image Rotation
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % data.images.length);
-    }, 6000);
+      setIndex((prevIndex) => (prevIndex + 1) % data.images.length);
+    }, 5000);
     return () => clearInterval(interval);
   }, [data.images.length]);
 
-  // Typewriter effect for headline
-  useEffect(() => {
-    let i = 0;
-    setTypedText("");
-    const typingInterval = setInterval(() => {
-      setTypedText(data.headline.slice(0, i + 1));
-      i++;
-      if (i === data.headline.length) clearInterval(typingInterval);
-    }, 100);
-    return () => clearInterval(typingInterval);
-  }, [data.headline]);
-
-  // Highlight keywords in Orange
-  const highlightTech = (text: string) => {
-    return text
-      .replace(/Digital Marketing/g, '<span class="text-orange-400 font-semibold">Digital Marketing</span>')
-      .replace(/Website Designing/g, '<span class="text-orange-400 font-semibold">Website Designing</span>')
-      .replace(/Web Development/g, '<span class="text-orange-400 font-semibold">Web Development</span>')
-      .replace(/App Development/g, '<span class="text-orange-400 font-semibold">App Development</span>')
-      .replace(/Software Development/g, '<span class="text-orange-400 font-semibold">Software Development</span>');
-  };
-
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-black to-orange-950 text-white">
-      {/* Background image */}
-      <img
-        src={data.images[index]}
-        alt="Background"
-        className="absolute inset-0 w-full h-full object-cover opacity-60"
-      />
-
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/70 z-10" />
-
-      <div className="relative z-20 text-center px-6 md:px-10 max-w-5xl mx-auto">
-        {/* Headline with typewriter effect */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-8">
-          <span dangerouslySetInnerHTML={{ __html: highlightTech(typedText) }} />
-          <span className="border-r-2 border-white animate-pulse ml-1" />
-        </h1>
-
-        {/* Subheadline */}
-        <p
-          className="text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto mb-10 bg-white/10 px-6 py-4 rounded-lg border border-white/10 shadow-md"
-          dangerouslySetInnerHTML={{ __html: highlightTech(data.subheadline) }}
+    <div className="relative flex items-center justify-center overflow-hidden bg-black min-h-[100vh] sm:min-h-[90vh] md:min-h-[100vh]">
+      {/* Background Image Slider */}
+      <AnimatePresence>
+        <motion.img
+          key={index}
+          src={data.images[index]}
+          alt="Background"
+          className="absolute inset-0 w-full h-full object-cover"
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 1.05 }}
+          transition={{ duration: 1.5, ease: 'easeInOut' }}
         />
+      </AnimatePresence>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/70 sm:bg-black/60 z-10"></div>
+
+      {/* Text Content */}
+      <div className="relative z-20 text-center px-4 sm:px-6 md:px-8 lg:px-12 max-w-[90%] sm:max-w-3xl mx-auto">
+        {/* Headline */}
+        <motion.h1
+          className="font-extrabold text-white mb-3 sm:mb-4 tracking-tight leading-tight 
+                     text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Two-line for small, one-line for large screens */}
+          <span className="block sm:hidden">
+            Smart Technology <br /> to Boost Your Business
+          </span>
+          <span className="hidden sm:block">
+            Smart Technology to Boost Your Business
+          </span>
+        </motion.h1>
+
+        {/* Typewriter Subtitle */}
+        <motion.p
+          className="text-base sm:text-lg md:text-xl bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-500 bg-clip-text text-transparent font-medium max-w-2xl mx-auto mb-8 leading-relaxed"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <Typewriter
+            words={[data.subheadline]}
+            loop={false}
+            cursor
+            cursorStyle="|"
+            typeSpeed={60}
+            deleteSpeed={30}
+            delaySpeed={1500}
+          />
+        </motion.p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-5 mt-6">
+        <motion.div
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 md:gap-6"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
           <button
-            onClick={() => navigate("/contact")}
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-orange-500 text-white font-semibold rounded-full shadow-lg hover:bg-orange-600 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,165,0,0.6)] transition-all duration-300"
+            onClick={() => navigate('/contact')}
+            className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 bg-orange-500 text-white text-sm sm:text-base font-semibold rounded-lg shadow-lg hover:bg-orange-600 transition-all duration-300 transform hover:scale-105"
           >
-            <RocketIcon className="w-5 h-5" />
-            {data.ctas[0].text}
+            <RocketIcon className="w-4 h-4 sm:w-5 sm:h-5" /> {data.ctas[0].text}
           </button>
           <button
-            onClick={() => navigate("/contact")}
-            className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-black hover:shadow-[0_0_15px_rgba(255,165,0,0.4)] transition-all duration-300"
+            onClick={() => navigate('/contact')}
+            className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-8 sm:py-3 bg-transparent border-2 border-white text-white text-sm sm:text-base font-semibold rounded-lg hover:bg-white hover:text-black transition-all duration-300"
           >
-            <PhoneIcon className="w-5 h-5" />
-            {data.ctas[1].text}
+            <PhoneIcon className="w-4 h-4 sm:w-5 sm:h-5" /> {data.ctas[1].text}
           </button>
-        </div>
+        </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 z-20 animate-bounce">
-        <ArrowDownIcon className="w-8 h-8 text-orange-400/70" />
-      </div>
-
-      {/* Gradient animation using Tailwind keyframes */}
-      <style>
-        {`
-          @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-          }
-          .animate-gradientBG {
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-          }
-        `}
-      </style>
-    </section>
+      {/* Scroll Down Icon */}
+      <motion.div
+        className="absolute bottom-6 sm:bottom-8 md:bottom-10 z-20"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+      >
+        <ArrowDownIcon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white/50" />
+      </motion.div>
+    </div>
   );
 };
 

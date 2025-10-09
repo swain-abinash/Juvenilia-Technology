@@ -137,6 +137,9 @@ export const AboutHero: React.FC = () => {
             className="text-sm sm:text-base text-gray-300 leading-relaxed mb-5 bg-white/5 p-4 sm:p-5 rounded-xl border border-white/10 shadow-md backdrop-blur-sm relative z-10"
             dangerouslySetInnerHTML={{ __html: aboutData.hero.description }}
           />
+          <p className="text-base text-orange-400/90 italic border-l-4 border-orange-400 pl-4">
+            "{aboutData.hero.philosophy}"
+          </p>
         </motion.div>
       </div>
     </section>
