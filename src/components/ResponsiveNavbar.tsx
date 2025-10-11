@@ -19,9 +19,9 @@ const ResponsiveNavbar = () => {
   const [isFixed, setIsFixed] = useState(false);
 
   const listitem = [
-      { link: "/", text: "Home", dropdown: [] },
+    { link: "/", text: "Home", dropdown: [] },
     { link: "/about", text: "About", dropdown: [] },
-      { link: "/services", text: "Services", dropdown: [] },
+    { link: "/services", text: "Services", dropdown: [] },
 
     // {
     //   link: "",
@@ -29,7 +29,7 @@ const ResponsiveNavbar = () => {
     //   dropdown: [
     //     { link: "/mou/college_student", text: "College Student", desc: "One for College for students" },
     //     { link: "/mou/employment", text: "Employement", desc: "Another as Companies for employment" },
-       
+
     //   ],
     // },
     { link: "/plans", text: "Plans", dropdown: [] },
@@ -39,11 +39,11 @@ const ResponsiveNavbar = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const toggleDropdown = (index:any) => {
+  const toggleDropdown = (index: any) => {
     setActiveDropdown(activeDropdown === index ? 0 : index);
   };
 
-  const handleDropdownSelect = (dropdownText:any, mainItemText:any) => {
+  const handleDropdownSelect = (dropdownText: any, mainItemText: any) => {
     setSelectedItem(dropdownText);
     setActiveItem(mainItemText);
     setHoveredItem("");
@@ -69,11 +69,10 @@ const ResponsiveNavbar = () => {
 
   return (
     <header
-      className={`transition-all duration-300 ease-in-out ${
-        isFixed 
-          ? "bg-white/90 backdrop-blur-md shadow-md" 
+      className={`transition-all duration-300 ease-in-out ${isFixed
+          ? "bg-white/90 backdrop-blur-md shadow-md"
           : "bg-gradient-to-r from-orange-50 to-white"
-      } sticky top-0 z-500`}
+        } sticky top-0 z-500`}
     >
       <div className="max-w-[1600px] xl:mx-auto flex justify-between items-center lg:py-1 md:px-18 lg:px-19 px-5 md:mx-10">
         {/* Logo */}
@@ -89,49 +88,46 @@ const ResponsiveNavbar = () => {
 
         </div>
 
-         {/* Desktop Menu */}
-         <nav className="hidden lg:flex space-x-6 text-[#000000] md:text-[16px] md:font-semibold">
-            {listitem.map((item, index) => (
-              <div
-                key={index}
-                className="group"
-                onMouseEnter={() => setHoveredItem(item.text)}
-                onMouseLeave={() => setHoveredItem("")}
-              >
-                {!item.link && (
-                  <span
-                    className={`block py-2 cursor-pointer ${
-                      activeItem === item.text || pathname.includes("industries")
-                        ? "text-orange-600"
-                        : "text-black"
+        {/* Desktop Menu */}
+        <nav className="hidden lg:flex space-x-6 text-[#000000] md:text-[16px] md:font-semibold">
+          {listitem.map((item, index) => (
+            <div
+              key={index}
+              className="group"
+              onMouseEnter={() => setHoveredItem(item.text)}
+              onMouseLeave={() => setHoveredItem("")}
+            >
+              {!item.link && (
+                <span
+                  className={`block py-2 cursor-pointer ${activeItem === item.text || pathname.includes("industries")
+                      ? "text-orange-600"
+                      : "text-black"
                     }`}
-                  >
-                    <span className="flex gap-2">
-                      <span>{item.text}</span>
-                      <span
-                        className={`mt-[2px] font-medium ${
-                          hoveredItem === item.text ? "rotate-180" : "rotate-0"
+                >
+                  <span className="flex gap-2">
+                    <span>{item.text}</span>
+                    <span
+                      className={`mt-[2px] font-medium ${hoveredItem === item.text ? "rotate-180" : "rotate-0"
                         } transition-transform duration-200`}
-                      >
-                        <RiArrowDownSLine className="text-2xl" />
-                      </span>
+                    >
+                      <RiArrowDownSLine className="text-2xl" />
                     </span>
                   </span>
-                )}
-                {item.link && (
-                  <Link
-                    to={item.link}
-                    className={`block py-2 ${
-                      activeItem === item.text || pathname === item.link
-                        ? "text-orange-600"
-                        : "text-black"
+                </span>
+              )}
+              {item.link && (
+                <Link
+                  to={item.link}
+                  className={`block py-2 ${activeItem === item.text || pathname === item.link
+                      ? "text-orange-600"
+                      : "text-black"
                     }`}
-                    onClick={() => handleDropdownSelect(item.text, item.text)}
-                  >
-                    {item.text}
-                  </Link>
-                )}
-                {/* {hoveredItem === item.text && item.dropdown.length > 0 && (
+                  onClick={() => handleDropdownSelect(item.text, item.text)}
+                >
+                  {item.text}
+                </Link>
+              )}
+              {/* {hoveredItem === item.text && item.dropdown.length > 0 && (
                   <div className="absolute  mt-0 rounded-md bg-white shadow-lg text-left space-y-2 z-50 w-[10vw] md:w-[15vw] lg:w-[20vw] grid grid-cols-1 gap-1 p-5 pb-8">
                     {item.dropdown.map((dropdownItem, dropdownIndex) => (
                       <Link
@@ -155,9 +151,9 @@ const ResponsiveNavbar = () => {
                     ))}
                   </div>
                 )} */}
-              </div>
-            ))}
-          </nav>
+            </div>
+          ))}
+        </nav>
 
 
         {/* Desktop CTA */}
@@ -173,9 +169,10 @@ const ResponsiveNavbar = () => {
         </div> */}
 
         {/* Mobile Menu Button */}
-        <button className="lg:hidden flex flex-col space-y-1.5 my-8 text-black" onClick={toggleMenu}>
+        <button className="lg:hidden flex flex-col space-y-1.5 my-8 text-orange-600" onClick={toggleMenu}>
           <HiMenuAlt3 className="text-3xl" />
         </button>
+
       </div>
 
       {/* Mobile Menu - Portal ensures overlay sits above all content even when scrolled */}
@@ -209,12 +206,11 @@ const ResponsiveNavbar = () => {
                   >
                     {!item.link && (
                       <div
-                        className={`block py-2 cursor-pointer text-left font-medium ${
-                          activeItem === item.text ||
-                          pathname.includes(item.link)
+                        className={`block py-2 cursor-pointer text-left font-medium ${activeItem === item.text ||
+                            pathname.includes(item.link)
                             ? "text-orange-600"
                             : "text-black"
-                        }`}
+                          }`}
                       >
                         {item.text}
                         {/* {activeDropdown === index && (
@@ -243,11 +239,10 @@ const ResponsiveNavbar = () => {
                     {item.link && (
                       <Link
                         to={item.link}
-                        className={`block py-2 font-medium ${
-                          activeItem === item.text
+                        className={`block py-2 font-medium ${activeItem === item.text
                             ? "text-orange-600"
                             : "text-black"
-                        }`}
+                          }`}
                         onClick={() => handleDropdownSelect(item.text, item.text)}
                       >
                         {item.text}
@@ -256,9 +251,8 @@ const ResponsiveNavbar = () => {
                   </div>
                   {!item.link && (
                     <span
-                      className={`mt-2 font-medium ${
-                        activeDropdown === index ? "rotate-180" : "rotate-0"
-                      } transition-transform duration-200`}
+                      className={`mt-2 font-medium ${activeDropdown === index ? "rotate-180" : "rotate-0"
+                        } transition-transform duration-200`}
                     >
                       <RiArrowDownSLine className="text-2xl" />
                     </span>

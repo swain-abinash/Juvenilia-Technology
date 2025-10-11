@@ -39,6 +39,7 @@ import PaypalLogo from '../assets/Paypal.svg';
 import TinderLogo from '../assets/Tinder.svg';
 
 import StartupIndiaLogo from '../assets/Startup-INDIA.svg';
+import UdyamLogo from '../assets/UDYAM.png';
 
 export const homeData: HomeData = {
 hero: {
@@ -202,6 +203,12 @@ awards: {
             issuer: "Government of India", 
             year: "2024", 
             image: StartupIndiaLogo    // ✅ new image award
+        },
+        {
+            name: "UDYAM Certification",
+            issuer: "Government of India",
+            year: "2024",
+            image: UdyamLogo
         }
     ]
 },

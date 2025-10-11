@@ -25,7 +25,7 @@ import SiteMap from "./pages/site-map/SiteMap";
 // import Testimonials from "./pages/home/sections/Testimonials";
 // import CaseStudies from "./pages/home/sections/CaseStudies";
 
-
+import Payment from "./pages/payment/Payment";
 import ScrollToTop from "./components/common/ScrollToTop";
 
 
@@ -46,7 +46,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/plans" element={<Plan />} />
           <Route path="/mou" element={<Mou />} />
-
+          <Route path="/payment" element={<Payment />} />
 
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
