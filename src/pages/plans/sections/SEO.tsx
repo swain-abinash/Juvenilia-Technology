@@ -243,7 +243,7 @@ return (
 
             {/* Contact Button */}
             <div className="mb-8">
-              <button className="bg-orange-500 hover:bg-orange-600 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg flex items-center gap-3 transition-colors duration-200 shadow-lg w-full sm:w-auto">
+              <button className="bg-orange-500 hover:bg-orange-600 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg font-semibold md:text-base text-xs flex items-center gap-3 transition-colors duration-200 shadow-lg w-full sm:w-auto">
                 <svg
                   className="w-5 h-5 sm:w-6 sm:h-6"
                   fill="currentColor"

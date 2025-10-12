@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion'; // Import motion
-import { getServicesByCategory } from '../../mock/service';
-import ServiceCard from '../../components/common/service/ServiceCard';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion"; // Import motion
+import { getServicesByCategory } from "../../mock/service";
+import ServiceCard from "../../components/common/service/ServiceCard";
 
-import { SEO } from '../../components/common/SEO';
+import { SEO } from "../../components/common/SEO";
 
 const Services: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [activeCategory, setActiveCategory] = useState<string>("all");
   const navigate = useNavigate();
 
   const servicesByCategory = getServicesByCategory();
@@ -18,7 +18,7 @@ const Services: React.FC = () => {
   };
 
   const getFilteredServices = () => {
-    if (activeCategory === 'all') {
+    if (activeCategory === "all") {
       return Object.values(servicesByCategory).flat();
     }
     return servicesByCategory[activeCategory] || [];
@@ -29,7 +29,7 @@ const Services: React.FC = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 }
+      transition: { staggerChildren: 0.1 },
     },
   };
 
@@ -40,7 +40,6 @@ const Services: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black">
-
       <SEO
         title="Juvenilia Technology - Leading the Way to Digital Transformation"
         description="Looking for top-notch digital marketing, web design, development, app development, or software solutions? Juvenilia Technology provides cutting-edge technology services to take your business to the next level."
@@ -64,7 +63,9 @@ const Services: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            Comprehensive digital solutions to help your business thrive in the modern world. From digital marketing to custom development, we've got you covered.
+            Comprehensive digital solutions to help your business thrive in the
+            modern world. From digital marketing to custom development, we've
+            got you covered.
           </motion.p>
 
           {/* Service Categories Stats */}
@@ -79,7 +80,7 @@ const Services: React.FC = () => {
               variants={itemVariants}
             >
               <div className="text-3xl font-bold text-orange-500 mb-2">
-                {servicesByCategory['Digital Marketing']?.length || 0}
+                {servicesByCategory["Digital Marketing"]?.length || 0}
               </div>
               <div className="text-white">Digital Marketing Services</div>
             </motion.div>
@@ -88,7 +89,7 @@ const Services: React.FC = () => {
               variants={itemVariants}
             >
               <div className="text-3xl font-bold text-orange-500 mb-2">
-                {servicesByCategory['Web Design']?.length || 0}
+                {servicesByCategory["Web Design"]?.length || 0}
               </div>
               <div className="text-white">Web Design Solutions</div>
             </motion.div>
@@ -97,7 +98,7 @@ const Services: React.FC = () => {
               variants={itemVariants}
             >
               <div className="text-3xl font-bold text-orange-500 mb-2">
-                {servicesByCategory['Web Development']?.length || 0}
+                {servicesByCategory["Web Development"]?.length || 0}
               </div>
               <div className="text-white">Development Services</div>
             </motion.div>
@@ -107,13 +108,14 @@ const Services: React.FC = () => {
 
       {/* Filter Tabs and Services */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap md:justify-center gap-4 mb-12">
           <button
-            onClick={() => setActiveCategory('all')}
-            className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${activeCategory === 'all'
-                ? 'bg-orange-500 text-white shadow-lg transform scale-105'
-                : 'bg-gray-800 text-white hover:bg-gray-700 border border-gray-600 shadow-md hover:shadow-lg'
-              }`}
+            onClick={() => setActiveCategory("all")}
+            className={`px-3 py-2 text-sm md:px-6 md:py-3 md:text-base rounded-full font-semibold transition-all duration-300 ${
+              activeCategory === "all"
+                ? "bg-orange-500 text-white shadow-lg transform scale-105"
+                : "bg-gray-800 text-white hover:bg-gray-700 border border-gray-600 shadow-md hover:shadow-lg"
+            }`}
           >
             All Services
           </button>
@@ -121,10 +123,11 @@ const Services: React.FC = () => {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${activeCategory === category
-                  ? 'bg-orange-500 text-white shadow-lg transform scale-105'
-                  : 'bg-gray-800 text-white hover:bg-gray-700 border border-gray-600 shadow-md hover:shadow-lg'
-                }`}
+              className={`px-3 py-2 text-sm md:px-6 md:py-3 md:text-base rounded-full font-semibold transition-all duration-300 ${
+                activeCategory === category
+                  ? "bg-orange-500 text-white shadow-lg transform scale-105"
+                  : "bg-gray-800 text-white hover:bg-gray-700 border border-gray-600 shadow-md hover:shadow-lg"
+              }`}
             >
               {category}
             </button>
@@ -145,10 +148,7 @@ const Services: React.FC = () => {
               className="transform transition-all duration-300 hover:scale-[1.02]"
               variants={itemVariants}
             >
-              <ServiceCard
-                service={service}
-                onClick={handleServiceClick}
-              />
+              <ServiceCard service={service} onClick={handleServiceClick} />
             </motion.div>
           ))}
         </motion.div>
@@ -157,8 +157,12 @@ const Services: React.FC = () => {
         {getFilteredServices().length === 0 && (
           <div className="text-center py-16">
             <div className="text-6xl mb-4">🔍</div>
-            <h3 className="text-2xl font-bold text-white mb-2">No Services Found</h3>
-            <p className="text-gray-300">Try selecting a different category or view all services.</p>
+            <h3 className="text-2xl font-bold text-white mb-2">
+              No Services Found
+            </h3>
+            <p className="text-gray-300">
+              Try selecting a different category or view all services.
+            </p>
           </div>
         )}
       </div>
@@ -182,8 +186,9 @@ const Services: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl text-orange-100 mb-8 leading-relaxed"
           >
-            Get in touch with our expert team to discuss your project requirements
-            and discover how we can help you achieve your digital goals.
+            Get in touch with our expert team to discuss your project
+            requirements and discover how we can help you achieve your digital
+            goals.
           </motion.p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.button
@@ -192,7 +197,7 @@ const Services: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3 }}
-              onClick={() => navigate('/contact')}
+              onClick={() => navigate("/contact")}
               className="px-8 py-4 bg-white text-orange-600 font-semibold rounded-xl hover:bg-gray-100 shadow-lg"
             >
               Start Your Project
@@ -203,7 +208,7 @@ const Services: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: 0.2 }}
-              onClick={() => navigate('/contact')}
+              onClick={() => navigate("/contact")}
               className="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white hover:text-orange-600 font-semibold rounded-xl"
             >
               Schedule Consultation

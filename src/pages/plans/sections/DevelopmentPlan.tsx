@@ -27,7 +27,7 @@ return (
 
             {/* Contact */}
             <div className="mb-8">
-              <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold text-base flex items-center gap-3 transition-colors duration-200 shadow-lg w-full sm:w-auto">
+              <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold md:text-base text-xs flex items-center gap-3 transition-colors duration-200 shadow-lg w-full sm:w-auto">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M2.25 4.5A2.25 2.25 0 0 1 4.5 2.25h15a2.25 2.25 0 0 1 2.25 2.25v15a2.25 2.25 0 0 1-2.25 2.25h-15A2.25 2.25 0 0 1 2.25 19.5v-15zm2.28.75 7.47 5.33a.75.75 0 0 0 .9 0l7.47-5.33H4.53zM19.5 18V7.27l-6.75 4.82a2.25 2.25 0 0 1-2.5 0L3.5 7.27V18A.75.75 0 0 0 4.25 18h15a.75.75 0 0 0 .75-.75z" />
                 </svg>
