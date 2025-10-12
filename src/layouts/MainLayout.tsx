@@ -22,16 +22,16 @@ export default function MainLayout() {
         <Footer />
         {/* Floating buttons */}
         {/*Becom an investor */}
-           <div className="fixed bottom-44 right-4 z-500">
+           <div className="fixed bottom-44 right-6   z-500">
           <InvestorButton />
         </div>
 
         {/* ChatBot - bottom right */}
-        <div className="fixed bottom-4 right-4 z-500">
+        <div className="fixed bottom-4 right-3 z-500">
           <ChatBot />
         </div>
         {/* Scroll to top - bottom right */}
-        <div className="fixed bottom-4 right-4 z-500">
+        <div className="fixed bottom-4 right-5 z-500">
           <ScrollToTopButton />
         </div>
       </div>
