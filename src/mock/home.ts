@@ -40,6 +40,10 @@ import TinderLogo from '../assets/Tinder.svg';
 
 import StartupIndiaLogo from '../assets/Startup-INDIA.svg';
 import UdyamLogo from '../assets/UDYAM.png';
+import HeroImage1 from '../assets/WebDevelopment_Hero1.jpg';
+import HeroImage2 from '../assets/AppDevelopment_Hero2.jpg';
+import HeroImage3 from '../assets/DigitalMarketing_Hero3.jpg';
+
 
 export const homeData: HomeData = {
 hero: {
@@ -49,13 +53,8 @@ hero: {
         { text: "Get Started", link: "#contact", type: "primary" },
         { text: "Contact Us", link: "#contact", type: "secondary" },
     ],
-    images: [
-        "https://placehold.co/1920x1080/111827/FFFFFF?text=Digital+Marketing+Solutions",
-        "https://placehold.co/1920x1080/1F2937/FFFFFF?text=Website+Design+%26+Development",
-        "https://placehold.co/1920x1080/374151/FFFFFF?text=App+%26+Software+Development"
-    ]
-}
-,
+    images: [HeroImage1,HeroImage2,HeroImage3]
+},
     aboutPreview: {
         intro: "Founded in 2015, Juvenilia Technologies Pvt Ltd has grown into one of India’s most trusted IT solution companies, delivering innovative digital solutions across industries.",
         cta: { text: "Learn More About Us", link: "/about" },

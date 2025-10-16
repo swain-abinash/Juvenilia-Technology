@@ -1,4 +1,5 @@
 import type { CareerPageData } from '../types';
+import CareerHeroImage from '../assets/Career_Hero1.jpg';
 
 
 export const careerData: CareerPageData = {
@@ -6,7 +7,7 @@ export const careerData: CareerPageData = {
     title: 'Build The Future With Us',
     subtitle:
       'We are looking for passionate, curious, and creative people to join our team. Explore our open roles and find your next great opportunity.',
-    mainImage: 'https://placehold.co/1200x600/1a202c/ffffff?text=Join+Our+Team',
+      mainImage: CareerHeroImage,
   },
   values: [
     {
