@@ -22,7 +22,7 @@ const InvestorButton: React.FC = () => {
       <Link
         to="/payment"
         aria-label="Invest Now"
-        className="flex items-center overflow-hidden h-14 w-14 group-hover:w-[200px] transition-[width] duration-500 ease-in-out 
+        className="flex items-center overflow-hidden h-14 w-14 group-hover:w-[220px] transition-[width] duration-500 ease-in-out 
                    bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 text-white font-semibold rounded-full 
                    shadow-lg hover:shadow-orange-500/50 relative"
       >

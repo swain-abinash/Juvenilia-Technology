@@ -6,8 +6,8 @@ import binitImage from "../assets/BINIT.png";
 import sudarsanImage from "../assets/SUDARSHAN.png";
 import amayaImage from "../assets/AMIYARANJAN.png";
 import subhadarshiniImage from "../assets/SUBHA.png";
-import rozysmitaImage from "../assets/ROZY.png";
-import swarnaImage from "../assets/SWARNA.png";
+// import rozysmitaImage from "../assets/ROZY.png";
+// import swarnaImage from "../assets/SWARNA.png";
 import harapriyaImage from "../assets/HARAPRIYA.png";
 
 
@@ -99,18 +99,18 @@ export const aboutData = {
       tagline: "Delivering measurable results with smart SEO practices",
       image: subhadarshiniImage
     },
-    {
-      name: "Rozysmita Sahoo",
-      position: "Counsellor",
-      tagline: "Ensuring client needs are understood and met with care",
-      image: rozysmitaImage
-    },
-    {
-      name: "Swarnaprava Swain",
-      position: "Counsellor",
-      tagline: "Guiding clients with clarity and care",
-      image: swarnaImage
-    },
+    // {
+    //   name: "Rozysmita Sahoo",
+    //   position: "Counsellor",
+    //   tagline: "Ensuring client needs are understood and met with care",
+    //   image: ""
+    // },
+    // {
+    //   name: "Swarnaprava Swain",
+    //   position: "Counsellor",
+    //   tagline: "Guiding clients with clarity and care",
+    //   image: ""
+    // },
     {
       name: "Harapriya Dhal",
       position: "Business Development Executive",

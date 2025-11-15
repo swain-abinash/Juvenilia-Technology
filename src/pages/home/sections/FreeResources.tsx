@@ -85,7 +85,7 @@ const FreeResources = ({ data }: { data: HomeData["resources"] }) => {
         body: data,
       });
 
-      setSuccessMessage("Thank you! We will contact you within 24 hours.");
+      setSuccessMessage("We will contact you within 24 hours.");
       setForm({ name: "", email: "", phone: "", website: "",formType:"freeresources" });
     } finally {
       setIsSubmitting(false);
